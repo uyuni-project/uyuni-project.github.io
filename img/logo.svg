@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138.01 159.033">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #63b4bf;
+      }
+
+      .cls-2 {
+        fill: #509098;
+      }
+
+      .cls-3 {
+        fill: #7dd0de;
+      }
+
+      .cls-4 {
+        fill: #1f6478;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Artboard_1" data-name="Artboard 1" transform="translate(-20.63 -12.92)">
+    <path id="Path_14" data-name="Path 14" class="cls-1" d="M176.7,131.464V52.432L108.26,12.92Z" transform="translate(-18.061)"/>
+    <path id="Path_15" data-name="Path 15" class="cls-2" d="M21.34,163.47l68.441,39.512,68.441-39.512Z" transform="translate(-0.146 -31.029)"/>
+    <path id="Path_16" data-name="Path 16" class="cls-3" d="M158.223,131.874,89.781,13.33,21.34,131.874Z" transform="translate(-0.146 -0.085)"/>
+    <path id="Path_17" data-name="Path 17" class="cls-4" d="M89.071,12.92,20.63,52.432v79.032Z"/>
+    <path id="Path_18" data-name="Path 18" class="cls-5" d="M111.663,85.234v28.652q0,12.393-9.789,12.4t-9.789-12.4V73.08H80.55v41.06q0,6.867,1.437,10.321a17.672,17.672,0,0,0,5.073,7.018q5.843,5.073,14.814,5.073a24.063,24.063,0,0,0,9.789-1.969v1.969H123.19V85.234Z" transform="translate(-12.35 -12.399)"/>
+  </g>
+</svg>

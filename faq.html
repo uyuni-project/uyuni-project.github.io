@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FAQ - Uyuni</title>
+  <meta name="description" content="Uyuni - A new way to manage your IT infrastructure">
+
+  <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="img/favicon/apple-touch-icon" sizes="180x180" href="img/favicon//apple-touch-icon.png">
+  <link rel="img/favicon/img/favicon/icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="img/favicon/icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="img/favicon/manifest" href="img/favicon/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="page-wrap">
+  <div class="content-wrap faq-wrap">
+   <div class="faq-header">
+     <div class="logo-wrap">
+       <img src="img/logo.svg" alt="Uyumi Logo" class="logo">
+       <h1>FAQ</h1>
+      </div>
+
+      <a href="index.html">&lt; go back </a>
+   </div>
+
+    <div class="faq-content">
+      <ul>
+        <li>
+          <h2>Q. Where is the Uyuni press release?</h2>
+          <p>A. Please, check it <a target="_blanK" href="http://beta.suse.com/private/uyuni-project/">here</a>.</p>
+        </li>
+        <li>
+          <h2>Q. Where I can find Uyuni source code?</h2>
+          <p>A. We plan to open our Spacewalk git branch during summer. We wanted to announce at the openSUSE Conference and we did not make it to have everything prepared.</p>
+          <p>Meanwhile, you can download it from  <a target="_blank" href="http://beta.suse.com/private/uyuni-project/">http://beta.suse.com/private/uyuni-project/</a> (look into Media2 directories for the SRPMs).</p>
+        </li>
+        <li>
+          <h2>Q. Are you going to release builds?</h2>
+          <p>A. We plan to release builds via the Open Build Service. Initially we will target openSUSE Leap 42.3 during summer, and openSUSE Leap 15.0 after that.</p>
+          <p>You can get an initial build at <a href="http://beta.suse.com/private/uyuni-project" target="_blank">http://beta.suse.com/private/uyuni-project</a> (you need to use the Media1 directories as repositories).</p>
+        </li>
+        <li>
+          <h2>Q. Is Uyuni based on SUSE Manager?</h2>
+          <p>A. Yes. SUSE Manager is based on the Spacewalk project. As our branch diverged more and more, we decided to make the current SUSE Manager code-base the initial Uyuni, and we will base future SUSE Manager releases on Uyuni going forward.</p>
+        </li>
+        <li>
+          <h2>Q. What are the main differences between Uyuni and Spacewalk right now?</h2>
+          <p>A. While most of the bugfixes and enhancements from SUSE Manager were contributed back to Spacewalk, some features did not made their way back. To highlight some:</p>
+          <ul>
+            <li><p>The server is a full Salt master and can manage systems running the Salt minion, with full configuration management support.</p></li>
+            <li><p>Building of image containers based on frozen channels.</p></li>
+            <li><p>Auditing of container images and Kubernetes clusters.</p></li>
+            <li><p>Initial configuration and setup based on YaST.</p></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="repositories-links">
+      <hr>
+      <!-- Links wrap -->
+      <ul class="repositories-url">
+        <a target="_blank" href="http://beta.suse.com/private/uyuni-project/"><li>All repositories</li></a>
+        <a target="_blank" href="http://beta.suse.com/private/uyuni-project/openSUSE42.3-Uyuni-Server-3.2-POOL-x86_64-Media1"><li>Binaries for Server</li></a>
+        <a target="_blank" href="http://beta.suse.com/private/uyuni-project/openSUSE42.3-Uyuni-Proxy-3.2-POOL-x86_64-Media1"><li>Binaries for Proxy</li></a>
+      </ul>
+    </div>
+    <!-- Social wrap -->
+    <div class="social">
+      <img onclick="window.open('https://twitter.com/UyuniProject')" src="img/twitter.svg" alt="">
+    </div>
+  </div>
+</div>
+</body>
+</html>
