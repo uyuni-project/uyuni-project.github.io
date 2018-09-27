@@ -31,7 +31,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
 
-  width: 500px;
+  width: 700px;
   margin: 5% 0;
   padding: 5%;
 
@@ -91,7 +91,7 @@ button:hover {
 }
 
 .repositories-links {
-  width: 80%;
+  width: 90%;
   text-align: center;
 }
 
@@ -240,4 +240,12 @@ div.faq-content ul li ul li {
 
 div.content > ul > li{
   list-style: none;
+}
+
+div.bash {
+  background-color: #000;
+  color: #ccc;
+  text-align: left;
+  font-size: 14px;
+  padding: 10px;
 }
