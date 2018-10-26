@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>FAQ - Uyuni</title>
+  <title>Uyuni - FAQ </title>
   <meta name="description" content="Uyuni - A new way to manage your IT infrastructure">
 
   <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
@@ -34,21 +34,18 @@
     <div class="faq-content">
       <ul>
         <li>
-          <h2>Q. Where is the Uyuni press release?</h2>
-          <p>A. Please, check it <a target="_blanK" href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/">here</a>.</p>
-        </li>
-        <li>
           <h2>Q. Where I can find Uyuni source code?</h2>
-          <p>At the <a target="_blank" href="https://github.com/uyuni-project/uyuni">Git repository</a></p>
-        </li>
-        <li>
-          <h2>Q. Are you going to release builds?</h2>
-          <p>A. We plan to release builds via the Open Build Service. Initially we will target openSUSE Leap 42.3 during summer, and openSUSE Leap 15.0 after that.</p>
-          <p>You can get an initial build at <a href="http://beta.suse.com/private/uyuni-project" target="_blank">http://beta.suse.com/private/uyuni-project</a> (you need to use the Media1 directories as repositories).</p>
+          <p>At the <a target="_blank" href="https://github.com/uyuni-project/uyuni">GIT REPOSITORY</a>.</p>
         </li>
         <li>
           <h2>Q. Is Uyuni based on SUSE Manager?</h2>
-          <p>A. Yes. SUSE Manager is based on the Spacewalk project. As our branch diverged more and more, we decided to make the current SUSE Manager code-base the initial Uyuni, and we will base future SUSE Manager releases on Uyuni going forward.</p>
+	  <p>A. Only the initial release 4.0.0, which is based SUSE Manager 3.2. Uyuni 4.0.0 and the next versions will be the base for next on SUSE Manager version 4.0, and all future versions.</p>
+	  <p>Uyuni and SUSE Manager are based on the Spacewalk project, but as our code diverged more and more, we decided to fork for the reasons explained at the <a target="_blank" href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/">Press Release</a>.</p>
+        </li>
+        <li>
+          <h2><a id="first-version">Q. Why is the first version 4.0.0 and not 1.0.0?</a></h2>
+          <p>Uyuni is since July 2018 the upstream for SUSE Manager, so the two first digits are the next SUSE Manager version (4.0) and the third one the Uyuni release.</p>
+          <p>As soon as next SUSE Manager version is out, the two first digits will change. Meanwhile only the last one will be increased and will be used for the rolling release model.</p>
         </li>
         <li>
           <h2>Q. What are the main differences between Uyuni and Spacewalk right now?</h2>
@@ -58,7 +55,7 @@
             <li><p>Building of image containers based on frozen channels.</p></li>
             <li><p>Auditing of container images and Kubernetes clusters.</p></li>
             <li><p>Initial configuration and setup based on YaST.</p></li>
-            <li><p>Infrastructure changes to keep the codebase modern (Java 8, Hibernate 5, React.js, Spark...)</p></li>
+            <li><p>Infrastructure changes to keep the codebase modern (Java 8, Hibernate 5, React.js, Spark, ...).</p></li>
           </ul>
         </li>
       </ul>
@@ -68,12 +65,12 @@
       <hr>
       <!-- Links wrap -->
       <ul class="repositories-url">
-        <a href="faq.html"><li>FAQ Page</li></a>
-        <a href="contact.html"><li>Contact</li></a>
-        <a target="_blank" href="https://github.com/uyuni-project/uyuni"><li>Git repository</li></a>
-	<a target="_blank" href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images-openSUSE_Leap_42.3/repo/Uyuni-Server-4.0-POOL-x86_64-Media1/"><li>Server binaries (Devel)</li></a>
-        <a target="_blank" href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images-openSUSE_Leap_42.3/repo/Uyuni-Proxy-4.0-POOL-x86_64-Media1/"><li>Proxy binaries (Devel)</li></a>
-	<a href="setup-devel-version.html"><li>Setup devel version</li>
+        <a href="https://lists.opensuse.org/uyuni-announce/" target="_blank"><li>STAY INFORMED</li></a>
+        <a href="faq.html"><li>FAQ PAGES</li></a>
+        <a href="contact.html"><li>CONTACT</li></a>
+        <a target="_blank" href="https://github.com/uyuni-project/uyuni"><li>GIT REPOSITORY</li></a>
+        <a href="stable-version.html">STABLE VERSION</a>
+        <a href="devel-version.html">DEVELOPMENT VERSION</a>
       </ul>
     </div>
     <!-- Social wrap -->
