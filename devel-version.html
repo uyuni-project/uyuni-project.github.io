@@ -47,7 +47,7 @@ redirect_from: "/setup-devel-version.html"
           <h3>Server</h3>
 	  <h4>Requirements</h4>
 	  <ul>
-            <li>A clean openSUSE Leap 15.0 installation, fully updated</li>
+            <li>A clean openSUSE Leap 15.1 installation, fully updated</li>
             <li>Multi-core x86_64 CPU</li>
             <li>At least 4GB of RAM for testing (for a production enviroment you would need between 16 and 32GB)</li>
             <li>100GB of free disk space + 50GB per SUSE/openSUSE product and 100GB per Red Hat Product</li>
@@ -55,9 +55,9 @@ redirect_from: "/setup-devel-version.html"
 	  <h4>Instructions</h4>
 	  <p>All commands are to be run as root or with sudo</p>
 	  <ol>
-            <li>Make sure your openSUSE Leap 15.0 is updated:<div class="bash">zypper update</div></li>
+            <li>Make sure your openSUSE Leap 15.1 is updated:<div class="bash">zypper update</div></li>
 	    <li>Configure a resolvable fully quallified domain name with <strong>Yast2</strong> &gt; <strong>System</strong> &gt; <strong>Netwok Settings</strong> &gt; <strong>Hostname/DNS</strong> (if your DNS does not resolve your FQDN, check <em>Assign Hostname to Loopback IP</em>, but you will need to configure the clients to resolve the Server's hostname somehow)</li>
-	    <li>Add the repository for the server:<div class="bash">zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images-openSUSE_Leap_15.0/repo/Uyuni-Server-4.0-POOL-x86_64-Media1/ uyuni-server-devel</div></li>
+	    <li>Add the repository for the server:<div class="bash">zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images-openSUSE_Leap_15.1/repo/Uyuni-Server-4.0-POOL-x86_64-Media1/ uyuni-server-devel</div></li>
 	    <li>Refresh metadata from the repositories:<div class="bash">zypper refresh</div></li>
 	    <li>Install the pattern for the Uyuni server:<div class="bash">zypper in patterns-uyuni_server</div></li>
 	    <li>Run Yast2 and to <strong>Network Services</strong> &gt; <strong>Uyuni Setup</strong></li>
@@ -68,7 +68,7 @@ redirect_from: "/setup-devel-version.html"
 	  <h3>Proxy</h3>
 	  <h4>Requirements</h4>
           <ul>
-            <li>A clean openSUSE Leap 15.0 installation, fully upgraded</li>
+            <li>A clean openSUSE Leap 15.1 installation, fully upgraded</li>
             <li>At least 2GB of RAM</li>
             <li>50GB of disk space per channel</li>
           </ul>
