@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uyuni - Stable Version</title>
+    <meta name="description" content="Uyuni - Stable Version">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/eos-icons-extended.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+
+<!-- Start here -->
+<header class="subpage-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo-letters.svg" alt="">
+            </a>
+
+            <ul class="nav top-nav d-flex justify-content-end">
+                <li class="nav-item">
+                    <a href="#">Docs</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://twitter.com/UyuniProject" target="_blank">
+                        <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- #nav -->
+        <div class="subpage-description">
+            <div class="subpage-title-back">
+                <h1>Stable version 4.0.0</h1>
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
+            </div>
+            <p>
+                See the release notes and documentation for more information.
+            </p>
+        </div>
+    </div>
+</header>
+
+<div class="container page-wrapper">
+    <div class="container">
+        <div class="row content-padding subpage-content">
+
+            <h4>Release notes</h4>
+            <ul>
+                <li><a href="../doc/4.0.0/release-notes-uyuni-server.html">Server</a></li>
+                <li><a href="../doc/4.0.0/release-notes-uyuni-proxy.html">Proxy</a></li>
+            </ul>
+
+            <h4>Documentation</h4>
+            <ul>
+                <li><a href="../doc/4.0.0/uyuni_installation_guide.pdf">Installation Guide</a></li>
+                <li><a href="../doc/4.0.0/uyuni_client_configuration_guide.pdf">Client Configuration Guide</a></li>
+                <li><a href="../doc/4.0.0/uyuni_upgrade_guide.pdf">Upgrade Guide</a></li>
+                <li><a href="../doc/4.0.0/uyuni_reference_manual.pdf">Reference Guide</a></li>
+                <li><a href="../doc/4.0.0/uyuni_administration_guide.pdf">Administration Guide</a></li>
+                <li><a href="../doc/4.0.0/uyuni_salt_guide.pdf">Salt Guide</a></li>
+                <li><a href="../doc/4.0.0/uyuni_architecture.pdf">Architecture Guide</a></li>
+            </ul>
+
+            <p>
+                You will also find the documentation at the Server WebUI after it is installed and ready.
+            </p>
+
+            <h4>Reporting Bugs</h4>
+            <p> Submit bugs to the issues tab located at our <a href="https://github.com/uyuni-project/uyuni/issues">Github repository</a>.</p>
+
+            <div class="alert alert-warning" role="alert">
+                Verify the issue does not already exist!
+            </div>
+
+
+            <h4>Setup</h4>
+            <div class="subpage-content-push-right">
+
+                <!-- STRUCTURE EXAMPLE START -->
+                <h5>Server</h5>
+                <h6>Requirements</h6>
+                <ul>
+                    <li>A clean openSUSE Leap 42.3 installation, fully updated</li>
+                    <li>Multi-core x86_64 CPU</li>
+                    <li>At least 4GB of RAM for testing (for a production enviroment you would need between 16 and 32GB)</li>
+                    <li>100GB of free disk space + 50GB per SUSE/openSUSE product and 100GB per Red Hat Product</li>
+                </ul>
+
+                <h6>Quickstart Instructions</h6>
+                <p>For comprehensive instructions see the official documentation.</p>
+
+                <p>1. Update openSUSE Leap 42.3:</p>
+                <code>sudo zypper update</code>
+
+                <p>2. Configure a resolvable fully quallified domain name with <strong>Yast2 > System > Netwok Settings > Hostname/DNS</strong></p>
+
+                <p>3. Add the repository for the server:</p>
+                <code>zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-4.0-POOL-x86_64-Media1/ uyuni-server-stable</code>
+
+                <p>4. Refresh metadata from the repositories:</p>
+                <code>sudo zypper refresh</code>
+
+                <p>5. Install the pattern for the Uyuni server:</p>
+                <code>sudo zypper in patterns-uyuni_server</code>
+
+                <p>6. Run <strong>Yast2</strong> and navigate to <strong>Network Services > Uyuni Setup</strong></p>
+
+               <p>7. Follow the setup assistant</p>
+
+                Once the setup assistant is ready, you will be able to access the WebUI at https://<FQDN>/
+
+                From that point you can start working with the Uyuni Server
+                <!-- STRUCTURE EXAMPLE END -->
+
+            </div>
+            <!-- end subpage-content-push -->
+        </div>
+    </div> <!-- #container -->
+    <!-- Footer -->
+    <footer>
+        <div class="row content-padding">
+            <div class="col-md-4 footer-description">
+                <h4>Uyuni</h4>
+                <p>Uyuni utilizes salt for confiugration management,
+                    therby inheriting its name: Uyuni refers to the world’s
+                    largest Salt flat, Salar de Uyuni in Southwest Bolivia.</p>
+                <span class="footer-legal">
+          © 2018 SUSE and individual contributors to Uyuni.
+        </span>
+            </div>
+            <div class="col-md">
+                <h6>Links of interes</h6>
+                <ul>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <div class="col-md">
+                <h6>Project</h6>
+                <ul>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <div class="col-md">
+                <h6>Social</h6>
+                <div class="social-links">
+                    <a href="https://github.com/uyuni-project/uyuni" target="_blank">
+                        <img src="../img/github_white.svg" alt="Uyuni - Github">
+                    </a>
+                    <a href="https://twitter.com/UyuniProject" target="_blank">
+                        <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+</div>
+<!-- .page-wrapper -->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../js/script.js"></script>
+</html>
