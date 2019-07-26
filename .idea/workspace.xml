@@ -2,62 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94bb9590-d5ee-41c8-9768-ea6dbf6e474e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/eos-icons-extended.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_administration_guide.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_architecture.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_client_configuration_guide.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_installation_guide.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_reference_manual.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_retail_guide.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_salt_guide.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/4.0.0/uyuni_upgrade_guide.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/eos-icons-extended.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/eos-icons-extended.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/eos-icons-extended.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/eos-icons-extended.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/eos-icons-extended.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/favicon/android-chrome-144x144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/favicon/safari-pinned-tab.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/github.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/github_white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/grey.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/header.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/il_1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/il_2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/link-arrow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/logo-letters.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/uyuni-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/world_map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/patch-notes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/stable-version-old.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/stable-version.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/subpage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/devel-version.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/4.0.0/susemanager-advanced-topics_en.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/4.0.0/susemanager-best-practices_en.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/4.0.0/susemanager-getting-started_en.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/4.0.0/susemanager-reference_en.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/faq.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/android-chrome-192x192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/favicon/apple-touch-icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/favicon/favicon-16x16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/favicon/favicon-32x32.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/img/favicon/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/mstile-150x150.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/favicon/mstile-150x150.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/favicon/site.webmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/img/favicon/site.webmanifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/twitter.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/twitter.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable-version.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/stable-version.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/stable-version.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.572526">
+    <splitter split-orientation="horizontal" split-proportion="0.7071848">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="false">
@@ -84,8 +29,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/stable-version.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="810">
-                  <caret line="82" column="139" selection-start-line="82" selection-start-column="139" selection-end-line="82" selection-end-column="139" />
+                <state relative-caret-position="494">
+                  <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -97,8 +42,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/stable-version-old.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="126">
-                  <caret line="7" column="90" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="90" />
+                <state relative-caret-position="1080">
+                  <caret line="44" column="109" lean-forward="true" selection-start-line="44" selection-start-column="109" selection-end-line="44" selection-end-column="109" />
                   <folding>
                     <element signature="e#1288#1292#0" expanded="true" />
                     <element signature="e#3425#3429#0" expanded="true" />
@@ -209,23 +154,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564065730539</updated>
-      <workItem from="1564065732089" duration="6226000" />
+      <workItem from="1564065732089" duration="11512000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6226000" />
+    <option name="totallyTimeSpent" value="11512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="2560" height="1573" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120429255" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.120429255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.23179272" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -261,10 +205,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/stable-version-old.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="90" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="90" />
+        <state relative-caret-position="1080">
+          <caret line="44" column="109" lean-forward="true" selection-start-line="44" selection-start-column="109" selection-end-line="44" selection-end-column="109" />
           <folding>
             <element signature="e#1288#1292#0" expanded="true" />
             <element signature="e#3425#3429#0" expanded="true" />
@@ -277,17 +228,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/stable-version.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="82" column="139" selection-start-line="82" selection-start-column="139" selection-end-line="82" selection-end-column="139" />
+        <state relative-caret-position="494">
+          <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
         </state>
       </provider>
     </entry>

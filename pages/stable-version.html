@@ -43,7 +43,7 @@
         <!-- #nav -->
         <div class="subpage-description">
             <div class="subpage-title-back">
-                <h1>Stable version 4.0.0</h1>
+                <h1>Stable version 4.0</h1>
                 <a href="../index.html" class="btn btn-primary">
                     <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
             </div>
@@ -75,33 +75,75 @@
                 <li><a href="../doc/4.0.0/uyuni_architecture.pdf">Architecture Guide</a></li>
             </ul>
 
-            <p>
-                You will also find the documentation at the Server WebUI after it is installed and ready.
-            </p>
-
-            <h4>Reporting Bugs</h4>
-            <p> Submit bugs to the issues tab located at our <a href="https://github.com/uyuni-project/uyuni/issues">Github repository</a>.</p>
-
-            <div class="alert alert-warning" role="alert">
-                Verify the issue does not already exist!
-            </div>
 
 
-            <h4>Setup</h4>
+            <p>For comprehensive instructions see the <a href="#">Documentation</a>. The latest documentation is also listed in the server's WebUI navigation after installation. </p>
+
+
+
+
+            <h4>Server Setup</h4>
             <div class="subpage-content-push-right">
-
+            </br>
+            <h5>Hardware and Software Requirements</h5>
                 <!-- STRUCTURE EXAMPLE START -->
-                <h5>Server</h5>
-                <h6>Requirements</h6>
-                <ul>
-                    <li>A clean openSUSE Leap 42.3 installation, fully updated</li>
-                    <li>Multi-core x86_64 CPU</li>
-                    <li>At least 4GB of RAM for testing (for a production enviroment you would need between 16 and 32GB)</li>
-                    <li>100GB of free disk space + 50GB per SUSE/openSUSE product and 100GB per Red Hat Product</li>
-                </ul>
 
-                <h6>Quickstart Instructions</h6>
-                <p>For comprehensive instructions see the official documentation.</p>
+                <table class="table table-success">
+                    <thead>
+                    <tr class="table-primary">
+
+                        <th scope="col">Requirement</th>
+                        <th scope="col">Description</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+
+                        <td class="table-light">openSUSE Leap 42.3</td>
+                        <td>Clean installation, up-to-date</td>
+
+                    </tr>
+                    <tr>
+
+                        <td class="table-light">Multi-core CPU</td>
+                        <td>x86_64</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="table-light">4GB RAM <strong>*</strong></td>
+                        <td>Sufficient for testing purposes</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="table-light">100GB Disk Space <strong>**</strong></td>
+                        <td>Disk space depends on your channel requirements</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td class="table-light"></td>
+                        <td class="table-light"><strong>*</strong><i>16GB -> 32GB of RAM recommended for a production environment</i></td>
+
+                    </tr>
+
+                    <tr class="table-borderless">
+
+                        <td class="table-light"></td>
+                        <td class="table-light"><strong>**</strong><i>50GB per SUSE/openSUSE product and 100GB per Red Hat Product</i></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+
+                </br>
+                <h5>Quickstart Installation Instructions</h5>
+
 
                 <p>1. Update openSUSE Leap 42.3:</p>
                 <code>sudo zypper update</code>
@@ -121,13 +163,20 @@
 
                <p>7. Follow the setup assistant</p>
 
-                Once the setup assistant is ready, you will be able to access the WebUI at https://<FQDN>/
+                Once the setup assistant is ready, you will be able to access the WebUI at https://<\FQDN>/
 
                 From that point you can start working with the Uyuni Server
                 <!-- STRUCTURE EXAMPLE END -->
 
             </div>
             <!-- end subpage-content-push -->
+
+            <h4>Reporting Bugs</h4>
+            <p> Submit bugs to the issues tab located at our <a href="https://github.com/uyuni-project/uyuni/issues">Github repository</a>.</p>
+
+            <div class="alert alert-warning" role="alert">
+                Verify that a duplicate of the issue does not already exist! </div>
+
         </div>
     </div> <!-- #container -->
     <!-- Footer -->
