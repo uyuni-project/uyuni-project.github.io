@@ -132,7 +132,7 @@ header .cta-section {
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 15vh;
+  margin-top: 10vh;
   position: relative;
   text-align: center;
   width: 60%;
@@ -148,7 +148,7 @@ header .cta-section {
   Page wrapper
   ========================================================================== */
 .page-wrapper {
-  margin-top: -100px;
+  margin-top: -250px;
   margin-bottom: 50px;
   background: #fff;
   border-radius: 5px;
