@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uyuni - Stable Version</title>
+    <meta name="description" content="Uyuni - Development Version">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/eos-icons-extended.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+
+<!-- Start here -->
+<header class="subpage-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="https://www.uyuni-project.org/">
+                <img src="../img/logo-letters.svg" alt="">
+            </a>
+
+            <ul class="nav top-nav d-flex justify-content-end">
+
+                <!-- NEWS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NEWS</a>
+                </li>
+                <!-- DOCS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/stable-version.html#documentation">DOCS</a>
+                </li>
+                <!-- FAQ -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <!-- Dropdown for available Uyuni versions -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        VERSION
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="pages/stable-version.html">Stable</a>
+                        <a class="dropdown-item" href="pages/devel-version.html">Develop</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com/UyuniProject" target="_blank">
+                        <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- #nav -->
+
+        <div class="subpage-description">
+            <div class="subpage-title-back">
+                <h1>Development version</h1>
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container page-wrapper">
+    <div class="container">
+        <div class="row content-padding subpage-content">
+
+            <h4><a href="#warning">Warning</a></h4>
+            <p>Never use the Uyuni Development Version for production systems in any way!</p>
+            <p>Uyuni Development Version is updated with each commit to the Git Repository, and it has the following know limitations:</p>
+            <ul>
+                <li>It can break at any moment</li>
+                <li>Upating to newer development versions does not work</li>
+                <li>Migrating to Stable is not supported</li>
+            </ul>
+            
+            <h4><a href="#documentation">Documentation</a></h4>
+            <p>The latest documentation is listed in the server's WebUI navigation after installation. </p>
+            
+             <h4><a href="#serversetup">Server Setup</a></h4>
+            <div class="subpage-content-push-right">
+            </br>
+            <h5>Hardware and Software Requirements</h5>
+                <!-- STRUCTURE EXAMPLE START -->
+
+                <table class="table table-bordered  table-hover table-sm">
+                    <thead class="table-primary">
+                    <tr>
+
+                        <th scope="col">Requirement</th>
+                        <th scope="col">Description</th>
+
+                    </tr>
+                    </thead>
+                    <tbody >
+                    <tr>
+
+                        <td>openSUSE Leap 15.1</td>
+                        <td>Clean installation, up-to-date</td>
+
+                    </tr>
+                    <tr>
+
+                        <td>Multi-core CPU</td>
+                        <td>x86_64</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>8GB RAM <strong>*</strong></td>
+                        <td>Sufficient for testing purposes</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td >100GB Disk Space <strong>**</strong></td>
+                        <td>Disk space depends on your channel requirements</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+
+                <p>* <i>32GB of RAM recommended for a production environment (16GB for a base installation)</i></p>
+                <p>**<i>50GB per SUSE/openSUSE product and 360GB per Red Hat Product</i></p>
+
+                </br>
+                <h5>Quickstart Installation Instructions</h5>
+
+
+                <p>1. Update openSUSE Leap 15.1:</p>
+                <code>sudo zypper update</code>
+
+                <p>2. Configure a resolvable fully quallified domain name with <strong>Yast2 > System > Netwok Settings > Hostname/DNS</strong></p>
+
+                <p>3. Add the repository for the server:</p>
+                <code>zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images/repo/Uyuni-Server-4.0-POOL-x86_64-Media1/ uyuni-server-devel</code>
+
+                <p>4. Refresh metadata from the repositories:</p>
+                <code>sudo zypper ref</code>
+
+                <p>5. Install the pattern for the Uyuni server:</p>
+                <code>sudo zypper in patterns-uyuni_server</code>
+
+                <p>6. Run <strong>Yast2</strong> and navigate to <strong>Network Services > Uyuni Setup</strong></p>
+
+               <p>7. Follow the setup assistant</p>
+
+                Once the setup assistant is ready, you will be able to access the WebUI at https://<\FQDN>/
+
+                From that point you can start working with the Uyuni Server
+                <!-- STRUCTURE EXAMPLE END -->
+
+            </div>
+            
+             <h4><a href="#proxysetup">Server Setup</a></h4>
+            <div class="subpage-content-push-right">
+            </br>
+            <h5>Hardware and Software Requirements</h5>
+                <!-- STRUCTURE EXAMPLE START -->
+
+                <table class="table table-bordered  table-hover table-sm">
+                    <thead class="table-primary">
+                    <tr>
+
+                        <th scope="col">Requirement</th>
+                        <th scope="col">Description</th>
+
+                    </tr>
+                    </thead>
+                    <tbody >
+                    <tr>
+
+                        <td>openSUSE Leap 15.1</td>
+                        <td>Clean installation, up-to-date</td>
+
+                    </tr>
+                    <tr>
+
+                        <td>Multi-core CPU</td>
+                        <td>x86_64</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>2GB RAM <strong>*</strong></td>
+                        <td>Minimum for testing and production</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td >50GB Disk Space <strong>**</strong></td>
+                        <td>Disk space depends on your channel requirements</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+                <p>**<i>50GB per SUSE/openSUSE product and 360GB per Red Hat Product to be mirrored by the proxy</i></p>
+
+                </br>
+                <h5>Quickstart Installation Instructions</h5>
+
+                <p>Installation of Uyuni Proxy is done via the Uyuni Server web interface.</p>
+                <p>See the <strong>Installation Guide</strong> for step-by-step instructions for installing and configuring Uyuni Proxy.</p>
+
+            </div>
+            <!-- end subpage-content-push -->
+
+            <h4>Client Tools</h4>
+            <div class="subpage-content-push-right">
+            </br>
+            <p>Each supported Operating System has a repository, for all supported architectures:</p>
+            <ul>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/openSUSE_Leap_42-Uyuni-Client-Tools/openSUSE_Leap_42.3"/>openSUSE Leap 42.3 (x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/">openSUSE Leap 15.0 (x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/SLE12-Uyuni-Client-Tools/SLE_12/">SLE12 (x86_64, pcc64le. s390x, aarch64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/SLE15-Uyuni-Client-Tools/SLE_15/">SLE15 (x86_64, pcc64le. s390x, aarch64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/CentOS6-Uyuni-Client-Tools/CentOS_6/">CentOS6 (i686, x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/CentOS7-Uyuni-Client-Tools/CentOS_7/">CentOS7 (x86_64)</a></li>
+            <ul>
+            </div>
+            
+            <h4>Reporting Bugs</h4>
+            <p> Submit bugs to the issues tab located at our <a href="https://github.com/uyuni-project/uyuni/issues">Github repository</a>.</p>
+
+            <div class="alert alert-warning" role="alert">
+                Verify that a duplicate of the issue does not already exist! </div>
+
+        </div>
+    </div> <!-- #container -->
+    <!-- Footer -->
+    <footer>
+        <div class="row content-padding">
+            <div class="col-md-4 footer-description">
+                <h4>Uyuni</h4>
+                <p>Uyuni utilizes salt for confiugration management,
+                    therby inheriting its name: Uyuni refers to the world’s
+                    largest Salt flat, Salar de Uyuni in Southwest Bolivia.</p>
+                <span class="footer-legal">
+          © 2018 SUSE and individual contributors to Uyuni.
+        </span>
+            </div>
+            <div class="col-md">
+                <h6>Links of interes</h6>
+                <ul>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <div class="col-md">
+                <h6>Project</h6>
+                <ul>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                </ul>
+            </div>
+            <div class="col-md">
+                <h6>Social</h6>
+                <div class="social-links">
+                    <a href="https://github.com/uyuni-project/uyuni" target="_blank">
+                        <img src="../img/github_white.svg" alt="Uyuni - Github">
+                    </a>
+                    <a href="https://twitter.com/UyuniProject" target="_blank">
+                        <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+</div>
+<!-- .page-wrapper -->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../js/script.js"></script>
+</html>
