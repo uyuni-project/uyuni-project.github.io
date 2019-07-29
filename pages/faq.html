@@ -33,11 +33,11 @@
 
                 <!-- NEWS -->
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/news.html">NEWS</a>
+                    <a class="nav-link" href="../pages/news.html">NEWS</a>
                 </li>
                 <!-- DOCS -->
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/stable-version.html#documentation">DOCS</a>
+                    <a class="nav-link" href="../pages/stable-version.html#documentation">DOCS</a>
                 </li>
                 <!-- Dropdown for available Uyuni versions -->
                 <li class="nav-item dropdown">
@@ -45,17 +45,17 @@
                         VERSION
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="pages/stable-version.html">Stable</a>
-                        <a class="dropdown-item" href="pages/devel-version.html">Develop</a>
+                        <a class="dropdown-item" href="../pages/stable-version.html">Stable</a>
+                        <a class="dropdown-item" href="../pages/devel-version.html">Develop</a>
                     </div>
                 </li>
                 <!-- FAQ -->
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/faq.html">FAQ</a>
+                    <a class="nav-link" href="../pages/faq.html">FAQ</a>
                 </li>
                 <!-- Contact -->
                 <li class="nav-item">
-                    <a class="nav-link" href="pages/contact.html">CONTACT</a>
+                    <a class="nav-link" href="../pages/contact.html">CONTACT</a>
                 </li>
 
                 <li class="nav-item">
@@ -82,36 +82,36 @@
         <div class="row content-padding subpage-content">
             <ul>
                 <li>
-                    <h2>Q. How is Uyuni pronounced?</h2>
+                    <h5>Q. How is Uyuni pronounced?</h5>
                     <p>A. As <strong>/uju:ˈni/</strong></p>
                 </li>
                 <li>
-                    <h2>Q. Why the name Uyuni?</h2>
+                    <h5>Q. Why the name Uyuni?</h5>
                     <p>A. As announced at the <a href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/" target="_blank">press release</a>, Uyuni is using <a href="https://www.saltstack.com/resources/community/" target="_blank">Salt</a> for configuration management, thereby inheriting its name: Uyuni refers to the world’s largest Salt flat, <a href="https://en.wikipedia.org/wiki/Salar_de_Uyuni" target="_blank">Salar de Uyuni</a> in Southwest Bolivia.</p>
                 </li>
                 <li>
-                    <h2>Q. Where I can find Uyuni source code?</h2>
-                    <p>At the <a target="_blank" href="https://github.com/uyuni-project/uyuni">Git repository</a>.</p>
+                    <h5>Q. Where I can find Uyuni source code?</h5>
+                    <p>A. At the <a target="_blank" href="https://github.com/uyuni-project/uyuni">Git repository</a>.</p>
                 </li>
                 <li>
-                    <h2>Q. Is Uyuni based on SUSE Manager?</h2>
-                    <p>A. Only the initial release 4.0.0, which is based SUSE Manager 3.2. Uyuni 4.0.0 and the next versions will be the base for next on SUSE Manager version 4.0, and all future versions.</p>
+                    <h5>Q. Is Uyuni based on SUSE Manager?</h5>
+                    <p>A. Only the initial release 4.0.0, was based on SUSE Manager 3.2. Uyuni 4.0.1 and subsequent versions are the base for next on SUSE Manager version 4.0, and all future versions.</p>
                     <p>Uyuni and SUSE Manager are based on the Spacewalk project, but as our code diverged more and more, we decided to fork for the reasons explained at the <a target="_blank" href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/">Press Release</a>.</p>
                 </li>
                 <li>
-                    <h2><a id="first-version">Q. Why is the first version 4.0.0 and not 1.0.0?</a></h2>
-                    <p>Uyuni is since July 2018 the upstream for SUSE Manager, so the two first digits are the next SUSE Manager version (4.0) and the third one the Uyuni release.</p>
+                    <h5><a id="first-version">Q. Why is the first version 4.0.0 and not 1.0.0?</a></h5>
+                    <p>A. Uyuni is since July 2018 the upstream for SUSE Manager, so the two first digits are the next SUSE Manager version (4.0) and the third one the Uyuni release.</p>
                     <p>As soon as next SUSE Manager version is out, the two first digits will change. Meanwhile only the last one will be increased and will be used for the rolling release model.</p>
                 </li>
                 <li>
-                    <h2>Q. What are the main differences between Uyuni and Spacewalk right now?</h2>
-                    <p>A. While most of the bugfixes and enhancements from SUSE Manager were contributed back to Spacewalk, some features did not make their way back. To highlight some:</p>
+                    <h5>Q. What are the main differences between Uyuni and Spacewalk right now?</h5>
+                    <p>A. While most of the bugfixes and enhancements from SUSE Manager were contributed back to Spacewalk, some features did not make their way back. To highlight some:
                     <ul>
-                        <li><p>The server is a full Salt master and can manage systems running the Salt minion, with full configuration management support.</p></li>
-                        <li><p>Building of image containers based on frozen channels.</p></li>
-                        <li><p>Auditing of container images and Kubernetes clusters.</p></li>
-                        <li><p>Initial configuration and setup based on YaST.</p></li>
-                        <li><p>Infrastructure changes to keep the codebase modern (Java 8, Hibernate 5, React.js, Spark, ...).</p></li>
+                        <li>The server is a full Salt master and can manage systems running the Salt minion, with full configuration management support.</li>
+                        <li>Building of image containers based on frozen channels.</li>
+                        <li>Auditing of container images and Kubernetes clusters.</li>
+                        <li>Initial configuration and setup based on YaST.</li>
+                        <li>Infrastructure changes to keep the codebase modern (Java 8, Hibernate 5, React.js, Spark, ...).</li>
                     </ul>
                 </li>
             </ul>
@@ -145,7 +145,7 @@
         </ul>
       </div>
       <div class="col-md">
-        <h6>Social</h6>
+        <h6>Social</h5>
         <div class="social-links">
           <a href="https://github.com/uyuni-project/uyuni" target="_blank">
             <img src="../img/github_white.svg" alt="Uyuni - Github">
