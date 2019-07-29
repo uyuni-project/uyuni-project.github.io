@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uyuni - FAQ Version</title>
+    <meta name="description" content="Uyuni - FAQ">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/eos-icons-extended.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+
+<!-- Start here -->
+<header class="subpage-header">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="https://www.uyuni-project.org/">
+                <img src="../img/logo-letters.svg" alt="">
+            </a>
+
+            <ul class="nav top-nav d-flex justify-content-end">
+
+                <!-- NEWS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/news.html">NEWS</a>
+                </li>
+                <!-- DOCS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/stable-version.html#documentation">DOCS</a>
+                </li>
+                <!-- Dropdown for available Uyuni versions -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        VERSION
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="pages/stable-version.html">Stable</a>
+                        <a class="dropdown-item" href="pages/devel-version.html">Develop</a>
+                    </div>
+                </li>
+                <!-- FAQ -->
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/faq.html">FAQ</a>
+                </li>
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/contact.html">CONTACT</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com/UyuniProject" target="_blank">
+                        <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- #nav -->
+
+        <div class="subpage-description">
+            <div class="subpage-title-back">
+                <h1>FAQ</h1>
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container page-wrapper">
+    <div class="container">
+        <div class="row content-padding subpage-content">
+            <ul>
+                <li>
+                    <h2>Q. How is Uyuni pronounced?</h2>
+                    <p>A. As <strong>/uju:ˈni/</strong></p>
+                </li>
+                <li>
+                    <h2>Q. Why the name Uyuni?</h2>
+                    <p>A. As announced at the <a href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/" target="_blank">press release</a>, Uyuni is using <a href="https://www.saltstack.com/resources/community/" target="_blank">Salt</a> for configuration management, thereby inheriting its name: Uyuni refers to the world’s largest Salt flat, <a href="https://en.wikipedia.org/wiki/Salar_de_Uyuni" target="_blank">Salar de Uyuni</a> in Southwest Bolivia.</p>
+                </li>
+                <li>
+                    <h2>Q. Where I can find Uyuni source code?</h2>
+                    <p>At the <a target="_blank" href="https://github.com/uyuni-project/uyuni">Git repository</a>.</p>
+                </li>
+                <li>
+                    <h2>Q. Is Uyuni based on SUSE Manager?</h2>
+                    <p>A. Only the initial release 4.0.0, which is based SUSE Manager 3.2. Uyuni 4.0.0 and the next versions will be the base for next on SUSE Manager version 4.0, and all future versions.</p>
+                    <p>Uyuni and SUSE Manager are based on the Spacewalk project, but as our code diverged more and more, we decided to fork for the reasons explained at the <a target="_blank" href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/">Press Release</a>.</p>
+                </li>
+                <li>
+                    <h2><a id="first-version">Q. Why is the first version 4.0.0 and not 1.0.0?</a></h2>
+                    <p>Uyuni is since July 2018 the upstream for SUSE Manager, so the two first digits are the next SUSE Manager version (4.0) and the third one the Uyuni release.</p>
+                    <p>As soon as next SUSE Manager version is out, the two first digits will change. Meanwhile only the last one will be increased and will be used for the rolling release model.</p>
+                </li>
+                <li>
+                    <h2>Q. What are the main differences between Uyuni and Spacewalk right now?</h2>
+                    <p>A. While most of the bugfixes and enhancements from SUSE Manager were contributed back to Spacewalk, some features did not make their way back. To highlight some:</p>
+                    <ul>
+                        <li><p>The server is a full Salt master and can manage systems running the Salt minion, with full configuration management support.</p></li>
+                        <li><p>Building of image containers based on frozen channels.</p></li>
+                        <li><p>Auditing of container images and Kubernetes clusters.</p></li>
+                        <li><p>Initial configuration and setup based on YaST.</p></li>
+                        <li><p>Infrastructure changes to keep the codebase modern (Java 8, Hibernate 5, React.js, Spark, ...).</p></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div> <!-- #container -->
+  <!-- Footer -->
+  <footer>
+    <div class="row content-padding">
+      <div class="col-md-4 footer-description">
+        <h4>Uyuni</h4>
+        <span class="footer-legal">
+          © 2018 SUSE and individual contributors to Uyuni.
+        </span>
+      </div>
+
+      <div class="col-md">
+        <h6>Project</h6>
+        <ul>
+          <li><a href="https://lists.opensuse.org/uyuni-announce/">Stay informed</a></li>
+          <li><a href="https://github.com/uyuni-project/sumaform/">Sumaform</a></li>
+          <li><a href0"https://github.com/uyuni-project/uyuni-rfc/">RFCs</a></li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <h6>Links of interes</h6>
+        <ul>
+          <li><a href="https://www.suse.com/products/suse-manager/">SUSE Manager</a></li>
+          <li><a href="https://www.saltstack.com/">SaltStack</a></li>
+          <li><a href="http://cobbler.github.io/">Cobbler</a></li>
+          <li><a href="https://spacewalkproject.github.io"/>Spacewalk</a></li>
+        </ul>
+      </div>
+      <div class="col-md">
+        <h6>Social</h6>
+        <div class="social-links">
+          <a href="https://github.com/uyuni-project/uyuni" target="_blank">
+            <img src="../img/github_white.svg" alt="Uyuni - Github">
+          </a>
+          <a href="https://twitter.com/UyuniProject" target="_blank">
+            <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- end footer -->
+</div>
+<!-- .page-wrapper -->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../js/script.js"></script>
+</html>
