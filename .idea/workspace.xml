@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94bb9590-d5ee-41c8-9768-ea6dbf6e474e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/stable-version.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/stable-version.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,8 +21,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1008">
-                  <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+                <state relative-caret-position="1062">
+                  <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -30,8 +30,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/stable-version.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="456">
-                  <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+                <state relative-caret-position="600">
+                  <caret line="282" column="34" lean-forward="true" selection-start-line="282" selection-start-column="34" selection-end-line="282" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -41,19 +41,10 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/pages/stable-version-old.html">
+            <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1080">
-                  <caret line="44" column="109" lean-forward="true" selection-start-line="44" selection-start-column="109" selection-end-line="44" selection-end-column="109" />
-                  <folding>
-                    <element signature="e#1288#1292#0" expanded="true" />
-                    <element signature="e#3425#3429#0" expanded="true" />
-                    <element signature="e#3454#3458#0" expanded="true" />
-                    <element signature="e#3492#3496#0" expanded="true" />
-                    <element signature="e#4066#4070#0" expanded="true" />
-                    <element signature="e#4268#4272#0" expanded="true" />
-                    <element signature="e#4276#4280#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="1008">
+                  <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
                 </state>
               </provider>
             </entry>
@@ -106,13 +97,12 @@
             <path>
               <item name="uyuni-project.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uyuni-project.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-              <item name="4.0.1" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="uyuni-project.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="uyuni-project.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -155,23 +145,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564065730539</updated>
-      <workItem from="1564065732089" duration="19525000" />
+      <workItem from="1564065732089" duration="22101000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19525000" />
+    <option name="totallyTimeSpent" value="22101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="27" width="2560" height="1573" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.120429255" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120429255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3592437" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.197479" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -225,15 +215,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        <state relative-caret-position="1062">
+          <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/stable-version.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="68" column="40" selection-start-line="68" selection-start-column="40" selection-end-line="68" selection-end-column="40" />
+        <state relative-caret-position="600">
+          <caret line="282" column="34" lean-forward="true" selection-start-line="282" selection-start-column="34" selection-end-line="282" selection-end-column="34" />
         </state>
       </provider>
     </entry>
