@@ -22,7 +22,7 @@
 body {
   color: var(--bc-black-text);
   font-family: 'Lato', Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 a, a:visited, a:active, a:focus {
@@ -107,7 +107,7 @@ header .cta-section {
 
 /* TOP NAVIGATION */
 .navbar a img {
-  width: 80px;
+  width: 100px;
 }
 
 .top-nav a {
@@ -175,7 +175,7 @@ header .cta-section {
 
 .accordion .accordion-header h5 {
   /* background: #E8E8E8; */
-  font-size: 14px;
+  font-size: 16px;
   color: #707070;
   font-weight: 500;
   padding: 10px 20px;
@@ -206,6 +206,11 @@ header .cta-section {
   font-weight: 400;
 }
 
+.accordion-plus {
+  width: 12px;
+  height: 12px;
+  margin: -2px 5px 0px -5px;
+}
 
 /* Home news box
   ========================================================================== */
@@ -257,7 +262,7 @@ header .cta-section {
 }
 
 .news-box-title span{
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .news-box-content {
