@@ -1,0 +1,14 @@
+{
+  "name": "uyuni",
+  "version": "1.0.0",
+  "description": "Uyuni website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "uyuni"
+  ],
+  "author": "en3sis",
+  "license": "MIT"
+}

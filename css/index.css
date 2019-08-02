@@ -1,0 +1,423 @@
+/* ==========================================================================
+  Variables
+  ========================================================================== */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+:root {
+  /* Margin */
+  --margin-xxxl: 64px;
+  --margin-m: 16px;
+  --margin-l: 24px;
+
+  /* Coolors */
+  --bc-primary: #00C081;
+  --bc-primary-light: #26C994;
+  --bc-secondary: #142529;
+  --bc-links: #008ACF;
+
+  /* Helpers */
+  --bc-gray-light: #FDFDFD;
+  --bc-black-text: #3b3b3b;
+}
+
+body {
+  color: var(--bc-black-text);
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 16px;
+}
+
+a, a:visited, a:active, a:focus {
+  color: var(--bc-links)
+}
+
+p {
+  font-weight: 400;
+}
+
+code {
+  font-size: 87.5%;
+  color: #e83e8c;
+  width: 100%;
+  background: #F5F5F5;
+  padding: 10px;
+  display: block;
+  margin: 15px 0;
+  border-bottom: 2px solid #c5c5c5
+}
+
+.content-padding{
+  padding: 80px 40px;
+}
+
+.btn-primary {
+  background: var(--bc-primary);
+  border: none;
+  transition: all 0.5 ease-in-out;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background: var(--bc-primary-light) !important;
+  border: none;
+}
+
+/* ==========================================================================
+  Header section
+  ========================================================================== */
+header {
+  background-size: cover;
+  background: url('../img/header.png') center center;
+  display: flex;
+  height: 900px;
+  justify-content: center;
+}
+
+header .top-nav {
+  width: 100%;
+}
+
+header .uyuni-logo {
+  margin-bottom: var(--margin-xxxl)
+}
+header .landing-description {
+  font-size: 1.3em;
+}
+
+header .landing-description a {
+  color: #fff;
+}
+
+header .btn {
+  border-radius: 50px;
+  padding: 8px 50px ;
+}
+
+header .eos-icons {
+  font-size: 16px;
+}
+
+header .cta-section {
+  align-items: center;
+  display: flex;
+  font-size: 0.7em;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* TOP NAVIGATION */
+.navbar a img {
+  width: 100px;
+}
+
+.top-nav a {
+  color: #fff;
+  margin-left: 20px;
+}
+
+.top-nav a img{
+  width: 18px;
+  margin: 0 20px;
+}
+
+.landing-header {
+  width: 100%;
+}
+
+.landing-description {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  position: relative;
+  text-align: center;
+  width: 60%;
+  z-index: 1;
+}
+
+.uyuni-logo {
+  width: 300px;
+}
+
+
+/* ==========================================================================
+  Page wrapper
+  ========================================================================== */
+.page-wrapper {
+  margin-top: -250px;
+  margin-bottom: 50px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 0;
+  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 5px solid var(--bc-primary);
+}
+
+.home-illustration {
+  width: 80%;
+}
+
+.section-description {
+  margin-bottom: 50px;
+  color: #3B3B3B;
+}
+
+/* Accordion
+  ========================================================================== */
+.accordion {
+  /* margin-top: var(--margin-l); */
+  min-height: 300px;
+}
+
+.accordion .accordion-header h5 {
+  /* background: #E8E8E8; */
+  font-size: 16px;
+  color: #707070;
+  font-weight: 500;
+  padding: 10px 20px;
+  margin: 10px 0;
+}
+
+.accordion [aria-expanded="true"] {
+  color: #fff;
+  background: #0D2C40;
+}
+
+.accordion [aria-expanded="true"] h5 {
+  color: #fff;
+}
+
+.accordion [aria-expanded="false"] {
+  background: #E8E8E8;
+}
+
+
+.accordion .accordion-header:hover, h5:hover  {
+  cursor: pointer;
+}
+
+.accordion  .accordion-content {
+  background: #f5f5f5;
+  padding: 8px 21px;
+  font-weight: 400;
+}
+
+.accordion-plus {
+  width: 12px;
+  height: 12px;
+  margin: -2px 5px 0px -5px;
+}
+
+/* Home news box
+  ========================================================================== */
+.carousel-wrap,
+.carousel-title-controller {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-title-controller{
+  justify-content: space-between;
+  width: 100%;
+}
+
+.carousel-controller span:hover {
+  cursor: pointer;
+}
+
+.slick-disabled {
+  color: rgb(165, 165, 165);
+}
+
+.home-carousel {
+  width: 100%;
+  display: flex;
+  margin-top: 24px;
+}
+
+.news-box {
+  /* width: 450px; */
+  max-height: 150px;
+  display: flex;
+  background: var(--bc-gray-light);
+  margin-right: 20px;
+}
+
+.news-box-title {
+  display: flex;
+  padding: 5px 15px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F7F7F7;
+}
+
+.news-box-title h4{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.news-box-title span{
+  font-size: 16px;
+}
+
+.news-box-content {
+  padding: 5px 15px;
+}
+
+.news-box-cta {
+  padding: 5px 15px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.news-box-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-box-cta a:before {
+  content: ' »';
+  width: 10px;
+  display: flex;
+  height: 100%;
+  /* background: url(../img/link-arrow.svg) no-repeat center; */
+}
+.news-box-cta a:hover {
+  text-decoration: none;
+}
+
+/* ==========================================================================
+  Footer
+  ========================================================================== */
+footer {
+  background: url('/img/world_map.png') right center no-repeat #142529;
+  background-size: contain;
+  color: #fff;
+  padding: 0 !important;
+  font-weight: 300;
+}
+
+footer .row {
+  margin: 0;
+}
+
+footer .footer-description p{
+  color: #909090
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li  {
+  list-style: none;
+}
+
+footer a {
+  color: #0082A0 !important;
+  font-weight: 400;
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.social-links a {
+  margin-right: 10px;
+}
+
+
+/* ==========================================================================
+  PAGES
+  ========================================================================== */
+  /* Global subpage
+  ========================================================================== */
+header.subpage-header {
+  height: 500px;
+  color: #fff;
+}
+
+header .subpage-description {
+  margin-top: 100px;
+}
+
+.subpage-header h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 48px;
+}
+
+.subpage-description p{
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: 300;
+}
+
+.subpage-title-back {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.subpage-title-back a{
+  color: #fff;
+}
+
+.subpage-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.subpage-content ul {
+  list-style: none;
+}
+
+.subpage-content ul li::before{
+  content: "\2022";
+  color: #F2F2F2;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.subpage-content-push-right {
+  margin: 0 0 16px;
+  padding-left: 30px;
+}
+/* ==========================================================================
+  Devices
+  ========================================================================== */
+
+@media screen and (max-width: 780px) {
+  header .top-nav {
+    width: auto;
+  }
+
+  .cta-section {
+    flex-direction: column;
+  }
+  .cta-section button{
+    margin-top: 10px;
+  }
+
+  .subpage-title-back {
+    flex-direction: column;
+  }
+
+  .subpage-title-back a{
+    margin-top: 20px;
+  }
+}
