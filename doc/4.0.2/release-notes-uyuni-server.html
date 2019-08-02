@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 4.0.2</span><br>
-<span id="revdate">2019-08-02 11:21:45 CEST</span>
+<span id="revdate">2019-08-02 14:18:21 CEST</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -795,7 +795,7 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_stay_informed">Stay informed</a></li>
 <li><a href="#_support">Support</a></li>
 <li><a href="#_release_model">Release model</a></li>
-<li><a href="#_major_changes_since_uyuni_proxy_4_0_0">Major changes since Uyuni Proxy 4.0.0</a>
+<li><a href="#_major_changes_since_uyuni_server_4_0_0">Major changes since Uyuni Server 4.0.0</a>
 <ul class="sectlevel2">
 <li><a href="#_features_and_changes">Features and changes</a>
 <ul class="sectlevel3">
@@ -916,7 +916,7 @@ p { margin-bottom: 1.25rem; }
 </div>
 </div>
 <div class="sect1">
-<h2 id="_major_changes_since_uyuni_proxy_4_0_0">Major changes since Uyuni Proxy 4.0.0</h2>
+<h2 id="_major_changes_since_uyuni_server_4_0_0">Major changes since Uyuni Server 4.0.0</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_features_and_changes">Features and changes</h3>
@@ -1642,6 +1642,12 @@ to bootstrap as both salt minions and traditional clients.</p>
 <li>
 <p>CentOS7 (x86_64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/</a></p>
 </li>
+<li>
+<p>Ubuntu 16.04 (x86_64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1604-Uyuni-Client-Tools/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1604-Uyuni-Client-Tools/</a></p>
+</li>
+<li>
+<p>Ubuntu 18.04 (x86_64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1804-Uyuni-Client-Tools/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1804-Uyuni-Client-Tools/</a></p>
+</li>
 </ul>
 </div>
 <div class="sect2">
@@ -1701,11 +1707,18 @@ to bootstrap as both salt minions and traditional clients.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Debian10</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu16.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu18.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
 </tr>
 </tbody>
 </table>
@@ -1768,7 +1781,7 @@ a CentOS version should work at the respective RHEL version.</p>
 <div class="sect2">
 <h3 id="_known_limitations">Known limitations</h3>
 <div class="paragraph">
-<p>The GPG key for Uyuni Client Tools is not trusted by default by neither openSUSE, SLE or CentOS.</p>
+<p>The GPG key for Uyuni Client Tools is not trusted by default by the respective package management tools for each OS.</p>
 </div>
 <div class="paragraph">
 <p>The systems will bootstrap without the GPG key being trusted, but will not be able to install new
@@ -1921,7 +1934,7 @@ See the advanced topics manual for detailed upgrade instructions.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-08-02 11:21:45 CEST
+Last updated 2019-08-02 14:18:21 CEST
 </div>
 </div>
 </body>
