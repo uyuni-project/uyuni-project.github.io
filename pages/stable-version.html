@@ -69,7 +69,7 @@
 
         <div class="subpage-description">
             <div class="subpage-title-back">
-                <h1>Stable version 4.0.2</h1>
+                <h1>Stable version 2020.01</h1>
                 <a href="../index.html" class="btn btn-primary">
                     <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
             </div>
@@ -83,8 +83,8 @@
 
             <h4><a href="#releasenotes">Release notes</a></h4>
             <ul>
-                <li><a href="../doc/4.0.2/release-notes-uyuni-server.html">Server</a></li>
-                <li><a href="../doc/4.0.2/release-notes-uyuni-proxy.html">Proxy</a></li>
+                <li><a href="../doc/2020.01/release-notes-uyuni-server.html">Server</a></li>
+                <li><a href="../doc/2020.01/release-notes-uyuni-proxy.html">Proxy</a></li>
             </ul>
             <div class="alert alert-warning" role="alert">Before migrating from 4.0.1 to a newer version check the release notes, as a special procedure is needed!</div>
 
@@ -93,13 +93,13 @@
                 <a href="https://www.uyuni-project.org/uyuni-docs">https://www.uyuni-project.org/uyuni-docs</a><br />
 	    <h5>PDF</h5>
             <ul>
-                <li><a href="../doc/4.0.2/uyuni_installation_guide.pdf">Installation Guide</a></li>
-                <li><a href="../doc/4.0.2/uyuni_client_configuration_guide.pdf">Client Configuration Guide</a></li>
-                <li><a href="../doc/4.0.2/uyuni_upgrade_guide.pdf">Upgrade Guide</a></li>
-                <li><a href="../doc/4.0.2/uyuni_reference_manual.pdf">Reference Guide</a></li>
-                <li><a href="../doc/4.0.2/uyuni_administration_guide.pdf">Administration Guide</a></li>
-                <li><a href="../doc/4.0.2/uyuni_salt_guide.pdf">Salt Guide</a></li>
-                <li><a href="../doc/4.0.2/uyuni_architecture.pdf">Architecture Guide</a></li>
+                <li><a href="../doc/2020.01/uyuni_installation_guide.pdf">Installation Guide</a></li>
+                <li><a href="../doc/2020.01/uyuni_client_configuration_guide.pdf">Client Configuration Guide</a></li>
+                <li><a href="../doc/2020.01/uyuni_upgrade_guide.pdf">Upgrade Guide</a></li>
+                <li><a href="../doc/2020.01/uyuni_reference_manual.pdf">Reference Guide</a></li>
+                <li><a href="../doc/2020.01/uyuni_administration_guide.pdf">Administration Guide</a></li>
+                <li><a href="../doc/2020.01/uyuni_salt_guide.pdf">Salt Guide</a></li>
+                <li><a href="../doc/2020.01/uyuni_architecture.pdf">Architecture Guide</a></li>
             </ul>
 
 
@@ -168,7 +168,7 @@
                 <p>2. Configure a resolvable fully quallified domain name with <strong>Yast2 > System > Netwok Settings > Hostname/DNS</strong></p>
 
                 <p>3. Add the repository for the server:</p>
-                <code>zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-4.0-POOL-x86_64-Media1/ uyuni-server-stable</code>
+                <code>zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/ uyuni-server-stable</code>
 
                 <p>4. Refresh metadata from the repositories:</p>
                 <code>sudo zypper ref</code>
@@ -176,7 +176,7 @@
                 <p>5. Install the pattern for the Uyuni server:</p>
                 <code>sudo zypper in patterns-uyuni_server</code>
 
-                <p>6. Run <strong>Yast2</strong> and navigate to <strong>Network Services > Uyuni Setup</strong></p>
+                <p>6. Run <strong>Yast2</strong> and navigate to <strong>Network Services > YaST Uyuni Setup</strong></p>
 
                <p>7. Follow the setup assistant</p>
 
@@ -240,6 +240,7 @@
 
                 <p>Installation of Uyuni Proxy is done via the Uyuni Server web interface.</p>
                 <p>See the <strong>Installation Guide</strong> for step-by-step instructions for installing and configuring Uyuni Proxy.</p>
+                <p>The repository for the Proxy is <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Proxy-POOL-x86_64-Media1/">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Proxy-POOL-x86_64-Media1/</a>
 
             </div>
             <!-- end subpage-content-push -->
@@ -249,12 +250,14 @@
             </br>
             <p>Each supported Operating System has a repository, for all supported architectures:</p>
             <ul>
-                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_42-Uyuni-Client-Tools/openSUSE_Leap_42.3"/>openSUSE Leap 42.3 (x86_64)</a></li>
-                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/">openSUSE Leap 15.0 (x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/">openSUSE Leap 15.* (x86_64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE12-Uyuni-Client-Tools/SLE_12/">SLE12 (x86_64, pcc64le. s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE15-Uyuni-Client-Tools/SLE_15/">SLE15 (x86_64, pcc64le. s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS6-Uyuni-Client-Tools/CentOS_6/">CentOS6 (i686, x86_64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/">CentOS7 (x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS8-Uyuni-Client-Tools/CentOS_8/">CentOS8 (x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1604-Uyuni-Client-Tools/xUbuntu_16.04/">Ubuntu 16.04 (x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1804-Uyuni-Client-Tools/xUbuntu_18.04/">Ubuntu 18.04 (x86_64)</a></li>
             <ul>
             </div>
 
