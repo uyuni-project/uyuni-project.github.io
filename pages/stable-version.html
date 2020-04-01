@@ -161,29 +161,31 @@
                 </br>
                 <h5>Quickstart Installation Instructions</h5>
 
+                <p>Please note Uyuni requires FQDNs for the Server, Proxy and clients, so usage of a properly-configured DNS server is mandatory for client updates to work.</p>
+                <p>If you want to install Uyuni in lab mode, for testing, you may be interested in how to easily make use of libvirt's included dnsmasq DNS and DHCP server: <a href="https://github.com/uyuni-project/uyuni/wiki/Libvirt-DNS-and-DHCP-without-Avahi">Libvirt DNS and DCHP without Avahi</a>.</p>
 
                 <p>1. Update openSUSE Leap 15.1:</p>
-                <code>sudo zypper update</code>
+                <code>$ sudo zypper update</code>
 
                 <p>2. Configure a resolvable fully quallified domain name with <strong>Yast2 > System > Netwok Settings > Hostname/DNS</strong></p>
 
                 <p>3. Add the repository for the server:</p>
-                <code>zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/ uyuni-server-stable</code>
+                <code>$ sudo zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/ uyuni-server-stable</code>
 
                 <p>4. Refresh metadata from the repositories:</p>
-                <code>sudo zypper ref</code>
+                <code>$ sudo zypper ref</code>
 
                 <p>5. Install the pattern for the Uyuni server:</p>
-                <code>sudo zypper in patterns-uyuni_server</code>
+                <code>$ sudo zypper in patterns-uyuni_server</code>
 
                 <p>6. Run <strong>Yast2</strong> and navigate to <strong>Network Services > YaST Uyuni Setup</strong></p>
 
-               <p>7. Follow the setup assistant</p>
+                <p>7. Follow the setup assistant</p>
 
-                Once the setup assistant is ready, you will be able to access the WebUI at <code>https://&lt;FQDN>/</code>.
-                 <br/>
+                Once the setup assistant is ready, you will be able to access the WebUI at <code>https://&lt;FQDN>/</code>
 
-                From that point you can start working with the Uyuni Server.
+                <p>From that point you can start working with the Uyuni Server.</p>
+
                 <!-- STRUCTURE EXAMPLE END -->
 
             </div>
