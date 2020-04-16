@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2020.04</span><br>
-<span id="revdate">2020-04-16 00:36:40 CEST</span>
+<span id="revdate">2020-04-16 10:00:53 CEST</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -802,17 +802,17 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_version_2020_04">Version 2020.04</a>
 <ul class="sectlevel4">
 <li><a href="#_recurring_actions">Recurring actions</a></li>
-<li><a href="#_bootstrapping_salt_clients_with_private_ssh_key_from_api_for_now">Bootstrapping salt clients with private SSH key (from API for now)</a></li>
-<li><a href="#_centos8_content_lifecycle_management_better_feedback_when_using_appstreams">CentOS8 Content LifeCycle Management: better feedback when using appstreams</a></li>
-<li><a href="#_automated_schema_database_upgrades_and_security_mechanism_in_case_of_failures">Automated schema database upgrades and security mechanism in case of failures</a></li>
-<li><a href="#_large_deployments_guide">Large Deployments Guide</a></li>
+<li><a href="#_bootstrapping_salt_clients_with_a_private_ssh_key_from_api">Bootstrapping Salt Clients with a Private SSH key (from API)</a></li>
+<li><a href="#_centos8_content_lifecycle_management_better_feedback_with_appstreams">CentOS8 Content Lifecycle Management: Better Feedback with Appstreams</a></li>
+<li><a href="#_automated_schema_database_upgrades_and_failure_security_mechanism">Automated Schema Database Upgrades and Failure Security Mechanism</a></li>
+<li><a href="#_large_deployments_guide_draft">Large Deployments Guide (draft)</a></li>
 <li><a href="#_uyuni_hub_documentation">Uyuni Hub documentation</a></li>
 <li><a href="#_public_cloud_quickstart_guide_draft">Public Cloud QuickStart Guide (draft)</a></li>
-<li><a href="#_caasp_grafana_dashboads">CaaSP Grafana dashboads</a></li>
-<li><a href="#_prometheus_federation_support_in_the_formulas_and_forms">Prometheus Federation support in the formulas and forms</a></li>
+<li><a href="#_caasp_grafana_dashboads">CaaSP Grafana Dashboads</a></li>
+<li><a href="#_prometheus_federation_support_in_formulas_with_forms">Prometheus Federation Support in Formulas with Forms</a></li>
 <li><a href="#_pre_configured_default_alerting_rules">Pre-configured default alerting rules</a></li>
-<li><a href="#_prometheus_exporters_for_centos8_x86_64">Prometheus exporters for CentOS8 x86_64</a></li>
-<li><a href="#_node_exporter_updated_to_0_18_1">Node exporter updated to 0.18.1</a></li>
+<li><a href="#_prometheus_exporters_for_centos8_x86_64">Prometheus Exporters for CentOS8 x86_64</a></li>
+<li><a href="#_node_exporter_updated_to_0_18_1">Node Exporter Updated to 0.18.1</a></li>
 <li><a href="#_virtualization_management_of_storage_pools">Virtualization: Management of storage pools</a></li>
 </ul>
 </li>
@@ -1010,25 +1010,25 @@ p { margin-bottom: 1.25rem; }
 <p>This is useful, for example, to apply highstates on a regular schedule and ensure configurations are enforced.</p>
 </div>
 <div class="paragraph">
-<p>You can check more about it at <code>Administration Guide</code>.</p>
+<p>For more information, see the <code>Administration Guide</code>.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_bootstrapping_salt_clients_with_private_ssh_key_from_api_for_now">Bootstrapping salt clients with private SSH key (from API for now)</h5>
+<h5 id="_bootstrapping_salt_clients_with_a_private_ssh_key_from_api">Bootstrapping Salt Clients with a Private SSH key (from API)</h5>
 <div class="paragraph">
-<p>Until now, only password authentication was possible when bootstrapping salt clients from the server.</p>
+<p>Before this release, only password authentication was available for bootstrapping Salt clients from the Server.</p>
 </div>
 <div class="paragraph">
-<p>This feature is now enhaced to allow SSH private key authentication (including passpharse for the private key, if required). For Uyuni 2020.04 this is only allowed from the API, but the next release will allow it from WebUI as well.</p>
+<p>Now SSH private key authentication is available, including use of a passphrase on the private key. For Uyuni 2020.04 this is only available from the API. It will be made available from the WebUI in a future release.</p>
 </div>
 <div class="paragraph">
-<p>For security reasons, the private key is stored at the Uyuni server only for the bootstrap procedure, and removed then. It needs to be provided for each bootstrap.</p>
+<p>For security reasons, the private key is stored at the Uyuni Server only for the bootstrap procedure, and removed after bootstrapping is complete. The private key must be provided for each bootstrap.</p>
 </div>
 <div class="paragraph">
-<p>The API doc provides the new method <code>bootstrapWithPrivateSshKey</code> in the namespace <code>system</code>.</p>
+<p>The new method <code>bootstrapWithPrivateSshKey</code> in the namespace <code>system</code> is documented in the <code>API Documentation</code>.</p>
 </div>
 <div class="paragraph">
-<p>You can also use the following example, as long as you adjust <code>client</code>, <code>keyfile</code>, <code>passphrase</code>, <code>MANAGER_URL</code>, <code>MANAGER_LOGIN</code> and <code>MANAGER_PASSWORD</code></p>
+<p>You can use this example by adjusting the <code>client</code>, <code>keyfile</code>, <code>passphrase</code>, <code>MANAGER_URL</code>, <code>MANAGER_LOGIN</code> and <code>MANAGER_PASSWORD</code> according to your environment:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1050,43 +1050,37 @@ conn.auth.logout(key)</code></pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_centos8_content_lifecycle_management_better_feedback_when_using_appstreams">CentOS8 Content LifeCycle Management: better feedback when using appstreams</h5>
+<h5 id="_centos8_content_lifecycle_management_better_feedback_with_appstreams">CentOS8 Content Lifecycle Management: Better Feedback with Appstreams</h5>
 <div class="paragraph">
-<p>Content lifecycle project page now provides feedback messages about module filters (such as missing or conflicting modules or dependency resolution problems).</p>
-</div>
-<div class="paragraph">
-<p>Such feedback messages can be either errors that require the user to fix configurations, or warnings about potential problems.</p>
+<p>The content lifecycle project page in the WebUI now has improved feedback messages about module filters, including missing or conflicting modules, and dependency resolution problems. The messages are in the form of errors that require the user to fix configurations, or warnings about potential problems.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_automated_schema_database_upgrades_and_security_mechanism_in_case_of_failures">Automated schema database upgrades and security mechanism in case of failures</h5>
+<h5 id="_automated_schema_database_upgrades_and_failure_security_mechanism">Automated Schema Database Upgrades and Failure Security Mechanism</h5>
 <div class="paragraph">
-<p>Now the database schema upgrades are applied automatically during services startup, so there is no need to call <code>spacewalk-schema-upgrade</code> manually.</p>
+<p>Database schema upgrades are now applied automatically during services startup, so there is no need to call <code>spacewalk-schema-upgrade</code> manually. A security mechanism has been implemented that prevents Uyuni Services from starting if the schema upgrade has failed.</p>
 </div>
 <div class="paragraph">
-<p>There is a security mechanism that prevents the Uyuni Services from starting when the schema upgrade failed.</p>
-</div>
-<div class="paragraph">
-<p>If that is the case:</p>
+<p>When this occurs:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>When you run <code>spacewalk-service start</code>, it will fail and will show an output with some hints.</p>
+<p>When you run <code>spacewalk-service start</code>,  it will fail and show an output with information about the error.</p>
 </li>
 <li>
-<p>As a consecuence, the services will not start (including Apache) so the WebUI will not be available.</p>
+<p>All services, including the Apache service, will not start. This will also cause the WebUI to be unavailable.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_large_deployments_guide">Large Deployments Guide</h5>
+<h5 id="_large_deployments_guide_draft">Large Deployments Guide (draft)</h5>
 <div class="paragraph">
 <p>Uyuni is designed by default to work on small and medium scale installations.</p>
 </div>
 <div class="paragraph">
-<p>For installations with more than 1000 clients per SUSE Manager Server, adequate hardware sizing and parameter tuning must be performed, and the new guide provides information about how to do it.</p>
+<p>For installations with more than 1000 clients per Uyuni Server, adequate hardware sizing and parameter tuning must be performed, and the new guide provides information about how to do it.</p>
 </div>
 <div class="paragraph">
 <p>Keep in mind there is no hard maximum number of supported systems. Many factors can affect how many clients can reliably be used in a particular installation. Factors can include which features are used, and how the hardware and systems are configured.</p>
@@ -1096,6 +1090,9 @@ conn.auth.logout(key)</code></pre>
 <h5 id="_uyuni_hub_documentation">Uyuni Hub documentation</h5>
 <div class="paragraph">
 <p>The Uyuni Hub announced for 2020.03 has now documentation available as part of the <code>Large Deployments Guide</code> (section <code>Multiple Servers with Hub</code>).</p>
+</div>
+<div class="paragraph">
+<p>This is a draft release, so please provide feedback using the Resources menu in the <a href="https://www.uyuni-project.org/uyuni-docs">online documentation</a></p>
 </div>
 </div>
 <div class="sect4">
@@ -1108,18 +1105,18 @@ conn.auth.logout(key)</code></pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_caasp_grafana_dashboads">CaaSP Grafana dashboads</h5>
+<h5 id="_caasp_grafana_dashboads">CaaSP Grafana Dashboads</h5>
 <div class="paragraph">
 <p>CaaSP specific Grafana dashboards have been integrated and can be deployed via the UI.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_prometheus_federation_support_in_the_formulas_and_forms">Prometheus Federation support in the formulas and forms</h5>
+<h5 id="_prometheus_federation_support_in_formulas_with_forms">Prometheus Federation Support in Formulas with Forms</h5>
 <div class="paragraph">
-<p>The new version of Prometheus formula allows configuring federation and pulling relevant metrics from Prometheus instances to provide global monitoring view.</p>
+<p>The new version of the Prometheus formula allows configuring federation and pulling relevant metrics from Prometheus instances to provide a global monitoring view.</p>
 </div>
 <div class="paragraph">
-<p>Please note that suitable recording rules have to be configured on the prometheus instances (for example at CaaSP prometheus instances).</p>
+<p>Note that suitable recording rules have to be configured on the Prometheus instances (for example at CaaSP Prometheus instances).</p>
 </div>
 <div class="paragraph">
 <p>For more information about Prometheus federation, check the <a href="https://prometheus.io/docs/prometheus/latest/federation/">official documentation</a>.</p>
@@ -1128,13 +1125,13 @@ conn.auth.logout(key)</code></pre>
 <div class="sect4">
 <h5 id="_pre_configured_default_alerting_rules">Pre-configured default alerting rules</h5>
 <div class="paragraph">
-<p>The set of default alerting rules has been added to monitor the Prometheus instances themselves (meta-monitoring) and the availability of configured targets. The rules can be disabled in the UI if needed.</p>
+<p>A default set of alerting rules have been added to monitor the Prometheus instances themselves (meta-monitoring) and the availability of configured targets. The rules can be disabled in the WebUI.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_prometheus_exporters_for_centos8_x86_64">Prometheus exporters for CentOS8 x86_64</h5>
+<h5 id="_prometheus_exporters_for_centos8_x86_64">Prometheus Exporters for CentOS8 x86_64</h5>
 <div class="paragraph">
-<p>We are now providing the following Prometheus Exporters as packages for CentOS8 x86_64 (compatible also with similar systems such as RHEL8)</p>
+<p>We now provide these Prometheus exporters as packages for CentOS8 x86_64 (compatible also with similar systems such as RHEL8):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1151,7 +1148,7 @@ conn.auth.logout(key)</code></pre>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_node_exporter_updated_to_0_18_1">Node exporter updated to 0.18.1</h5>
+<h5 id="_node_exporter_updated_to_0_18_1">Node Exporter Updated to 0.18.1</h5>
 <div class="paragraph">
 <p>All the changes can be found at the changelog for the package, or at <a href="https://github.com/prometheus/node_exporter/releases/tag/v0.18.0" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v0.18.0</a> and <a href="https://github.com/prometheus/node_exporter/releases/tag/v0.18.1" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v0.18.1</a></p>
 </div>
@@ -1184,10 +1181,8 @@ conn.auth.logout(key)</code></pre>
 <div class="sect4">
 <h5 id="_virtualization_management_of_storage_pools">Virtualization: Management of storage pools</h5>
 <div class="paragraph">
-<p>Until now users could list the storage pools, which is where the virtual machines disks are stored.</p>
-</div>
-<div class="paragraph">
-<p>Now the users can create, edit, start, stop, refresh and Delete storage pools from the UI and from Salt states.</p>
+<p>Until now users could list the storage pools, which is where the virtual machines disks are stored. Storage pools are where virtual machine disks are stored. In previous versions, you could only list the pools.
+With this update, you can create, edit, start, stop, refresh, and delete storage pools. This is available from the WebUI, or through Salt states.</p>
 </div>
 </div>
 </div>
@@ -2989,7 +2984,7 @@ See the advanced topics manual for detailed upgrade instructions.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-16 00:36:40 CEST
+Last updated 2020-04-16 10:00:53 CEST
 </div>
 </div>
 </body>
