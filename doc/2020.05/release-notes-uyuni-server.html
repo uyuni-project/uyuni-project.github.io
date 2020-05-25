@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2020.05</span><br>
-<span id="revdate">2020-05-21 12:31:30 +0200</span>
+<span id="revdate">2020-05-25 14:32:42 +0200</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -1016,6 +1016,28 @@ p { margin-bottom: 1.25rem; }
 <div class="paragraph">
 <p>Repository synchronization has been optimized to perform faster than in previous versions. This applies to if the synchronization is triggered in the WebUI, or from the command prompt using the <code>spacewalk-repo-sync command</code>.
 It also applies whether the synchronization is invoked manually, or automatically as part of product or custom channel synchronizations. The performance improvement is up six times faster than previous versions, but the improvement depends mostly on your hardware setup, especially the number of CPUs, and how many packages are being synchronized.</p>
+</div>
+<div class="paragraph">
+<p><strong>IMPORTANT:</strong> This requires a vendor change for the package <code>python3-psycopg2-2.8.4-2.1.uyuni.x86_64</code>.</p>
+</div>
+<div class="paragraph">
+<p>After running <code>zypper update</code> you will need force the vendor change with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>zypper in python3-psycopg2-2.8.4-2.1.uyuni.x86_64</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then update again again, so the <code>spacewalk-backend</code> subpackages are updated:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>zypper update</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For Uyuni 2020.06 <code>python3-psycopg2-2.8.4</code> should be already part of openSUSE Leap 15.1 and we will provide instructions use the openSUSE version again.</p>
 </div>
 </div>
 <div class="sect4">
@@ -3017,7 +3039,7 @@ See the advanced topics manual for detailed upgrade instructions.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-21 12:31:30 +0200
+Last updated 2020-05-25 14:32:42 +0200
 </div>
 </div>
 </body>
