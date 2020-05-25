@@ -31,27 +31,27 @@
 
             <ul class="nav top-nav d-flex justify-content-end">
 
-                <!-- NEWS -->
-                <li class="nav-item">
-                    <a class="nav-link" href="../pages/news.html">NEWS</a>
-                </li>
-                <!-- DOCS -->
-                <li class="nav-item">
-                    <a class="nav-link" href="https://www.uyuni-project.org/uyuni-docs/">DOCS</a>
-                </li>
                 <!-- Dropdown for available Uyuni versions -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        VERSION
+                        DOWNLOAD
                     </a>
                     <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="../pages/stable-version.html">Stable</a>
                         <a class="dropdown-item" href="../pages/devel-version.html">Develop</a>
                     </div>
                 </li>
+                <!-- DOCS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.uyuni-project.org/uyuni-docs/">DOCUMENTATION</a>
+                </li>
                 <!-- FAQ -->
                 <li class="nav-item">
                     <a class="nav-link" href="../pages/faq.html">FAQ</a>
+                </li>
+                <!-- NEWS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../pages/news.html">NEWS</a>
                 </li>
                 <!-- Contact -->
                 <li class="nav-item">
@@ -60,7 +60,7 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="https://twitter.com/UyuniProject" target="_blank">
-                        <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+                        <img src="../img/twitter.svg" alt="Uyuni - Twitter" title="Twitter">
                     </a>
                 </li>
             </ul>
@@ -91,12 +91,13 @@
                 </li>
                 <li>
                     <h5>Q. Where I can find Uyuni source code?</h5>
-                    <p>A. At the <a target="_blank" href="https://github.com/uyuni-project/uyuni">Git repository</a>.</p>
+                    <p>A. The main Git repository is <a target="_blank" href="https://github.com/uyuni-project/uyuni">uyuni-project/uyuni</a>.</p>
+                    <p>There are other repositories which provide additional functionality: <a target="_blank" href="https://github.com/uyuni-project/retail">uyuni-project/retail</a>, <a target="_blank" href="https://github.com/openSUSE/virtual-host-gatherer">virtual-host-gatherer</a>, <a target="_blank" href="https://github.com/openSUSE/subscription-matcher/">subscription-matcher</a>,  <a target="_blank" href="https://github.com/uyuni-project/hub-xmlrpc-api">uyuni-project/hub-xmlrpc-api</a> and of course <a target="_blank" href="https://github.com/uyuni-project/uyuni-docs/">our documentation</a>.</p>
                 </li>
                 <li>
                     <h5>Q. Is Uyuni based on SUSE Manager?</h5>
-                    <p>A. Only the initial release 4.0.0, was based on SUSE Manager 3.2. Uyuni 4.0.1 and subsequent versions are the base for next on SUSE Manager version 4.0, and all future versions.</p>
-                    <p>Uyuni and SUSE Manager are based on the Spacewalk project, but as our code diverged more and more, we decided to fork for the reasons explained at the <a target="_blank" href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/">Press Release</a>.</p>
+                    <p>A. Only the initial release (4.0.0) was based on SUSE Manager 3.2. Uyuni 4.0.1 and subsequent versions are the base for next on SUSE Manager version 4.0, and all future versions.</p>
+                    <p>Uyuni and SUSE Manager are based on the Spacewalk project, but as our code diverged more and more, in 2018 we decided to fork for the reasons explained at the <a target="_blank" href="https://news.opensuse.org/2018/05/26/uyuni-forking-spacewalk-with-salt-and-containers/">Press Release</a>. Spacewalk has since been abandoned by its original developers.</p>
                 </li>
                 <li>
                     <h5><a id="first-version">Q. Why is the first version 4.0.0 and not 1.0.0?</a></h5>
@@ -112,6 +113,9 @@
                         <li>Auditing of container images and Kubernetes clusters.</li>
                         <li>Initial configuration and setup based on YaST.</li>
                         <li>Infrastructure changes to keep the codebase modern (Java 8, Hibernate 5, React.js, Spark, ...).</li>
+                        <li>Virtualization</li>
+                        <li>Cluster management</li>
+                        <li>...and many more! Check our <a target="_blank" href="https://github.com/uyuni-project/uyuni/wiki/Presentations">presentations</a> and <a target="_blank" href="https://www.youtube.com/channel/UCB0SkZFAw9vPCFeUIYqZQ5A">YouTube channel</a> for details in real time, as we keep adding more and more.</li>
                     </ul>
                 </li>
             </ul>
@@ -130,11 +134,13 @@
       <div class="col-md">
         <h6>Project</h6>
         <ul>
-          <li><a href="https://www.uyuni-project.org/uyuni-docs/">Documentation</a></li>
+	  <li><a href="https://www.uyuni-project.org/uyuni-docs/">Documentation</a></li>
           <li><a href="../pages/faq.html">FAQ</a></li>
-          <li><a href="../pages/stable-version.html">Stable version</a></li>
-          <li><a href="../pages/devel-version.html">Develop version</a></li>
-          <li><a href="https://lists.opensuse.org/uyuni-announce/">Stay informed</a></li>
+    <li><a href="https://github.com/uyuni-project/uyuni/wiki/Presentations">Presentations</a></li>
+	  <li><a href="../pages/stable-version.html">Stable version</a></li>
+	  <li><a href="../pages/devel-version.html">Development version</a></li>
+          <li><a href="../pages/contact.html#ml">Mailing lists</a></li>
+          <li><a href="../pages/contact.html#irc">Chat</a></li>
           <li><a href="https://github.com/uyuni-project/sumaform/">Sumaform</a></li>
           <li><a href="https://github.com/uyuni-project/uyuni-rfc/">RFCs</a></li>
         </ul>
@@ -149,16 +155,19 @@
         </ul>
       </div>
       <div class="col-md">
-        <h6>Social</h5>
+        <h6>Social</h6>
         <div class="social-links">
-          <a href="https://github.com/uyuni-project/uyuni" target="_blank">
-            <img src="../img/github_white.svg" alt="Uyuni - Github">
+          <a href="https://github.com/uyuni-project" target="_blank">
+            <img src="../img/github_white.svg" alt="Uyuni - Github" title="GitHub source repository">
           </a>
           <a href="https://twitter.com/UyuniProject" target="_blank">
-            <img src="../img/twitter.svg" alt="Uyuni - Twitter">
+            <img src="../img/twitter.svg" alt="Uyuni - Twitter" title="Twitter">
           </a>
-	  <a href="https://gitter.im/uyuni-project" target="_blank">
-            <img src="../img/gitter.svg" alt="Uyuni - Gitter">
+          <a href="https://gitter.im/uyuni-project" target="_blank">
+            <img src="../img/gitter.svg" alt="Uyuni - Gitter" title="Gitter chat rooms">
+          </a>
+          <a href="https://www.youtube.com/channel/UCB0SkZFAw9vPCFeUIYqZQ5A" target="_blank">
+            <img src="../img/yt_icon_mono_dark.svg" width="24" height="24" alt="Uyuni - YouTube" title="YouTube channel">
           </a>
         </div>
       </div>
