@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Uyuni</title>
-  <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="../img/favicon/site.webmanifest">
-  <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../css/index.css">
-  <link rel="stylesheet" type="text/css" href="../css/eos-icons-extended.css">
-  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uyuni - Patches</title>
+    <meta name="description" content="Uyuni - Stable Version">
+
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/eos-icons-extended.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 </head>
 <body>
 
 <!-- Start here -->
 <header class="subpage-header">
-  <div class="container">
+    <div class="container">
         <nav class="navbar navbar-expand-lg">
             <a class="navbar-brand" href="https://www.uyuni-project.org/">
                 <img src="../img/logo-letters.svg" alt="">
@@ -59,35 +61,52 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="https://twitter.com/UyuniProject" target="_blank">
-                        <img src="../img/twitter.svg" alt="Uyuni - Twitter" title="Twitter" />
+                        <img src="../img/twitter.svg" alt="Uyuni - Twitter" title="Twitter">
                     </a>
                 </li>
             </ul>
         </nav>
         <!-- #nav -->
-    <div class="subpage-description">
-      <div class="subpage-title-back">
-        <h1>PAGE-TITLE</h1>
-        <a href="../index.html" class="btn btn-primary">
-          <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
-      </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br> Ab a aliquid modi vero velit, tempore alias animi facer
-      </p>
-  </div>
+
+        <div class="subpage-description">
+            <div class="subpage-title-back">
+                <h1>Patches</h1>
+                <a href="../index.html" class="btn btn-primary">
+                    <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
+            </div>
+        </div>
+    </div>
 </header>
 
 <div class="container page-wrapper">
-  <div class="container">
-    <div class="content-padding">
-
-      <!-- ================= -->
-      <!-- YOUR CONTENT HERE -->
-      <h1>Remove me!</h1>
-      <p>DEMO PAGE</p>
-      <!-- ================= -->
-    </div>
-  </div> <!-- #container -->
+    <div class="container">
+        <div class="row content-padding subpage-content">
+            <h4><a href="#releasenotes">General information</a></h4>
+            <div class="subpage-content-push-right">
+                <p>Uyuni follows a rolling release model, meaning there is no maintenance for a given Uyuni version and all bugfixes are provided by the next version.</p>
+                <p>However there are some exceptional situations where patches need to be provided, for example for CVEs, and that is what this procedure covers.</p>
+            </div>
+            <h4><a href="#server">Server</a></h4>
+            <div class="subpage-content-push-right">    
+                <p>1. Add the patches repository to the Server, if you do not have it already:</p>
+                <code>$ sudo zypper addrepo https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Patches/openSUSE_Leap_15.2/systemsmanagement:Uyuni:Stable:Patches.repo
+        </code>
+                <p>2. Refresh the metadata:</p>
+                <code>$ sudo zypper refresh</code>
+                <p>3. Stop the services:</p>
+                <code>$ sudo spacewalk-service stop</code>
+                <p>4. Apply the update:</p>
+                <code>$ sudo zypper update:</code>
+                <p>5. Restart the services:</p>
+                <code>$ sudo spacewalk-service start</code>
+            </div>
+            <h4><a href="#proxiesclients">Proxies and clients</a></h4>
+            <div class="subpage-content-push-right">
+                <p>1. Sync all the affected client tools repositories</p>
+                <p>2. Update the clients using the Uyuni Server as you would for any other updates</p>
+            </div>
+        </div>
+    </div> <!-- #container -->
   <!-- Footer -->
   <footer>
     <div class="row content-padding">
@@ -151,9 +170,9 @@
 
 
 </body>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="../js/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="../js/script.js"></script>
 </html>
