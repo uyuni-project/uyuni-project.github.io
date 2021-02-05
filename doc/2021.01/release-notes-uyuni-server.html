@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2021.01</span><br>
-<span id="revdate">2021-02-04 13:34:33 +0100</span>
+<span id="revdate">2021-02-05 19:42:11 +0100</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -801,6 +801,7 @@ p { margin-bottom: 1.25rem; }
 <ul class="sectlevel3">
 <li><a href="#_version_2021_01">Version 2021.01</a>
 <ul class="sectlevel4">
+<li><a href="#_vendor_change_for_some_java_dependencies">Vendor change for some Java dependencies</a></li>
 <li><a href="#_fix_version_comparison_algorithm_for_deb_packages_ubuntu">Fix version comparison algorithm for deb packages (Ubuntu)</a></li>
 <li><a href="#_new_products_enabled">New products enabled</a></li>
 <li><a href="#_sap_content">SAP content</a></li>
@@ -1094,6 +1095,18 @@ p { margin-bottom: 1.25rem; }
 <h3 id="_features_and_changes">Features and changes</h3>
 <div class="sect3">
 <h4 id="_version_2021_01">Version 2021.01</h4>
+<div class="sect4">
+<h5 id="_vendor_change_for_some_java_dependencies">Vendor change for some Java dependencies</h5>
+<div class="paragraph">
+<p>Besides the regular update, you will need to execute the following command to change the vendor for some Java dependencies:</p>
+</div>
+<div class="paragraph">
+<p><code>zypper install --allow-downgrade --allow-vendor-change -f apache-commons-cli-1.4-lp152.1.3.noarch apache-commons-jexl-2.1.1-lp152.1.1.noarch apache-commons-el-1.0-lp152.2.3.1.noarch</code></p>
+</div>
+<div class="paragraph">
+<p>If you do not do this, the WebUI will not start and you will get a HTTP 404 erroor.</p>
+</div>
+</div>
 <div class="sect4">
 <h5 id="_fix_version_comparison_algorithm_for_deb_packages_ubuntu">Fix version comparison algorithm for deb packages (Ubuntu)</h5>
 <div class="paragraph">
@@ -4056,7 +4069,7 @@ Channels to deploy the change to the clients.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-04 13:34:33 +0100
+Last updated 2021-02-05 19:42:11 +0100
 </div>
 </div>
 </body>
