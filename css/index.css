@@ -65,8 +65,8 @@ code {
   Header section
   ========================================================================== */
 header {
+  background: url('../img/header.png') no-repeat center center;
   background-size: cover;
-  background: url('../img/header.png') center center;
   display: flex;
   height: 900px;
   justify-content: center;
