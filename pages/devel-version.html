@@ -125,7 +125,7 @@
                     <tr>
 
                         <td>Multi-core CPU</td>
-                        <td>x86_64</td>
+                        <td>x86_64 or aarch64</td>
 
                     </tr>
 
@@ -161,7 +161,7 @@
                 <p>2. Configure a resolvable fully quallified domain name with <strong>Yast2 > System > Netwok Settings > Hostname/DNS</strong></p>
 
                 <p>3. Add the repository for the server:</p>
-                <code>$ sudo zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images/repo/Uyuni-Server-POOL-x86_64-Media1/ uyuni-server-devel</code>
+                <code>$ sudo zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images/repo/Uyuni-Server-POOL-$(arch)-Media1/ uyuni-server-devel</code>
 
                 <p>4. Refresh metadata from the repositories:</p>
                 <code>$ sudo zypper ref</code>
