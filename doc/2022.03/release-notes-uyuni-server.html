@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2022.03</span><br>
-<span id="revdate">2022-03-30 12:50:53 +0200</span>
+<span id="revdate">2022-04-04 10:35:19 +0200</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -806,7 +806,6 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_new_xml_rpc_api_version_26">New XML-RPC API version 26</a></li>
 <li><a href="#_smdba_changed_defaults_for_newer_postgresql_versions">smdba: changed defaults for newer PostgreSQL versions</a></li>
 <li><a href="#_monitoring_grafana_8_3_5">Monitoring: Grafana 8.3.5</a></li>
-<li><a href="#_salt_ssh_now_uses_the_salt_bundle">Salt SSH now uses the Salt Bundle</a></li>
 <li><a href="#_unsupported_products">Unsupported products</a></li>
 </ul>
 </li>
@@ -1424,31 +1423,6 @@ p { margin-bottom: 1.25rem; }
 </div>
 <div class="paragraph">
 <p>If you use legacy Grafana alerting in your environment, consider migrating to new Grafana 8 alerting.</p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_salt_ssh_now_uses_the_salt_bundle">Salt SSH now uses the Salt Bundle</h5>
-<div class="paragraph">
-<p>The Salt Bundle is now used to handle Salt SSH executions on the client side. The bootstrap of new Salt clients using webUI or API is now also using the Salt Bundle.</p>
-</div>
-<div class="paragraph">
-<p>To ensure bootstrap works in the proper way, the bootstrap repositories for the clients must be regenerated before bootstrapping new clients.</p>
-</div>
-<div class="paragraph">
-<p>The bootstrap repository regeneration happens for any given product when a resync for the product repositories happens:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>For products provided by the SUSE Customer Center, added via de Setup Wizard or <code>mgr-sync</code>, this happens each night.</p>
-</li>
-<li>
-<p>For products added via <code>spacewalk-common-channels</code> there is no automated resync by default, unless it was configured after adding the product. In this case, the regeneration needs to be trigger manually.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>To manually trigger the regeneration, use the tool <code>mgr-create-bootstrap-repo</code> at the Uyuni Server.</p>
 </div>
 </div>
 <div class="sect4">
@@ -6070,7 +6044,7 @@ Channels to deploy the change to the clients.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-03-30 12:50:53 +0200
+Last updated 2022-04-04 10:35:19 +0200
 </div>
 </div>
 </body>
