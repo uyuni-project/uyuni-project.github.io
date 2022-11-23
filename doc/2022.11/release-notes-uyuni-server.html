@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2022.11</span><br>
-<span id="revdate">2022-11-21 12:25:12 +0100</span>
+<span id="revdate">2022-11-23 16:55:19 +0100</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -801,6 +801,7 @@ p { margin-bottom: 1.25rem; }
 <ul class="sectlevel3">
 <li><a href="#_version_2022_11">Version 2022.11</a>
 <ul class="sectlevel4">
+<li><a href="#_system_list_refactor">System list refactor</a></li>
 <li><a href="#_instructions_to_disable_custom_channel_automatic_syncronization">Instructions to disable custom channel automatic syncronization</a></li>
 <li><a href="#_allow_more_tools_for_network_management_for_the_uyuni_server">Allow more tools for network management for the Uyuni Server</a></li>
 <li><a href="#_monitoring_grafana_update_to_8_5_13">Monitoring: Grafana update to 8.5.13</a></li>
@@ -1162,6 +1163,7 @@ p { margin-bottom: 1.25rem; }
 </li>
 <li><a href="#_known_issues">Known issues</a>
 <ul class="sectlevel2">
+<li><a href="#_rocky_linux_9_onboarding_fails_to_complete">Rocky Linux 9 onboarding fails to complete.</a></li>
 <li><a href="#_gpg_keys_acceptance_issue">GPG keys acceptance issue</a></li>
 <li><a href="#_almalinux">AlmaLinux</a></li>
 <li><a href="#_bootstrap_with_web_ui_using_non_root_user">Bootstrap with web UI using non-root user</a></li>
@@ -1340,6 +1342,30 @@ p { margin-bottom: 1.25rem; }
 <h3 id="_features_and_changes">Features and changes</h3>
 <div class="sect3">
 <h4 id="_version_2022_11">Version 2022.11</h4>
+<div class="sect4">
+<h5 id="_system_list_refactor">System list refactor</h5>
+<div class="paragraph">
+<p>The System list page has been refactored to be more optimized and can handle thousands of systems with a breeze.</p>
+</div>
+<div class="paragraph">
+<p>For this we had to add a new database table to store the cached system data.</p>
+</div>
+<div class="paragraph">
+<p>This table is updated every hour by the <code>update-system-overview-default</code> task and within a minute after data for any of the systems is changed.</p>
+</div>
+<div class="paragraph">
+<p>As a side effect, the System list will be empty after the server upgrade until the refresh is triggered.</p>
+</div>
+<div class="paragraph">
+<p>To force a refresh before the top of the hour, run the <code>update-system-overview-default</code> task manually in Admin &gt; Task Schedules page. Keep in mind that processing this task can take some time depending on how many systems are present in the database.</p>
+</div>
+<div class="paragraph">
+<p>We intend to automate the initial refresh during during the Uyuni Server update in a future release, for people that are still upgrading from versions older than 2022.11</p>
+</div>
+<div class="paragraph">
+<p>The new page has also introduced a more advanced filtering of the data. Though quite powerful, the user interface for the value selection is still rough and requires knowing what to query. While this has been temporarily been worked around by keeping the old links in the Systems List menu, we expect improvements for the interface in a future release.</p>
+</div>
+</div>
 <div class="sect4">
 <h5 id="_instructions_to_disable_custom_channel_automatic_syncronization">Instructions to disable custom channel automatic syncronization</h5>
 <div class="paragraph">
@@ -6278,6 +6304,35 @@ to bootstrap as both salt minions and traditional clients.</p>
 <h2 id="_known_issues">Known issues</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="_rocky_linux_9_onboarding_fails_to_complete">Rocky Linux 9 onboarding fails to complete.</h3>
+<div class="paragraph">
+<p>Rocky Linux 9 is distributed with SELinux configured to <code>enforced</code> by default, and that is causing connection issues between the Salt minion and the Salt master.</p>
+</div>
+<div class="paragraph">
+<p>In all cases there will be no failures during the bootstrap, but the minion will never show up at the System List page (as it will not complete the onboarding)</p>
+</div>
+<div class="paragraph">
+<p>At <code>/var/log/venv-salt-minion.log</code> at the minion, a message like the following one will be present:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>[ERROR   ][1649] Error while bringing up minion for multi-master. Is master at uyuni-server.mydomain.int responding?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Workaround</strong>: Before onboarding the Rocky Linux 9 client, issue the following command as the root user:</p>
+</div>
+<div class="paragraph">
+<p><code>setenforce 0</code></p>
+</div>
+<div class="paragraph">
+<p>This command can also be useful if you have already onboarded the Rocky Linux 9 client but it did not appear in the Systems list.</p>
+</div>
+<div class="paragraph">
+<p>We are working on a solution to have the Salt Bundle working with SELinux for Rocky Linux 9.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_gpg_keys_acceptance_issue">GPG keys acceptance issue</h3>
 <div class="paragraph">
 <p>Some Enterprise Linux distributions do not trust their own GPG key for package installation. In case of GPG key errors, try to import the GPG key manually.</p>
@@ -6929,7 +6984,7 @@ Channels to deploy the change to the clients.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-21 12:25:12 +0100
+Last updated 2022-11-23 16:55:19 +0100
 </div>
 </div>
 </body>
