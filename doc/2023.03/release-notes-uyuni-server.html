@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2023.03</span><br>
-<span id="revdate">2023-03-01 15:45:02 +0100</span>
+<span id="revdate">2023-03-16 16:00:10 +0100</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -804,7 +804,7 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_opensuse_leap_micro_5_3_support_as_client">openSUSE Leap Micro 5.3 support as client</a></li>
 <li><a href="#_suse_linux_enterprise_server_micro_product_migration">SUSE Linux Enterprise Server Micro product migration</a></li>
 <li><a href="#_new_products_enabled">New products enabled</a></li>
-<li><a href="#_monitoring_grafana_update_to_8_5_15">Monitoring: Grafana update to 8.5.15</a></li>
+<li><a href="#_monitoring_grafana_update_to_8_5_20">Monitoring: Grafana update to 8.5.20</a></li>
 <li><a href="#_syncing_optional_channels_from_from_the_webui">Syncing optional channels from from the WebUI</a></li>
 <li><a href="#_subscription_warning_notifications_will_now_happen_weekly">Subscription warning notifications will now happen weekly</a></li>
 <li><a href="#_documentation_new_look_and_feel">Documentation: New look and feel</a></li>
@@ -824,7 +824,7 @@ p { margin-bottom: 1.25rem; }
 <ul class="sectlevel4">
 <li><a href="#_indications_for_systems_requiring_reboot_or_with_a_scheduled_reboot">Indications for systems requiring reboot or with a scheduled reboot</a></li>
 <li><a href="#_notification_messages_via_email">Notification messages via email</a></li>
-<li><a href="#_monitoring_grafana_update_to_8_5_15_2">Monitoring: Grafana update to 8.5.15</a></li>
+<li><a href="#_monitoring_grafana_update_to_8_5_15">Monitoring: Grafana update to 8.5.15</a></li>
 <li><a href="#_subscription_warning_notifications">Subscription warning notifications</a></li>
 <li><a href="#_limit_changelogs_at_repositories_metadata_to_the_last_20_entries">Limit changelogs at repositories metadata to the last 20 entries</a></li>
 <li><a href="#_drop_legacy_way_to_prevent_disabling_local_repositories_at_bootstrap_scripts">Drop legacy way to prevent disabling local repositories at bootstrap scripts</a></li>
@@ -1096,34 +1096,35 @@ p { margin-bottom: 1.25rem; }
 </div>
 </div>
 <div class="sect4">
-<h5 id="_monitoring_grafana_update_to_8_5_15">Monitoring: Grafana update to 8.5.15</h5>
+<h5 id="_monitoring_grafana_update_to_8_5_20">Monitoring: Grafana update to 8.5.20</h5>
 <div class="paragraph">
 <p>This update fixes several security vulnerabilities:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>CVE-2022-39306</p>
+<p>Security: SVG: Add dompurify preprocessor step (CVE-2022-23552)</p>
 </li>
 <li>
-<p>CVE-2022-39307</p>
+<p>Security: Snapshots: Fix originalUrl spoof security issue( CVE-2022-39324)</p>
 </li>
 <li>
-<p>CVE-2022-39201</p>
-</li>
-<li>
-<p>CVE-2022-31130</p>
-</li>
-<li>
-<p>CVE-2022-31123</p>
-</li>
-<li>
-<p>CVE-2022-39229</p>
+<p>Security: Omit error from http response</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>No other bugfixes, features or changelogs are part of this update.</p>
+<p>As well as one bugfix:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Email and username trimming and invitation validation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>No other features are part of this update.</p>
 </div>
 <div class="paragraph">
 <p>Check the <a href="https://grafana.com/docs/grafana/latest/release-notes/">upstream changelog</a> for all the details.</p>
@@ -1312,7 +1313,7 @@ The documentation still mentions SUSE Linux Enterprise Micro as "Technology Prev
 </div>
 </div>
 <div class="sect4">
-<h5 id="_monitoring_grafana_update_to_8_5_15_2">Monitoring: Grafana update to 8.5.15</h5>
+<h5 id="_monitoring_grafana_update_to_8_5_15">Monitoring: Grafana update to 8.5.15</h5>
 <div class="paragraph">
 <p>This update fixes several security vulnerabilities:</p>
 </div>
@@ -3226,7 +3227,7 @@ RHEL8 and 9 are expected to work in the same way as Rocky Linux or AlmaLinux 8 o
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-01 15:45:02 +0100
+Last updated 2023-03-16 16:00:10 +0100
 </div>
 </div>
 </body>
