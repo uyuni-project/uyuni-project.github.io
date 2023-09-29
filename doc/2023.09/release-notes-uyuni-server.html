@@ -1,0 +1,3184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="author" content="Version 2023.09">
+<title>Release notes for Uyuni Server</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Release notes for Uyuni Server</h1>
+<div class="details">
+<span id="author" class="author">Version 2023.09</span><br>
+<span id="revdate">2023-09-29 09:33:09 +0200</span>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_version_revision_history">Version Revision History</a></li>
+<li><a href="#_stay_informed">Stay informed</a></li>
+<li><a href="#_support">Support</a></li>
+<li><a href="#_release_model">Release model</a></li>
+<li><a href="#_major_changes_since_uyuni_server_2021_06">Major changes since Uyuni Server 2021.06</a>
+<ul class="sectlevel2">
+<li><a href="#_features_and_changes">Features and changes</a>
+<ul class="sectlevel3">
+<li><a href="#_version_2023_09">Version 2023.09</a>
+<ul class="sectlevel4">
+<li><a href="#_upgrade_notes">Upgrade notes</a></li>
+<li><a href="#_base_operating_system_upgrade">Base operating system upgrade</a></li>
+<li><a href="#_new_products_enabled">New products enabled</a></li>
+<li><a href="#_opensuse_leap_micro_5_4_support_as_client">openSUSE Leap Micro 5.4 support as client</a></li>
+<li><a href="#_suse_linux_enterprise_micro_5_4_support_as_client">SUSE Linux Enterprise Micro 5.4 support as client</a></li>
+<li><a href="#_salt_3006_0">Salt 3006.0</a></li>
+<li><a href="#_important_salt_minion_update">Important Salt Minion update</a></li>
+<li><a href="#_the_salt_minion_is_no_longer_disabled_for_salt_ssh_managed_clients">The salt-minion is no longer disabled for salt-ssh managed clients</a></li>
+<li><a href="#_ubuntu_18_04_end_of_life">Ubuntu 18.04 End of Life</a></li>
+<li><a href="#_minimal_requirement_for_memory">Minimal requirement for memory</a></li>
+<li><a href="#_automated_rhui_credential_update">Automated RHUI credential update</a></li>
+<li><a href="#_monitoring">Monitoring</a></li>
+<li><a href="#_ansible_integration">Ansible integration</a></li>
+<li><a href="#_installing_ptfs_from_uyuni">Installing PTFs from Uyuni</a></li>
+<li><a href="#_recurrent_custom_states">Recurrent Custom States</a></li>
+<li><a href="#_system_profile_refresh_taskomatic_job">'system-profile-refresh' Taskomatic job</a></li>
+<li><a href="#_show_a_notification_when_an_update_for_uyuni_is_available">Show a notification when an update for Uyuni is available</a></li>
+</ul>
+</li>
+<li><a href="#_version_2023_04">Version 2023.04</a>
+<ul class="sectlevel4">
+<li><a href="#_monitoring_2">Monitoring</a></li>
+<li><a href="#_all_tomcat_logs_are_now_rotated_with_logrotate">All tomcat logs are now rotated with logrotate</a></li>
+<li><a href="#_security_enhancements_to_api_logging">Security enhancements to API logging</a></li>
+</ul>
+</li>
+<li><a href="#_version_2023_03">Version 2023.03</a>
+<ul class="sectlevel4">
+<li><a href="#_opensuse_leap_micro_5_3_support_as_client">openSUSE Leap Micro 5.3 support as client</a></li>
+<li><a href="#_new_products_enabled_2">New products enabled</a></li>
+<li><a href="#_monitoring_grafana_update_to_8_5_15">Monitoring: Grafana update to 8.5.15</a></li>
+<li><a href="#_syncing_optional_channels_from_from_the_webui">Syncing optional channels from from the WebUI</a></li>
+<li><a href="#_subscription_warning_notifications_will_now_happen_weekly">Subscription warning notifications will now happen weekly</a></li>
+<li><a href="#_salt_3000_end_of_life">Salt 3000 End of Life</a></li>
+<li><a href="#_debian_9_end_of_life">Debian 9 End of Life</a></li>
+<li><a href="#_spacewalk_clone_by_date_has_been_deprecated">'spacewalk-clone-by-date' has been deprecated</a></li>
+</ul>
+</li>
+<li><a href="#_version_2023_01">Version 2023.01</a>
+<ul class="sectlevel4">
+<li><a href="#_release_notes_cleanup">Release notes cleanup</a></li>
+<li><a href="#_suse_linux_enterprise_micro_support_as_client">SUSE Linux Enterprise Micro support as client</a></li>
+<li><a href="#_content_lifecycle_management_disabling_modularity_for_appstream_repositories">Content Lifecycle Management: Disabling modularity for AppStream repositories</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_12">Version 2022.12</a>
+<ul class="sectlevel4">
+<li><a href="#_indications_for_systems_requiring_reboot_or_with_a_scheduled_reboot">Indications for systems requiring reboot or with a scheduled reboot</a></li>
+<li><a href="#_notification_messages_via_email">Notification messages via email</a></li>
+<li><a href="#_monitoring_grafana_update_to_8_5_15_2">Monitoring: Grafana update to 8.5.15</a></li>
+<li><a href="#_subscription_warning_notifications">Subscription warning notifications</a></li>
+<li><a href="#_limit_changelogs_at_repositories_metadata_to_the_last_20_entries">Limit changelogs at repositories metadata to the last 20 entries</a></li>
+<li><a href="#_drop_legacy_way_to_prevent_disabling_local_repositories_at_bootstrap_scripts">Drop legacy way to prevent disabling local repositories at bootstrap scripts</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_11">Version 2022.11</a>
+<ul class="sectlevel4">
+<li><a href="#_system_list_refactor">System list refactor</a></li>
+<li><a href="#_instructions_to_disable_custom_channel_automatic_synchronization">Instructions to disable custom channel automatic synchronization</a></li>
+<li><a href="#_allow_more_tools_for_network_management_for_the_uyuni_server">Allow more tools for network management for the Uyuni Server</a></li>
+<li><a href="#_monitoring_grafana_update_to_8_5_13">Monitoring: Grafana update to 8.5.13</a></li>
+<li><a href="#_monitoring_fix_tls_configuration_and_enable_client_certificate_authentication_for_blackbox_exporter">Monitoring: Fix TLS configuration and enable client certificate authentication for Blackbox exporter</a></li>
+<li><a href="#_traditional_stack_being_removed">Traditional stack being removed</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_10">Version 2022.10</a>
+<ul class="sectlevel4">
+<li><a href="#_update_notes">Update notes</a></li>
+<li><a href="#_rheloracle_linuxalmalinuxrocky_linux_9_as_clients">RHEL/Oracle Linux/AlmaLinux/Rocky Linux 9 as clients</a></li>
+<li><a href="#_monitoring_for_ubuntu_22_04">Monitoring for Ubuntu 22.04</a></li>
+<li><a href="#_pip_support_for_the_salt_bundle">pip support for the Salt Bundle</a></li>
+<li><a href="#_apache_exporter_updated_to_version_0_11_0_for_suse_linux_enterprise_and_opensuse">Apache exporter updated to version 0.11.0 for SUSE Linux Enterprise and openSUSE</a></li>
+<li><a href="#_cobbler_updated_to_version_3_3_3">Cobbler updated to version 3.3.3</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_08">Version 2022.08</a>
+<ul class="sectlevel4">
+<li><a href="#_ubuntu_22_04_as_client">Ubuntu 22.04 as client</a></li>
+<li><a href="#_gpg_key_handling_in_uyuni">GPG key handling in Uyuni</a></li>
+<li><a href="#_disabling_locally_defined_repositories">Disabling locally defined repositories</a></li>
+<li><a href="#_technology_preview_helm_chart_to_deploy_containerized_uyuni_proxy_and_retail_branch_server">Technology Preview: Helm chart to deploy containerized Uyuni Proxy and Retail Branch Server</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_06">Version 2022.06</a>
+<ul class="sectlevel4">
+<li><a href="#_upgrade_notes_2">Upgrade notes</a></li>
+<li><a href="#_base_operating_system_upgrade_2">Base operating system upgrade</a></li>
+<li><a href="#_postgresql_14">PostgreSQL 14</a></li>
+<li><a href="#_salt_3004">Salt 3004</a></li>
+<li><a href="#_new_products_enabled_3">New products enabled</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_05">Version 2022.05</a>
+<ul class="sectlevel4">
+<li><a href="#_reporting_database_documentation">Reporting Database documentation</a></li>
+<li><a href="#_spacewalk_report_now_uses_data_from_the_reporting_database">spacewalk-report now uses data from the reporting database</a></li>
+<li><a href="#_adding_systems_with_failed_actions_to_system_set_manager">Adding systems with failed actions to System Set Manager</a></li>
+<li><a href="#_technology_preview_json_over_http_api">Technology Preview: JSON over HTTP API</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_04">Version 2022.04</a>
+<ul class="sectlevel4">
+<li><a href="#_salt_ssh_now_uses_the_salt_bundle">Salt SSH now uses the Salt Bundle</a></li>
+<li><a href="#_technology_preview_containerized_uyuni_proxy_and_retail_branch_server">Technology Preview: Containerized Uyuni Proxy and Retail Branch Server</a></li>
+<li><a href="#_reporting_database_improvements">Reporting Database improvements</a></li>
+<li><a href="#_improved_image_management">Improved image management</a></li>
+<li><a href="#_hsts_available">HSTS available</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_03">Version 2022.03</a>
+<ul class="sectlevel4">
+<li><a href="#_fixes_for_salt_security_issues">Fixes for Salt security issues</a></li>
+<li><a href="#_salt_upgrade">Salt Upgrade</a></li>
+<li><a href="#_new_xml_rpc_api_version_26">New XML-RPC API version 26</a></li>
+<li><a href="#_smdba_changed_defaults_for_newer_postgresql_versions">smdba: changed defaults for newer PostgreSQL versions</a></li>
+<li><a href="#_monitoring_grafana_8_3_5">Monitoring: Grafana 8.3.5</a></li>
+<li><a href="#_unsupported_products">Unsupported products</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_02">Version 2022.02</a>
+<ul class="sectlevel4">
+<li><a href="#_postgresql_default_password_encryption_mechanism_change">PostgreSQL default password encryption mechanism change</a></li>
+<li><a href="#_reporting_database">Reporting Database</a></li>
+<li><a href="#_ubuntu_errata_installation">Ubuntu errata installation</a></li>
+<li><a href="#_monitoring_3">Monitoring</a></li>
+<li><a href="#_sles_payg_client_support_on_cloud">SLES PAYG client support on cloud</a></li>
+<li><a href="#_openscap_for_debian_11_tech_preview">openscap for Debian 11 (Tech Preview)</a></li>
+</ul>
+</li>
+<li><a href="#_version_2022_01">Version 2022.01</a>
+<ul class="sectlevel4">
+<li><a href="#_debian_11_as_client">Debian 11 as client</a></li>
+<li><a href="#_link_to_vendor_security_advisory_in_patch_details_page">Link to vendor security advisory in Patch details page</a></li>
+<li><a href="#_add_support_for_custom_ssh_port_for_ssh_minions">Add support for custom SSH port for SSH minions</a></li>
+<li><a href="#_change_proxy_used_for_clients_from_the_webui">Change proxy used for clients from the WebUI</a></li>
+</ul>
+</li>
+<li><a href="#_version_2021_12">Version 2021.12</a>
+<ul class="sectlevel4">
+<li><a href="#_salt_as_a_bundle">Salt as a Bundle</a></li>
+<li><a href="#_aarch64_support_for_opensuse_leap_15_3_centos_78_clones_and_related_systems">aarch64 support for openSUSE Leap 15.3, CentOS 7/8, clones and related systems</a></li>
+<li><a href="#_system_reactivation">System reactivation</a></li>
+<li><a href="#_low_diskspace_notification">Low Diskspace notification</a></li>
+<li><a href="#_package_locking_for_salt_minions">Package Locking for Salt Minions</a></li>
+<li><a href="#_monitoring_4">Monitoring</a></li>
+<li><a href="#_content_lifecycle_management_improvement">Content Lifecycle Management improvement</a></li>
+<li><a href="#_new_xmlrpc_api_methods_for_saltkey">New XMLRPC API methods for SaltKey</a></li>
+<li><a href="#_new_product_enabled">New product enabled</a></li>
+<li><a href="#_cve_2021_40348_remediation">CVE-2021-40348 remediation</a></li>
+<li><a href="#_centos_8_end_of_life">CentOS 8 End of Life</a></li>
+<li><a href="#_future_deprecation_of_the_traditional_stack">Future deprecation of the traditional stack</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#known_issues">Known issues</a>
+<ul class="sectlevel2">
+<li><a href="#_automated_rhui_credential_update_2">Automated RHUI credential update</a></li>
+<li><a href="#_almalinux">AlmaLinux</a></li>
+<li><a href="#_bootstrap_with_web_ui_using_non_root_user">Bootstrap with web UI using non-root user</a></li>
+<li><a href="#_clm_and_custom_repositories">CLM and custom repositories</a></li>
+<li><a href="#_container_build_host_and_salt_bundle">Container build host and Salt bundle</a></li>
+<li><a href="#_single_sign_on_api_and_cli_tools">Single Sign On, API and CLI tools</a></li>
+<li><a href="#_epel_and_salt_packages">EPEL and Salt packages</a></li>
+<li><a href="#_rhel_native_clients">RHEL native clients</a></li>
+<li><a href="#_registering_spacewalk_2_xred_hat_satellite_5_x_clients_to_uyuni_as_salt_minions">Registering Spacewalk 2.x/Red Hat Satellite 5.x clients to Uyuni as Salt minions</a></li>
+</ul>
+</li>
+<li><a href="#_client_tools_notes">Client Tools Notes</a>
+<ul class="sectlevel2">
+<li><a href="#_supported_clients">Supported clients</a></li>
+<li><a href="#_untested_clients">Untested clients</a></li>
+</ul>
+</li>
+<li><a href="#_installation">Installation</a>
+<ul class="sectlevel2">
+<li><a href="#_requirements">Requirements</a></li>
+<li><a href="#_installing_the_server">Installing the Server</a></li>
+<li><a href="#_update_from_previous_versions_of_uyuni_server">Update from previous versions of Uyuni Server</a></li>
+<li><a href="#_update_from_previous_versions_of_uyuni_proxy">Update from previous versions of Uyuni Proxy</a></li>
+</ul>
+</li>
+<li><a href="#_other_information">Other information</a>
+<ul class="sectlevel2">
+<li><a href="#_red_hat_channels">Red Hat Channels</a></li>
+<li><a href="#_suse_channels">SUSE Channels</a></li>
+</ul>
+</li>
+<li><a href="#_providing_feedback">Providing feedback</a></li>
+<li><a href="#_legal_notices">Legal Notices</a></li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_version_revision_history">Version Revision History</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>2023/09/29: 2023.09 release</p>
+</li>
+<li>
+<p>2023/04/21: 2023.04 release</p>
+</li>
+<li>
+<p>2023/03/02: 2023.03 release</p>
+</li>
+<li>
+<p>2023/01/30: 2023.01 release</p>
+</li>
+<li>
+<p>2022/12/20: 2022.12 release</p>
+</li>
+<li>
+<p>2022/11/21: 2022.11 release</p>
+</li>
+<li>
+<p>2022/10/14: 2022.10 release</p>
+</li>
+<li>
+<p>2022/08/10: 2022.08 release</p>
+</li>
+<li>
+<p>2022/06/26: 2022.06 release</p>
+</li>
+<li>
+<p>2022/05/10: 2022.05 release</p>
+</li>
+<li>
+<p>2022/04/29: 2022.04 release</p>
+</li>
+<li>
+<p>2022/03/31: 2022.03 release</p>
+</li>
+<li>
+<p>2022/02/28: 2022.02 release</p>
+</li>
+<li>
+<p>2022/01/28: 2022.01 release</p>
+</li>
+<li>
+<p>2021/12/09: 2021.12 release</p>
+</li>
+<li>
+<p><a href="https://www.uyuni-project.org/doc/2022.12/release-notes-uyuni-server.html">Older versions up to 4.0.0</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stay_informed">Stay informed</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can stay up-to-date regarding information about Uyuni:</p>
+</div>
+<div class="paragraph">
+<p>Check the home site <a href="https://www.uyuni-project.org" class="bare">https://www.uyuni-project.org</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_support">Support</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Uyuni is a community-supported project. The ways of contacting the community are available at the home site.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_model">Release model</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Uyuni uses a rolling release model (meaning there will be no bugfixing for given Uyuni version, but new frequent versions that will include bugfixes and features)</p>
+</div>
+<div class="paragraph">
+<p>Check the home site get in contact with the community.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_major_changes_since_uyuni_server_2021_06">Major changes since Uyuni Server 2021.06</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_features_and_changes">Features and changes</h3>
+<div class="sect3">
+<h4 id="_version_2023_09">Version 2023.09</h4>
+<div class="sect4">
+<h5 id="_upgrade_notes">Upgrade notes</h5>
+<div class="paragraph">
+<p><strong>WARNING:</strong> This release updates the base OS from openSUSE Leap 15.4 to openSUSE Leap 15.5 and there are special steps required. You need at least Uyuni 2023.04 already installed to perform the upgrade, and you need to follow the
+<a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/server-major-upgrade-uyuni.html">major upgrade procedure for the Server</a>. More details are also available at the "Update from previous versions of Uyuni Server" section below.</p>
+</div>
+<div class="paragraph">
+<p><strong>WARNING:</strong> This release updates the Salt version for Master and Minions to a next major release. Make sure you update the Uyuni Server before updating the clients, as <a href="https://docs.saltproject.io/en/latest/topics/installation/index.html#upgrading-salt">backward compatibility of Minions against an older Master is not guaranteed</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_base_operating_system_upgrade">Base operating system upgrade</h5>
+<div class="paragraph">
+<p>The base operating system has been upgraded to openSUSE Leap 15.5.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_new_products_enabled">New products enabled</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>openSUSE Leap Micro 5.4</p>
+</li>
+<li>
+<p>SUSE Linux Enterprise Micro 5.4</p>
+</li>
+<li>
+<p>openSUSE Leap 15.5</p>
+</li>
+<li>
+<p>SUSE Linux Enterprise Server 15 SP5</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Please notice that openSUSE Leap 15.5 and SUSE Linux Enterprise Server 15 SP5 have been previously enabled as beta, and now their stable version is supported.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_opensuse_leap_micro_5_4_support_as_client">openSUSE Leap Micro 5.4 support as client</h5>
+<div class="paragraph">
+<p>openSUSE Leap Micro is an ultra-reliable, lightweight operating system built for containerized and virtualized workloads.</p>
+</div>
+<div class="paragraph">
+<p>Based on SUSE Linux Enterprise Micro, it leverages the enterprise hardened security and compliance components of SUSE Linux Enterprise. This merging of technologies provides for a modern, immutable and developer-friendly OS platform.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/supported-features-opensuse-leap-micro.html">Client Configuration Guide</a> for information about the supported features.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_suse_linux_enterprise_micro_5_4_support_as_client">SUSE Linux Enterprise Micro 5.4 support as client</h5>
+<div class="paragraph">
+<p>SUSE Linux Enterprise Server Micro is an ultra-reliable, lightweight operating system purpose built for containerized and virtualized workloads. It leverages the enterprise hardened security and compliance components of SUSE Linux Enterprise and merges them with a modern, immutable, developer-friendly OS platform.</p>
+</div>
+<div class="paragraph">
+<p>Support for SUSE Linux Enterprise Server Micro in Uyuni was added as a tech preview. In the meanwhile, we have made some significant improvements around it to make sure that users get the seamless usability experience in case of an immutable OS such as SUSE Linux Enterprise Server Micro.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/supported-features-sle-micro.html">Client Configuration Guide</a> for information about the supported features.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_salt_3006_0">Salt 3006.0</h5>
+<div class="paragraph">
+<p>Salt has been upgraded to upstream version 3006.0, plus a number of patches, backports and enhancements by SUSE, for the Uyuni Server, Proxy, and Client Tools.</p>
+</div>
+<div class="paragraph">
+<p>Salt 3006.0 is the first LTS release of Salt based on the newly defined <a href="https://docs.saltproject.io/salt/install-guide/en/latest/topics/salt-version-support-lifecycle.html">release strategy</a>. The purpose of the LTS release is to provide users with a stable version of Salt for a longer period.</p>
+</div>
+<div class="paragraph">
+<p>Following CVEs have been fixed for Salt with this Maintenance Update.
+- CVE-2023-20897 - <a href="https://bugzilla.suse.com/show_bug.cgi?id=1214796">bsc#1214796</a> <a href="https://bugzilla.suse.com/show_bug.cgi?id=1213441">bsc#1213441</a>
+- CVE-2023-20898 - <a href="https://bugzilla.suse.com/show_bug.cgi?id=1214797">bsc#1214797</a> <a href="https://bugzilla.suse.com/show_bug.cgi?id=1193948">bsc#1193948</a></p>
+</div>
+<div class="paragraph">
+<p>For more details about this release, see the <a href="https://docs.saltproject.io/en/latest/topics/releases/3006.html">Salt 3006.0 upstream release notes</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>WARNING:</strong> This release updates the Salt version for master and minions. Make sure you update the Uyuni Server before updating the clients, as stated here <a href="https://docs.saltproject.io/salt/install-guide/en/latest/topics/upgrade.html" class="bare">https://docs.saltproject.io/salt/install-guide/en/latest/topics/upgrade.html</a></p>
+</div>
+<div class="paragraph">
+<p>Salt Bundle 3006.0 will be available for all supported clients.</p>
+</div>
+<div class="paragraph">
+<p>The non-bundle version of Salt requires Python3 installed by default, and it will not be available for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SUSE Linux Enterprise 12</p>
+</li>
+<li>
+<p>CentOS 7</p>
+</li>
+<li>
+<p>Oracle Linux 7</p>
+</li>
+<li>
+<p>Red Hat Enterprise Linux 7</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>When a highstate is performed, all the unsupported Salt 3000 clients will be automatically migrated to the Salt bundle in its latest release.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_important_salt_minion_update">Important Salt Minion update</h5>
+<div class="paragraph">
+<p>Salt version 3006.0 introduced a significant regression that led to communication issues between Salt Minions and the Salt Master. These communication problems manifest in two distinct ways:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In some instances, Minions send duplicate job results to the Master.</p>
+</li>
+<li>
+<p>In specific scenarios, particularly when using Salt to install or update a Salt Minion, the job result is lost. This loss of a job response keeps Uyuni actions in "pending" state, effectively tying up system resources.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both Salt Minion (classic) and Salt Bundle are impacted by these issues.</p>
+</div>
+<div class="paragraph">
+<p>This update provides the necessary fix to address the communication problems. However, there is a minor caveat to consider. Installing this update on Salt Minions carries a high probability of causing the previously mentioned job result loss. Consequently, the Uyuni action responsible for updating the Salt Minion may remain in a permanent "pending" state until manually cancelled.
+To be clear, we expect this to be a one-time issue happening when this update is installed. Subsequent interactions with Salt Minions are expected to function without any problems.</p>
+</div>
+<div class="paragraph">
+<p><strong>IMPORTANT:</strong> We strongly advise upgrading the Salt Minion (classic or Salt bundle) on all Minions, ideally as a separate action. Please note that this action may remain in a pending state as expected. After some time has passed, you can execute a package refresh to verify the successful completion of the update and confirm that the Salt Minion package has been upgraded.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_the_salt_minion_is_no_longer_disabled_for_salt_ssh_managed_clients">The salt-minion is no longer disabled for salt-ssh managed clients</h5>
+<div class="paragraph">
+<p>When deleting a salt-ssh managed system, the cleanup state tries to disable and stop the salt-minion process.
+This can result in a state.apply error which requires a force delete when neither salt-minion nor venv-salt-minion is installed.
+In case a customer uses salt-minion against an own salt-master, this would disable and remove a working minion.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ubuntu_18_04_end_of_life">Ubuntu 18.04 End of Life</h5>
+<div class="paragraph">
+<p>Ubuntu 18.04 was End of Life on May 31st, 2023.</p>
+</div>
+<div class="paragraph">
+<p>After a grace period of more than a quarter of a year, Uyuni 2023.09 is stopping support for this operating system.</p>
+</div>
+<div class="paragraph">
+<p>While existing client tools repositories will not be removed, they will not get updates.</p>
+</div>
+<div class="paragraph">
+<p>As for the code, it will not be broken on purpose, but it will not get tested for Ubuntu 18.04 anymore, so even if Uyuni 2023.09 can still manage Ubuntu 18.04, this can break at any further release.</p>
+</div>
+<div class="paragraph">
+<p>All remaining users with Ubuntu 18.04 systems are encouraged to migrate to Ubuntu 20.04 or Ubuntu 22.04 as soon as possible.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_minimal_requirement_for_memory">Minimal requirement for memory</h5>
+<div class="paragraph">
+<p>In order to achieve optimal performance, we are updating the minimal memory requirement for the server from 8GB to 16GB. To ensure smooth operations, we suggest updating your system accordingly.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_automated_rhui_credential_update">Automated RHUI credential update</h5>
+<div class="paragraph">
+<p>In the past, there was a requirement to manually import certificates and entitlement data into the Uyuni Server.</p>
+</div>
+<div class="paragraph">
+<p>Now, we have streamlined this procedure by integrating the same mechanism employed for SUSE PAYG instances. The PAYG connection regularly communicates with the client to retrieve the most current authentication data. It&#8217;s crucial to ensure that the client remains operational and undergoes regular updates.</p>
+</div>
+<div class="paragraph">
+<p>For more detailed information on this, please refer to the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/clients-rh-rhui.html">Red Hat Clients - RHUI</a> section in the Uyuni 2023.09 documentation.</p>
+</div>
+<div class="paragraph">
+<p>Please consult the <a href="#known_issues">Known issues</a> section for some issues around this.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring">Monitoring</h5>
+<div class="sect5">
+<h6 id="_prometheus_upgraded_to_2_45_0">Prometheus upgraded to 2.45.0</h6>
+<div class="paragraph">
+<p>Prometheus <code>golang-github-prometheus-prometheus</code> has been upgraded from 2.37.6 to 2.45.0. Prometheus 2.45.x is the new LTS release that will receive security, documentation and bugfix patches for at least 12 months.
+The update includes number of enhancements and bug fixes. There was a <a href="https://github.com/prometheus/prometheus/pull/11783">breaking change</a> around changed WAL record format for the experimental native histograms coming from 2.42.0.</p>
+</div>
+<div class="paragraph">
+<p>This upgrade also includes the fix for the following CVE:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/advisories/GHSA-vvpx-j8f3-3w6h">CVE-2022-41723</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the upstream changelogs for more details:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.45.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.45.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.44.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.44.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.43.1" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.43.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.43.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.43.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.42.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.42.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.41.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.41.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.7" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.7</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.6" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.6</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.5" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.5</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.4" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.4</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.3" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.3</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.2" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.1" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.40.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.40.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.39.2" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.39.2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.39.1" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.39.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.39.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.39.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.38.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.38.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.37.9" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.37.9</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.37.8" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.37.8</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.37.7" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.37.7</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_apache_exporter_updated_to_version_1_0_0">Apache exporter updated to version 1.0.0</h6>
+<div class="paragraph">
+<p>Prometheus exporter for Apache <code>golang-github-lusitaniae-apache_exporter</code> has been upgraded from version 0.11.0 to the version 1.0.0.
+This upgrade includes the fix for the following CVEs:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/advisories/GHSA-69ch-w2m2-3vjp">CVE-2022-32149</a></p>
+</li>
+<li>
+<p><a href="https://github.com/advisories/GHSA-vvpx-j8f3-3w6h">CVE-2022-41723</a></p>
+</li>
+<li>
+<p><a href="https://github.com/advisories/GHSA-7rg2-cxvp-9p7p">CVE-2022-46146</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://github.com/Lusitaniae/apache_exporter/releases">upstream release notes</a> for more details, including new metrics.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_grafana_upgraded_to_9_5_5">Grafana upgraded to 9.5.5</h6>
+<div class="paragraph">
+<p>Grafana has been upgraded from 8.5.20 to 9.5.5.</p>
+</div>
+<div class="paragraph">
+<p>This upgrade includes several breaking changes, new features and some important fixes for several security vulnerabilities.</p>
+</div>
+<div class="paragraph">
+<p>This update fixes the following security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2023-3128 - <a href="https://bugzilla.suse.com/show_bug.cgi?id=1212641">bsc#1212641</a></p>
+</li>
+<li>
+<p>CVE-2023-2183 - <a href="https://bugzilla.suse.com/show_bug.cgi?id=1212100">bsc#1212100</a></p>
+</li>
+<li>
+<p>CVE-2023-2801 - <a href="https://bugzilla.suse.com/show_bug.cgi?id=1212099">bsc#1212099</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://grafana.com/docs/grafana/v9.5/whatsnew/whats-new-in-v9-5/">What’s new in Grafana v9.5</a> page and the upstream changelogs for all the provided details:</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#955-2023-06-22" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#955-2023-06-22</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#953-2023-06-06" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#953-2023-06-06</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#952-2023-05-03" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#952-2023-05-03</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#951-2023-04-26" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#951-2023-04-26</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#950-2023-04-04" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#950-2023-04-04</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9415-2023-09-18" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9415-2023-09-18</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9413-2023-06-22" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9413-2023-06-22</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9316-2023-06-22" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9316-2023-06-22</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9220-2023-06-22" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#9220-2023-06-22</a>
+<a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md#8527-2023-06-22" class="bare">https://github.com/grafana/grafana/blob/main/CHANGELOG.md#8527-2023-06-22</a></p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_prometheus_alert_manager">Prometheus alert manager</h6>
+<div class="paragraph">
+<p>Prometheus <code>golang-github-prometheus-alertmanager</code> has been patched to include the fix for the following CVE:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_postgres_exporter_upgraded_to_0_10_1">Postgres exporter upgraded to 0.10.1</h6>
+<div class="paragraph">
+<p><code>prometheus-postgres_exporter</code> has been updated from version 0.10.0 to version 0.10.1, with the update fixing the following security vulnerability:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This update does not include any breaking changes or features.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://github.com/prometheus-community/postgres_exporter/releases?q=0.10.1">upstream release notes</a> for all the details.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_blackbox_exporter">Blackbox exporter</h6>
+<div class="paragraph">
+<p>Prometheus <code>prometheus-blackbox_exporter</code> has been patched to include the fix for the following CVE.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_node_exporter_upgraded_to_1_5_0">Node exporter upgraded to 1.5.0</h6>
+<div class="paragraph">
+<p>With Uyuni 2023.09, <code>golang-github-prometheus-node_exporter</code> has been updated from version 1.3.0 to 1.5.0</p>
+</div>
+<div class="paragraph">
+<p>The new version changes the Go runtime <code>GOMAXPROCS</code> to 1. This is done to limit the concurrency of the exporter to 1 CPU thread at a time in order to avoid a race condition problem in the Linux kernel and parallel IO issues on nodes with high numbers of CPUs/CPU threads.</p>
+</div>
+<div class="paragraph">
+<p>This update fixes the following security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-27191</p>
+</li>
+<li>
+<p>CVE-2022-27664</p>
+</li>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The update includes also several bugfixes and features but no breaking changes.</p>
+</div>
+<div class="paragraph">
+<p>Check the upstream changelogs for more details:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.5.0" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.5.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.4.1" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.4.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.4.0" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.4.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.3.1" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.3.1</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ansible_integration">Ansible integration</h5>
+<div class="paragraph">
+<p>Given the widespread usage and advocacy of Ansible by various vendors and tools, it was a logical step to incorporate Ansible integration into Uyuni.</p>
+</div>
+<div class="paragraph">
+<p>Initially introduced as a Technology Preview in Uyuni 2021.06, we are delighted to announce that starting with Uyuni 2023.09, Ansible integration will be officially supported.</p>
+</div>
+<div class="paragraph">
+<p>You can now effortlessly utilize and execute your existing Ansible playbooks. This feature not only saves time and resources but also consolidates tools, preserving your prior automation investments. The integration eliminates the need to re-implement your Ansible automation solution, simplifying the migration process.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, when combined with Uyuni&#8217;s powerful Salt capabilities, it enhances the configuration and automation functionalities of the platform. This comprehensive solution empowers you to efficiently orchestrate even the most complex environments, spanning across both cloud and on-premise infrastructure.</p>
+</div>
+<div class="paragraph">
+<p>For more detailed information on this integration, please refer to the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/ansible-integration.html">Ansible Integration</a> section in the Uyuni documentation.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_installing_ptfs_from_uyuni">Installing PTFs from Uyuni</h5>
+<div class="paragraph">
+<p>SUSE provides temporary fixes for all currently supported solutions delivered directly to its customers. These PTFs (Program Temporary Fixes) are now available as repositories, which can be synced in Uyuni.
+This enables users to conveniently install the PTFs on clients wherever necessary, directly from Uyuni.</p>
+</div>
+<div class="paragraph">
+<p>For more information about this feature, see the dedicated section about <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/ptfs.html">Using PTFs in Uyuni</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> PTF packages are currently only supported for SUSE Linux Enterprise Server 12 and SUSE Linux Enterprise Server 15 based systems. Other versions or operating systems do not have this feature yet and the related pages are not visible for them.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_recurrent_custom_states">Recurrent Custom States</h5>
+<div class="paragraph">
+<p>Our recent focus has been on enhancing automation capabilities, particularly through the recurrent highstate feature. While that capability received positive feedback, it was deemed somewhat restricted.
+To address this, we have extended the initiative by enabling users to schedule custom states on a recurrent basis. With this new feature, users can now automate their workflows more effectively and efficiently.
+Users can schedule automated recurring actions for Salt clients both from the WebUI and the API. One can apply recurring action to individual clients, to all clients in a system group, or to an entire organization.</p>
+</div>
+<div class="paragraph">
+<p>For more information about this feature, see the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/actions.html#_recurring_actions">Recurring Actions</a> section in the administration guide.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> We would like to inform our users that the <code>recurringaction</code> namespace in the API has been deprecated. In its place, we have introduced three new namespaces: <code>recurring</code>, <code>recurring.custom</code>, and <code>recurring.highstate</code>. These new namespaces are now available for use and we recommend updating your code to reflect these changes.</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> As part of this feature, we have also exposed some internal states and a new state called <code>uptodate</code> that helps users to keep clients up to date. Users can combine all these states in any order, but states with a reboot should be scheduled last. Note that the execution order may differ from what it seems if a state includes any ordering or condition using <code>order</code> or <code>requires</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_system_profile_refresh_taskomatic_job">'system-profile-refresh' Taskomatic job</h5>
+<div class="paragraph">
+<p>To ensure a consistent view in SCC for clients registered through SUSEconnect, RMT, SMT, and SUSE Manager, a new taskomatic job called system-profile-refresh was introduced specifically for SUSE Manager. This job is necessary to send accurate subscription information to SCC, as up-to-date hardware data is required for that purpose.
+The task runs once every month on the 15th at 5:00 AM, which may impose some load on the systems. However, no significant performance issues are anticipated during that time.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_show_a_notification_when_an_update_for_uyuni_is_available">Show a notification when an update for Uyuni is available</h5>
+<div class="paragraph">
+<p>Uyuni will check in the background for updates or critical security patches available from the official Uyuni channels on a daily basis (via the daily summary taskomatic job). Users are then notified in the UI with a reference to the latest release notes accordingly. The notification shown is currently rather generic and the patch relies on the repository names in order to work, in regards to this first implementation.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2023_04">Version 2023.04</h4>
+<div class="sect4">
+<h5 id="_monitoring_2">Monitoring</h5>
+<div class="sect5">
+<h6 id="_grafana_updated_to_version_8_5_22">Grafana updated to version 8.5.22</h6>
+<div class="paragraph">
+<p>This update fixes several security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2023-1410</p>
+</li>
+<li>
+<p>CVE-2023-0507</p>
+</li>
+<li>
+<p>CVE-2023-0594</p>
+</li>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This update does not include any breaking changes or features.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://github.com/grafana/grafana/blob/main/CHANGELOG.md">upstream changelog</a> for all the details.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_prometheus_updated_to_2_37_6">Prometheus updated to 2.37.6</h6>
+<div class="paragraph">
+<p>With Uyuni 2023.04, <code>golang-github-prometheus-prometheus</code> has been updated from version 2.32.1 to 2.37.6</p>
+</div>
+<div class="paragraph">
+<p>This version contains two noticeable changes related to TLS:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>TLS 1.0 and 1.1 disabled by default client-side. Prometheus users can override this with the <code>min_version</code> parameter of <code>tls_config</code>.</p>
+</li>
+<li>
+<p>Certificates signed with the SHA-1 hash function are rejected. This doesn&#8217;t apply to self-signed root certificates.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This update fixes several security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+<li>
+<p>CVE-2022-41715</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note: Uyuni 2023.04 is not affected by CVE-2022-24921.</p>
+</div>
+<div class="paragraph">
+<p>The update includes also several bugfixes and features but no breaking changes.</p>
+</div>
+<div class="paragraph">
+<p>Check the upstream changelogs for all the details:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.37.6" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.37.6</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.37.2" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.37.2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.37.1" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.37.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.37.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.37.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.36.2" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.36.2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.36.1" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.36.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.36.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.36.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.35.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.35.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.34.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.34.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.33.5" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.33.5</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.33.4" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.33.4</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.33.3" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.33.3</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.33.2" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.33.2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.33.1" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.33.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/prometheus/releases/tag/v2.33.0" class="bare">https://github.com/prometheus/prometheus/releases/tag/v2.33.0</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_prometheus_postgresql_server_updated_to_0_10_1">Prometheus PostgreSQL Server updated to 0.10.1</h6>
+<div class="paragraph">
+<p><code>prometheus-postgres_exporter</code> has been updated from version 0.10.0 to version 0.10.1, with the update fixing the following security vulnerability:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This update does not include any breaking changes or features.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://github.com/prometheus-community/postgres_exporter/releases?q=0.10.1">upstream release notes</a> for all the details.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_prometheus_node_exporter_updated_to_1_5_0">Prometheus Node Exporter updated to 1.5.0</h6>
+<div class="paragraph">
+<p>With Uyuni 2003.04, <code>golang-github-prometheus-node_exporter</code> has been updated from version 1.3.0 to 1.5.0</p>
+</div>
+<div class="paragraph">
+<p>This new version changes the Go runtime <code>GOMAXPROCS</code> to 1. This is done to limit the concurrency of the exporter to 1 CPU thread at a time in order to avoid a race condition problem in the Linux kernel and parallel IO issues on nodes with high numbers of CPUs/CPU threads.</p>
+</div>
+<div class="paragraph">
+<p>This update fixes several security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-27191</p>
+</li>
+<li>
+<p>CVE-2022-27664</p>
+</li>
+<li>
+<p>CVE-2022-46146</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The update includes also several bugfixes and features but no breaking changes.</p>
+</div>
+<div class="paragraph">
+<p>Check the upstream changelogs for all the details:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.5.0" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.5.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.4.1" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.4.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.4.0" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.4.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/prometheus/node_exporter/releases/tag/v1.3.1" class="bare">https://github.com/prometheus/node_exporter/releases/tag/v1.3.1</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_all_tomcat_logs_are_now_rotated_with_logrotate">All tomcat logs are now rotated with logrotate</h5>
+<div class="paragraph">
+<p>Until Uyuni 2023.03, <code>localhost.log</code>, <code>manager.log</code>, <code>host-manager.log</code>, <code>localhost_access_log.txt</code> and <code>catalina.out</code> were rotated with <a href="https://tomcat.apache.org/tomcat-8.5-doc/config/valve.html#Access_Logging">Valve</a>.</p>
+</div>
+<div class="paragraph">
+<p>Valve does not support archiving, so now the Tomcat logs are configured to rotate with logrotate and support archiving.</p>
+</div>
+<div class="paragraph">
+<p>The configuration is the same as for the other tomcat logs: weekly rotation, one year of retention and compression enabled.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_security_enhancements_to_api_logging">Security enhancements to API logging</h5>
+<div class="paragraph">
+<p>Together with the <code>password</code>, this Uyuni release also removes the arguments <code>key</code> and <code>content</code> from the API logging, because they could still include sensitive data and should not be exposed in the logs.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2023_03">Version 2023.03</h4>
+<div class="sect4">
+<h5 id="_opensuse_leap_micro_5_3_support_as_client">openSUSE Leap Micro 5.3 support as client</h5>
+<div class="paragraph">
+<p>openSUSE Leap Micro is an ultra-reliable, lightweight operating system built for containerized and virtualized workloads.</p>
+</div>
+<div class="paragraph">
+<p>Based on SUSE Linux Enterprise Micro, it leverages the enterprise hardened security and compliance components of SUSE Linux Enterprise. This merging of technologies provides for a modern, immutable and developer-friendly OS platform.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/supported-features-opensuse-leap-micro.html">Client Configuration Guide</a> for information about the supported features.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_new_products_enabled_2">New products enabled</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>openSUSE Leap 15.5 (Beta)</p>
+</li>
+<li>
+<p>SUSE Linux Enterprise 15 SP5 family (Beta)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both products are still beta, and both products will work only using the Salt Bundle (default since Uyuni 2022.12) as otherwise they ship Salt 3005 which is incompatible with the salt master version being used on Uyuni server (the Salt master on Uyuni still uses Salt 3004 as provided by openSUSE Leap 15.4).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_grafana_update_to_8_5_15">Monitoring: Grafana update to 8.5.15</h5>
+<div class="paragraph">
+<p>This update fixes several security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-39306</p>
+</li>
+<li>
+<p>CVE-2022-39307</p>
+</li>
+<li>
+<p>CVE-2022-39201</p>
+</li>
+<li>
+<p>CVE-2022-31130</p>
+</li>
+<li>
+<p>CVE-2022-31123</p>
+</li>
+<li>
+<p>CVE-2022-39229</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>No other bugfixes, features or changelogs are part of this update.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://grafana.com/docs/grafana/latest/release-notes/">upstream changelog</a> for all the details.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_syncing_optional_channels_from_from_the_webui">Syncing optional channels from from the WebUI</h5>
+<div class="paragraph">
+<p>Until Uyuni 2023.01, syncing optional channels was only possible with the CLI tool <code>mgr-sync</code>, but not from the WebUI Setup Wizard.</p>
+</div>
+<div class="paragraph">
+<p>Starting with Uyuni 2023.03, doing this from WebUI is now possible.</p>
+</div>
+<div class="paragraph">
+<p>Each product at the Setup Wizard will now allow syncing optional channels, provided that the mandatory channels for the product are already synced.</p>
+</div>
+<div class="paragraph">
+<p>To enable the optional channels:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to Admin &#8594; Setup Wizard &#8594; Products</p>
+</li>
+<li>
+<p>Look for the product you want to sync optional channel for,</p>
+</li>
+<li>
+<p>Use the <code>Show the product&#8217;s channels</code> button (next to the sync status)</p>
+</li>
+<li>
+<p>A popup will show, allowing you to use checkboxes to enable optional channels. Mark as many as needed.</p>
+</li>
+<li>
+<p>Use the <code>Confirm</code> button to schedule the sync</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_subscription_warning_notifications_will_now_happen_weekly">Subscription warning notifications will now happen weekly</h5>
+<div class="paragraph">
+<p>This change is only relevant for users using SUSE subscriptions.</p>
+</div>
+<div class="paragraph">
+<p>Previous versions of Uyuni created a notification each day when a SUSE Customer Center (SCC) subscription was about to expire, starting 90 days before the subscription expiration and 30 days after expiration.</p>
+</div>
+<div class="paragraph">
+<p>With Uyuni 2023.03 we are addressing the feedback we got about the frequency, and we are changing it to happen weekly, on Mondays.</p>
+</div>
+<div class="paragraph">
+<p>The warning box at the Dashboard (Home &gt; Overview) will still show up any time there is a subscription expiring in the next 90 days, or expired in the last 30 days.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_salt_3000_end_of_life">Salt 3000 End of Life</h5>
+<div class="paragraph">
+<p>Upstream Salt 3000 went End of life on August 31, 2021. However, because it was part of the Advanced Systems Management Module of SUSE Linux Enterprise 12 and there was no bundle available for SUSE Manager 4.1, it was still supported.</p>
+</div>
+<div class="paragraph">
+<p>Salt 3000 will no longer be supported in the context of Uyuni now that both SUSE Manager 4.1 and the Advanced Systems Management Module of SUSE Linux Enterprise 12 are End of Life.</p>
+</div>
+<div class="paragraph">
+<p>Users are required to migrate existing Salt 3000 minions for SUSE Linux Enterprise Server 12, Red Hat Enterprise Linux 7, CentOS 7, Oracle Linux 7, and Amazon Linux 2 to the Salt Bundle before creating any bug reports.</p>
+</div>
+<div class="paragraph">
+<p>For more information about performing Salt 3000 to Salt Bundle migrations, please consult the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/contact-methods-saltbundle.html#_switching_from_salt_minion_to_salt_bundle">Salt Bundle</a> section in the Client Configuration Guide.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_debian_9_end_of_life">Debian 9 End of Life</h5>
+<div class="paragraph">
+<p>Debian 9 LTS support ended in June 30th, 2022.</p>
+</div>
+<div class="paragraph">
+<p>After a grace period of more than half a year, Uyuni 2023.03 is stopping support for this operating system.</p>
+</div>
+<div class="paragraph">
+<p>While existing client tools repositories will not be removed, they will not get updates.</p>
+</div>
+<div class="paragraph">
+<p>As for the code, it will not be broken on purpose, but it will not get tested for Debian 9 anymore, so even if Uyuni 2023.03 can still manage Debian 9, this can break at any further release.</p>
+</div>
+<div class="paragraph">
+<p>All remaining users with Debian 9 systems are encouraged to migrate to Debian 10 or Debian 11 as soon as possible.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_spacewalk_clone_by_date_has_been_deprecated">'spacewalk-clone-by-date' has been deprecated</h5>
+<div class="paragraph">
+<p>With Uyuni 2023.03, <code>spacewalk-clone-by-date</code> tool has been deprecated. With CLM (Content Lifecycle Management), we believe users have a better alternative to <code>spacewalk-clone-by-date</code>, which is much more flexible and powerful.</p>
+</div>
+<div class="paragraph">
+<p>CLM provides a comprehensive API to cover all the important features that <code>spacewalk-clone-by-date</code> tool offers.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2023_01">Version 2023.01</h4>
+<div class="sect4">
+<h5 id="_release_notes_cleanup">Release notes cleanup</h5>
+<div class="paragraph">
+<p>With Uyuni 2023.01, we are removing versions older than 2021.12 from the release notes, to make the document smaller and easier to review.</p>
+</div>
+<div class="paragraph">
+<p>Release notes for older versions, up to 4.0.0 can still be found at <a href="https://www.uyuni-project.org/doc/2022.12/release-notes-uyuni-server.html">the website</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_suse_linux_enterprise_micro_support_as_client">SUSE Linux Enterprise Micro support as client</h5>
+<div class="paragraph">
+<p>SUSE Linux Enterprise Server Micro is an ultra-reliable, lightweight operating system purpose built for containerized and virtualized workloads. It leverages the enterprise hardened security and compliance components of SUSE Linux Enterprise and merges them with a modern, immutable, developer-friendly OS platform.</p>
+</div>
+<div class="paragraph">
+<p>Support for SUSE Linux Enterprise Server Micro in Uyuni was added as a tech preview. In the meanwhile, we have made some significant improvements around it to make sure that users get the seamless usability experience in case of an immutable OS such as SUSE Linux Enterprise Server Micro.</p>
+</div>
+<div class="paragraph">
+<p>Check the  <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/supported-features-sle-micro.html">Client Configuration Guide</a> for information about the supported features.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The documentation still mentions SUSE Linux Enterprise Micro as "Technology Preview". This documentation bug will be fixed for Uyuni 2023.03
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Please consult the <a href="#known_issues">Known issues</a> section for an issue around SUSE Linux Enterprise Micro support.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_content_lifecycle_management_disabling_modularity_for_appstream_repositories">Content Lifecycle Management: Disabling modularity for AppStream repositories</h5>
+<div class="paragraph">
+<p>Starting with Uyuni 2023.01, AppStream modularity can be disabled by removing the module metadata from the target repositories without having to enable any modules. This can be achieved by using the new <code>none</code> matcher with the AppStream filters.</p>
+</div>
+<div class="paragraph">
+<p>This new feature is especially useful for AlmaLinux 9, Rocky Linux 9, Oracle Linux 9 or RHEL 9, as default versions of most applications are now served as regular packages.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/content-lifecycle-examples.html">Administration Guide</a> for more information.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_12">Version 2022.12</h4>
+<div class="sect4">
+<h5 id="_indications_for_systems_requiring_reboot_or_with_a_scheduled_reboot">Indications for systems requiring reboot or with a scheduled reboot</h5>
+<div class="paragraph">
+<p>Uyuni 2022.12 brings several improvements to the reboot of the Uyuni clients:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The System List page now provides a new icon at the <code>Updates</code> column when a reboot is required. This new icon allows scheduling the reboot.</p>
+</li>
+<li>
+<p>The System Overview page for the clients will show the text <code>System reboot scheduled</code> when a reboot is scheduled.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_notification_messages_via_email">Notification messages via email</h5>
+<div class="paragraph">
+<p>Uyuni shows notification messages on the webUI, but they are not very useful for those users that do not login very often.</p>
+</div>
+<div class="paragraph">
+<p>With Uyuni 2022.12, each user can enable such notifications to be delivered via email using the user preferences (checkbox <code>Receive email notifications</code>).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_grafana_update_to_8_5_15_2">Monitoring: Grafana update to 8.5.15</h5>
+<div class="paragraph">
+<p>This update fixes several security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-39306</p>
+</li>
+<li>
+<p>CVE-2022-39307</p>
+</li>
+<li>
+<p>CVE-2022-39201</p>
+</li>
+<li>
+<p>CVE-2022-31130</p>
+</li>
+<li>
+<p>CVE-2022-31123</p>
+</li>
+<li>
+<p>CVE-2022-39229</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>No other bugfixes, features or changelogs are part of this update.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://grafana.com/docs/grafana/latest/release-notes/">upstream changelog</a> for all the details-</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_subscription_warning_notifications">Subscription warning notifications</h5>
+<div class="paragraph">
+<p>Uyuni 2022.12 will show notifications at the Overview page now, when SUSE subscriptions are about to expire or have already expired.</p>
+</div>
+<div class="paragraph">
+<p>This will not affect users not using SUSE subscriptions.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_limit_changelogs_at_repositories_metadata_to_the_last_20_entries">Limit changelogs at repositories metadata to the last 20 entries</h5>
+<div class="paragraph">
+<p>Until 2022.11, Uyuni added all the changelog entries for all packages to the generated metadata for each repository generated at the Uyuni Server. This caused the file <code>others.xml.gz</code> to be very big in some situations, and therefore increasing the time it takes to synchronize the metadata on the Uyuni clients.</p>
+</div>
+<div class="paragraph">
+<p>Starting with Uyuni 2022.12, this is now limited to 20 entries for each package by default for new packages. Already synced packages will keep the whole changelog.</p>
+</div>
+<div class="paragraph">
+<p>This change is only about the repository metadata and will not affect the packages themselves, which will keep the complete changelogs.</p>
+</div>
+<div class="paragraph">
+<p>If you want to go back to keeping all the changelog entries, increase the number of entries, or apply the new default for all existing packages. For that check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/tuning-changelogs.html">Administration Guide</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_drop_legacy_way_to_prevent_disabling_local_repositories_at_bootstrap_scripts">Drop legacy way to prevent disabling local repositories at bootstrap scripts</h5>
+<div class="paragraph">
+<p>In the past, using <code>DISABLE_LOCAL_REPOS=0</code> with the bootstrap script allowed users to keep local repositories enabled after registration.</p>
+</div>
+<div class="paragraph">
+<p>This feature can be accomplished with Salt, for any kind of onboarding (webUI, API, Bootstrap script, etc.), as explained at the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/repositories.html#_local_repository_locations">Client Configuration Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_11">Version 2022.11</h4>
+<div class="sect4">
+<h5 id="_system_list_refactor">System list refactor</h5>
+<div class="paragraph">
+<p>The System list page has been refactored to be more optimized and can handle thousands of systems with a breeze.</p>
+</div>
+<div class="paragraph">
+<p>For this we had to add a new database table to store the cached system data.</p>
+</div>
+<div class="paragraph">
+<p>This table is updated every hour by the <code>update-system-overview-default</code> task and within a minute after data for any of the systems is changed.</p>
+</div>
+<div class="paragraph">
+<p>As a side effect, the System list will be empty after the server upgrade until the refresh is triggered.</p>
+</div>
+<div class="paragraph">
+<p>To force a refresh before the top of the hour, run the <code>update-system-overview-default</code> task manually in Admin &gt; Task Schedules page. Keep in mind that processing this task can take some time depending on how many systems are present in the database.</p>
+</div>
+<div class="paragraph">
+<p>We intend to automate the initial refresh during during the Uyuni Server update in a future release, for people that are still upgrading from versions older than 2022.11</p>
+</div>
+<div class="paragraph">
+<p>The new page has also introduced a more advanced filtering of the data. Though quite powerful, the user interface for the value selection is still rough and requires knowing what to query. While this has been temporarily been worked around by keeping the old links in the Systems List menu, we expect improvements for the interface in a future release.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_instructions_to_disable_custom_channel_automatic_synchronization">Instructions to disable custom channel automatic synchronization</h5>
+<div class="paragraph">
+<p>Since Uyuni 2022.10, the custom channels are now synced automatically.</p>
+</div>
+<div class="paragraph">
+<p>By default, a synchronization will start automatically after adding a new repository to a custom channel. Moreover, they will all update daily as a part of the <code>mgr-sync-refresh-default</code> scheduled task.</p>
+</div>
+<div class="paragraph">
+<p>To disable this new feature and revert back to the old behaviour, you can set in <code>/etc/rhn/rhn.conf</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>java.unify_custom_channel_management = 0</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/custom-channels.html">Custom Channels section of the Administration guide</a> for information about the custom channel synchronization.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_allow_more_tools_for_network_management_for_the_uyuni_server">Allow more tools for network management for the Uyuni Server</h5>
+<div class="paragraph">
+<p>Until now, the Uyuni Server only supported Wicked for network management, because of a problem at the <code>uyuni-check-database</code> service.</p>
+</div>
+<div class="paragraph">
+<p>With Uyuni 2022.11, this problem is fixed and now any other tool such as NetworkManager can be used.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_grafana_update_to_8_5_13">Monitoring: Grafana update to 8.5.13</h5>
+<div class="paragraph">
+<p>Uyuni 2022.03 updates Grafana from version 8.3.5 to 8.5.13.</p>
+</div>
+<div class="paragraph">
+<p>This update fixes several security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>CVE-2022-36062</p>
+</li>
+<li>
+<p>CVE-2022-35957</p>
+</li>
+<li>
+<p>CVE-2022-31107</p>
+</li>
+<li>
+<p>CVE-2022-31097</p>
+</li>
+<li>
+<p>CVE-2022-29170</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://grafana.com/docs/grafana/latest/release-notes/">upstream changelog</a> for all the details on what has changed.</p>
+</div>
+<div class="paragraph">
+<p>There is one breaking change:
+- For a data source query made via <code>/api/ds/query</code>, if the <code>DatasourceQueryMultiStatus</code> feature is enabled and the data source response has an error set as part of the <code>DataResponse</code>, the resulting HTTP status code is now <code>207 Multi Status</code> instead of <code>400 Bad gateway</code>.</p>
+</div>
+<div class="paragraph">
+<p>Updating Grafana is strongly recommended.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_fix_tls_configuration_and_enable_client_certificate_authentication_for_blackbox_exporter">Monitoring: Fix TLS configuration and enable client certificate authentication for Blackbox exporter</h5>
+<div class="paragraph">
+<p>Uyuni 2022.10 and previous versions were using basic authentication for the Blackbox exporter scrapping, even though using TLS client certificates was enabled at the prometheus-formula</p>
+</div>
+<div class="paragraph">
+<p>With Uyuni 2022.11, the Prometheus formula adds a section for the Blackbox exporter with TLS certificate and key for client certificate authentication.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_traditional_stack_being_removed">Traditional stack being removed</h5>
+<div class="paragraph">
+<p>Uyuni 2022.06 was the last version where traditional client tools were tested to work, and it was announced that with Uyuni 2022.08 the traditional client tools will be deprecated and removed at some point after the summer.</p>
+</div>
+<div class="paragraph">
+<p>Uyuni 2022.11 is already removing code for the traditional clients, so this version will not support traditional clients in any way. New deployments will not work and existing deployments will not work either. If you still have traditional clients and they still work normally, you need to migrate them to Salt before updating to Uyuni 2022.11.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_10">Version 2022.10</h4>
+<div class="sect4">
+<h5 id="_update_notes">Update notes</h5>
+<div class="paragraph">
+<p><strong>WARNING:</strong> This release requires vendor changes for some Uyuni dependencies at the server, so pay attention to the following instructions!</p>
+</div>
+<div class="paragraph">
+<p>Because of <a href="https://bugzilla.suse.com/show_bug.cgi?id=1201972">bug at <code>zypper</code></a>, it could be that <code>--allow-vendor-change</code> is broken on your system. This can apply even if you are still on Uyuni 2022.05 or earlier (based on openSUSE Leap 15.3)</p>
+</div>
+<div class="paragraph">
+<p>Make sure you manually update zypper first at the Uyuni Server with <code>zypper ref &amp;&amp; zypper in zypper</code>, and then verify that the installed zypper version is <code>1.14.57</code> or newer (use <code>zypper info zypper</code>).</p>
+</div>
+<div class="paragraph">
+<p>Then:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you are on Uyuni 2022.06 or newer, while doing the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/server-minor-upgrade-uyuni.html">minor upgrade procedure for the Server</a>, make sure you allow such vendor changes  by calling <code>zypper up --allow-vendor-change</code> instead of <code>zypper up</code>.</p>
+</li>
+<li>
+<p>If you are on Uyuni 2022.05 or older, follow the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/server-major-upgrade-uyuni.html">major upgrade procedure for the Server</a> without any special steps.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_rheloracle_linuxalmalinuxrocky_linux_9_as_clients">RHEL/Oracle Linux/AlmaLinux/Rocky Linux 9 as clients</h5>
+<div class="paragraph">
+<p>Uyuni is now able to manage RHEL/Oracle Linux/AlmaLinux/Rocky Linux 9 as Salt or Salt SSH minions. All other features that worked for previous versions of RHEL/Oracle Linux/AlmaLinux/Rocky will work now too, with the exception of the Prometheus Exporters.</p>
+</div>
+<div class="paragraph">
+<p>The following architectures can be managed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>x86_64</p>
+</li>
+<li>
+<p>aarch64</p>
+</li>
+<li>
+<p>s390x (RHEL/AlmaLinux/Rocky Linux only)</p>
+</li>
+<li>
+<p>ppc64le (RHEL/AlmaLinux/Rocky Linux only)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/client-config-overview.html">Client Configuration Guide</a> for information about how to configure the Uyuni Server to work with RHEL/Oracle Linux/AlmaLinux/Rocky Linux 8 clients.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_for_ubuntu_22_04">Monitoring for Ubuntu 22.04</h5>
+<div class="paragraph">
+<p>The Client Tools for Ubuntu 22.04 now contain four exporters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>prometheus-apache-exporter</p>
+</li>
+<li>
+<p>prometheus-exporter-exporter</p>
+</li>
+<li>
+<p>prometheus-node-exporter</p>
+</li>
+<li>
+<p>prometheus-postgres-exporter</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>With these tools all of the features available for previous Ubuntu versions are available at 22.04</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_pip_support_for_the_salt_bundle">pip support for the Salt Bundle</h5>
+<div class="paragraph">
+<p>The Salt Bundle now includes support for <code>pip</code>, allowing users to extend the functionality of the bundled Salt Minion with extra Python packages.</p>
+</div>
+<div class="paragraph">
+<p>Check the official Saltstack documentation on how to do it as a <a href="https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.pip.html">module</a> and a <a href="https://docs.saltproject.io/en/latest/ref/states/all/salt.states.pip_state.html">state</a>.</p>
+</div>
+<div class="paragraph">
+<p>Keep in mind that not all of the functions are available with the state, but the missing functionality can still be accessed with <code>module.run</code>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_apache_exporter_updated_to_version_0_11_0_for_suse_linux_enterprise_and_opensuse">Apache exporter updated to version 0.11.0 for SUSE Linux Enterprise and openSUSE</h5>
+<div class="paragraph">
+<p>Uyuni 2022.10 updates the Prometheus exporter for Apache from version 0.7 to version 0.10.0 for SUSE Linux Enterprise and openSUSE, including the Uyuni Server, the Uyuni Proxy and the Uyuni Retail Branch Server.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://github.com/Lusitaniae/apache_exporter/releases">upstream release notes</a> for more details, including new metrics.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_cobbler_updated_to_version_3_3_3">Cobbler updated to version 3.3.3</h5>
+<div class="paragraph">
+<p>Cobbler was updated from version 3.1.2 to version 3.3.3.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"cobbler buildiso" now supports building ISOs with UEFI support</p>
+</li>
+<li>
+<p>Cobbler has a new command "cobbler mkloaders" that can be called optionally after GRUB or Syslinux was updated on the Uyuni Server</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For the complete list of changes, see the upstream release notes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/cobbler/cobbler/releases/tag/v3.3.3" class="bare">https://github.com/cobbler/cobbler/releases/tag/v3.3.3</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cobbler/cobbler/releases/tag/v3.3.2" class="bare">https://github.com/cobbler/cobbler/releases/tag/v3.3.2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cobbler/cobbler/releases/tag/v3.3.1" class="bare">https://github.com/cobbler/cobbler/releases/tag/v3.3.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cobbler/cobbler/releases/tag/v3.3.0" class="bare">https://github.com/cobbler/cobbler/releases/tag/v3.3.0</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cobbler/cobbler/releases/tag/v3.2.2" class="bare">https://github.com/cobbler/cobbler/releases/tag/v3.2.2</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cobbler/cobbler/releases/tag/v3.2.1" class="bare">https://github.com/cobbler/cobbler/releases/tag/v3.2.1</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cobbler/cobbler/releases/tag/v3.2.0" class="bare">https://github.com/cobbler/cobbler/releases/tag/v3.2.0</a></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The migration of stored Cobbler collections and settings from previous Cobbler version to 3.3.3 will run automatically during this upgrade.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>A backup of old Cobbler settings file will be created at <code>/etc/cobbler/settings.before-migration-backup</code> and old collections backup under <code>/var/lib/cobbler/</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_08">Version 2022.08</h4>
+<div class="sect4">
+<h5 id="_ubuntu_22_04_as_client">Ubuntu 22.04 as client</h5>
+<div class="paragraph">
+<p>Uyuni is now able to manage Ubuntu 22.04 clients as Salt or Salt SSH minions. All other features that worked for previous versions of Ubuntu will work now too, with the exception of the Prometheus Exporters and package vendor identification, which will be part of a future Uyuni release (for now, Prometheus Exporters are available in the Universe repositories).</p>
+</div>
+<div class="paragraph">
+<p>The following architectures can be managed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>x86_64</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/client-config-overview.html">Client Configuration Guide</a> for information about how to configure Uyuni Server to work with Ubuntu 22.04 clients.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_gpg_key_handling_in_uyuni">GPG key handling in Uyuni</h5>
+<div class="paragraph">
+<p>Uyuni is now taking care of trusting the required GPG keys on the clients, in order to install packages from assigned channels</p>
+</div>
+<div class="paragraph">
+<p>The GPG key URL can be defined for Software Channels which will be used to find the key needed for that channel.</p>
+</div>
+<div class="paragraph">
+<p>When the channel is assigned to the client the key will be trusted on repository refresh or when installing a package out of the channels.</p>
+</div>
+<div class="paragraph">
+<p>For more information, check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/gpg-keys.html">documentation</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_disabling_locally_defined_repositories">Disabling locally defined repositories</h5>
+<div class="paragraph">
+<p>To prevent problems with local defined repositories providing wrong or unwanted packages, we disable now all these repositories as the first step in bootstraping.</p>
+</div>
+<div class="paragraph">
+<p>Additionally we try to keep local repositories disabled and perform this in the channel state which is also used during highstate.</p>
+</div>
+<div class="paragraph">
+<p>For more information, check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/registration-webui.html#_handling_of_locally_assigned_repositories">documentation</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_technology_preview_helm_chart_to_deploy_containerized_uyuni_proxy_and_retail_branch_server">Technology Preview: Helm chart to deploy containerized Uyuni Proxy and Retail Branch Server</h5>
+<div class="paragraph">
+<p>Deploying Proxy and Retail Branch Servers as containers is now also possible using a Helm chart.</p>
+</div>
+<div class="paragraph">
+<p>For more information check this <a href="https://github.com/uyuni-project/uyuni/blob/master/containers/README.md">README file</a>. The information will be part of the Uyuni official documentation in a future release.</p>
+</div>
+<div class="paragraph">
+<p><strong>WARNING:</strong> The container images configuration has a new format and it is now packaged as tar.gz file. All previously deployed container Proxies and Retail Branch Servers will need to get their configuration regenerated and deployed again before pulling these images.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_06">Version 2022.06</h4>
+<div class="sect4">
+<h5 id="_upgrade_notes_2">Upgrade notes</h5>
+<div class="paragraph">
+<p><strong>WARNING:</strong> This release updates the base OS from openSUSE Leap 15.3 to openSUSE Leap 15.4 and there are special steps required. You need at least Uyuni 2021.06 already installed to perform the upgrade, and you need to follow the
+<a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/server-major-upgrade-uyuni.html">major upgrade procedure for the Server</a>. More details are also available at the "Update from previous versions of Uyuni Server" section below.</p>
+</div>
+<div class="paragraph">
+<p><strong>WARNING:</strong> This release updates the Salt version for Master and Minions to a next major release. Make sure you update the Uyuni Server before updating the clients, as <a href="https://docs.saltproject.io/en/latest/topics/installation/index.html#upgrading-salt">backward compatiblity of minions agains an older master is not guaranteed</a></p>
+</div>
+<div class="paragraph">
+<p><strong>WARNING:</strong> With Uyuni 2021.12, we announced the future deprecation of the Traditional client tools. Uyuni 2022.06 is the last release that supports them. Starting with Uyuni 2022.08, the traditional client tools will be deprecated as we will start removing the code at some point after the summer. Do not use traditional for any new deployments of clients or proxies, and start migrating your traditional clients to Salt.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_base_operating_system_upgrade_2">Base operating system upgrade</h5>
+<div class="paragraph">
+<p>The base operating system has been upgraded to openSUSE Leap 15.4.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_postgresql_14">PostgreSQL 14</h5>
+<div class="paragraph">
+<p>The database engine has been updated from PostgreSQL&#160;13 to PostgreSQL&#160;14, which brings a number of performance and reliability improvements. A detailed changelog is available <a href="https://www.postgresql.org/docs/release/14.0/">upstream</a>.</p>
+</div>
+<div class="paragraph">
+<p>To prevent inconsistent configurations and data on upgrade or update, Uyuni 2022.06 refuse to start until the database migration from PostgreSQL 13 to PostgreSQL 14 has been completed successfully.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_salt_3004">Salt 3004</h5>
+<div class="paragraph">
+<p>Salt has been upgraded to upstream version 3004, plus a number of patches, backports and enhancements by SUSE, for the Uyuni Manager Server, Proxy, and Client Tools.</p>
+</div>
+<div class="paragraph">
+<p>We intend to regularly upgrade Salt to more recent versions.</p>
+</div>
+<div class="paragraph">
+<p>For more details about changes in your manually-created Salt states, see the <a href="https://docs.saltproject.io/en/latest/topics/releases/3004.html">Salt 3004 upstream release notes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Salt Bundle 3004 will be available for all supported clients.</p>
+</div>
+<div class="paragraph">
+<p>The non-bundle version of Salt requires Python3 installed by default, and it will not be available for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SUSE Linux Enterprise 12</p>
+</li>
+<li>
+<p>CentOS 7</p>
+</li>
+<li>
+<p>Oracle Linux 7</p>
+</li>
+<li>
+<p>Red Hat Enterprise Linux 7</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_new_products_enabled_3">New products enabled</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>openSUSE Leap 15.4</p>
+</li>
+<li>
+<p>SUSE Linux Enterprise 15 SP4 family</p>
+</li>
+<li>
+<p>SLE Micro 5.2</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_05">Version 2022.05</h4>
+<div class="sect4">
+<h5 id="_reporting_database_documentation">Reporting Database documentation</h5>
+<div class="paragraph">
+<p>The reporting database schema is now fully documented.</p>
+</div>
+<div class="paragraph">
+<p>The documentation describes the schema in detail, showing all the tables and the views available and highlighting the relationships among them.</p>
+</div>
+<div class="paragraph">
+<p>You can access it from the Uyuni Server WebUI, at Help &gt; Report Database Schema, from the left navigation bar.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_spacewalk_report_now_uses_data_from_the_reporting_database">spacewalk-report now uses data from the reporting database</h5>
+<div class="paragraph">
+<p>Starting with Uyuni 2022.05, <code>spacewalk-report</code> will use the data from the report database by default. This change affects both new and updated setups.</p>
+</div>
+<div class="paragraph">
+<p>This means that the new generated reports will differ in the structure and the format of the data and might break existing integrations.</p>
+</div>
+<div class="paragraph">
+<p>If this change causes trouble in your use case, the new option <code>--legacy-report</code> can be used to fallback to the old report engine.</p>
+</div>
+<div class="paragraph">
+<p>For a comprehensive list of what is changed and what reports are affected, see the section "Generate Reports" at the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/administration/admin-overview.html">Administration Guide</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_adding_systems_with_failed_actions_to_system_set_manager">Adding systems with failed actions to System Set Manager</h5>
+<div class="paragraph">
+<p>It is now possible to select and add systems that failed or completed actions, with a new button <code>Add Selected to SSM</code> that shows for the actions at "Completed Systems" and "Failed Systems".</p>
+</div>
+<div class="paragraph">
+<p>You can the find the actions at the Uyuni Server WebUI, at <code>Schedule</code> on the left navigation bar.</p>
+</div>
+<div class="paragraph">
+<p>This can be useful to fix issues with systems that failed to complete actions, or to run more actions on those that completed them.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_technology_preview_json_over_http_api">Technology Preview: JSON over HTTP API</h5>
+<div class="paragraph">
+<p>With Uyuni 2022.05, in addition to the current XML-RPC API, a new JSON over HTTPI API will also be provided to make Uyuni API even easier to consume.</p>
+</div>
+<div class="paragraph">
+<p>Uyuni is seeing more and more use in automated scenarios, where it is a part of a bigger system and driven via its APIs.</p>
+</div>
+<div class="paragraph">
+<p>The XML-RPC protocol has served users well so far and will continue to do so, but HTTP APIs are more in demand and have better tooling support.</p>
+</div>
+<div class="paragraph">
+<p>The API documentation has been updated to reflect the changes to support the HTTP API, and is available at the Uyuni Server WebUI under About &gt; API, and at the <a href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/index.html">website</a></p>
+</div>
+<div class="paragraph">
+<p>Usage examples can be found in the "Sample scripts" section of the documentation.</p>
+</div>
+<div class="paragraph">
+<p>With the addition of the JSON over HTTP API documentation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Mandatory names to the input parameters for each method were added</p>
+</li>
+<li>
+<p>Information about the HTTP request type (GET or POST) was added</p>
+</li>
+<li>
+<p>Example scripts to consume the HTTP API via Curl were added</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_04">Version 2022.04</h4>
+<div class="sect4">
+<h5 id="_salt_ssh_now_uses_the_salt_bundle">Salt SSH now uses the Salt Bundle</h5>
+<div class="paragraph">
+<p>The Salt Bundle is now used to handle Salt SSH executions on the client side. The bootstrap of new Salt clients using webUI or API is now also using the Salt Bundle.</p>
+</div>
+<div class="paragraph">
+<p>To ensure bootstrap works in the proper way, the bootstrap repositories for the clients must be regenerated before bootstrapping new clients.</p>
+</div>
+<div class="paragraph">
+<p>The bootstrap repository regeneration happens for any given product when a resync for the product repositories happens:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For products provided by the SUSE Customer Center, added via de Setup Wizard or <code>mgr-sync</code>, this happens each night.</p>
+</li>
+<li>
+<p>For products added via <code>spacewalk-common-channels</code> there is no automated resync by default, unless it was configured after adding the product. In this case, the regeneration needs to be trigger manually.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>To manually trigger the regeneration, use the tool <code>mgr-create-bootstrap-repo</code> at the Uyuni Server.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_technology_preview_containerized_uyuni_proxy_and_retail_branch_server">Technology Preview: Containerized Uyuni Proxy and Retail Branch Server</h5>
+<div class="paragraph">
+<p>Starting with Uyuni 2022.04, it will be possible to run the Uyuni proxy and Retail branch server also in containers. This could be very helpful in scenarios where adding new virtual machines is not feasible for some reason.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, the ability to run Uyuni Proxy and Retail branch servers in containers make it more flexible to run them anywhere without worrying about the underlying OS, while also making it possible to get the advantage of Kubernetes offerings like HA.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_reporting_database_improvements">Reporting Database improvements</h5>
+<div class="paragraph">
+<p>The following improvements have been made in the reporting database</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add UI for peripheral server with report database password regeneration</p>
+</li>
+<li>
+<p>Added the server location information to the reporting database</p>
+</li>
+<li>
+<p>detect MgrServer on bootstrap and store report database settings</p>
+</li>
+<li>
+<p>Added Channel information</p>
+</li>
+<li>
+<p>Added System packages information</p>
+</li>
+<li>
+<p>Added OpenScap scans information</p>
+</li>
+<li>
+<p>Added Groups information</p>
+</li>
+<li>
+<p>Added System packages information</p>
+</li>
+<li>
+<p>Added proxy information to the system table</p>
+</li>
+<li>
+<p>Changed table SystemGroup to better reflect its content</p>
+</li>
+<li>
+<p>Added location information to the system table</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_improved_image_management">Improved image management</h5>
+<div class="paragraph">
+<p>Uyuni 2022.04 comes with a lot of improvements for image management.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Kiwi images:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Uses name and version from Kiwi config file, revision is increased on each build</p>
+</li>
+<li>
+<p>Built image files are referenced in the database and deleted with the image entry</p>
+</li>
+<li>
+<p>Image pillars are stored in the database</p>
+</li>
+<li>
+<p>The build log is visible in the User Interface</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Docker images:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Use a new database entry for each revision</p>
+</li>
+<li>
+<p>Old revision can be shown with the "Show obsolete" checkbox</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Updated XML RPC API to manipulate with images, image files and pillars:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For more details about these end points, please refer to <a href="https://www.uyuni-project.org/uyuni-docs-api/uyuni/api/image.html">Uyuni API</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_hsts_available">HSTS available</h5>
+<div class="paragraph">
+<p>HTTP Strict Transport Security (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">HSTS</a>) is a policy mechanism that helps to protect websites against man-in-the-middle attacks such as protocol downgrade attacks and cookie hijacking.</p>
+</div>
+<div class="paragraph">
+<p>Uyuni 2022.04 allows enabling HSTS. Which means each request will need to be HTTPS while plain HTTP requests will be rejected.</p>
+</div>
+<div class="paragraph">
+<p>To enable it for the Uyuni Server:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit <code>/etc/apache2/conf.d/zz-spacewalk-www.conf</code></p>
+</li>
+<li>
+<p>Uncomment the line <code># Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"</code></p>
+</li>
+<li>
+<p>Restart Apache with <code>systemctl restart apache2</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>To enable it for the Uyuni Proxy</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Edit <code>/etc/apache2/conf.d/spacewalk-proxy.conf</code></p>
+</li>
+<li>
+<p>Uncomment the line <code># Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"</code></p>
+</li>
+<li>
+<p>Restart Apache with <code>systemctl restart apache2</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>IMPORTANT:</strong> If you enable HSTS while using the default SSL certificate generated by Uyuni, or a self-signed certificate, some browsers will refuse to connect using HTTPS unless the CA used to sign such certificates is trusted by the browser. If you are using the SSL certificate generated by Uyuni, you can trust it at the servers by using the file located at <code>http://&lt;UYUNI-SERVER-HOSTNAME&gt;/pub/RHN-ORG-TRUSTED-SSL-CERT</code></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_03">Version 2022.03</h4>
+<div class="sect4">
+<h5 id="_fixes_for_salt_security_issues">Fixes for Salt security issues</h5>
+<div class="paragraph">
+<p>Fixes for the following security issues have been released: <a href="https://saltproject.io/security_announcements/salt-security-advisory-release/">CVE-2022-22934, CVE-2022-22935, CVE-2022-22936, CVE-2022-22941</a>.</p>
+</div>
+<div class="paragraph">
+<p>You should patch your Salt master at the Uyuni Server and minions as soon as possible. Please take the next section into account when upgrading the Salt.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_salt_upgrade">Salt Upgrade</h5>
+<div class="paragraph">
+<p>To properly upgrade Salt with the fixes for the latest CVEs, and avoid breaking the communication between for Salt master and minion, you need to upgrade your "salt-master" first and then continue upgrading your Salt minions.</p>
+</div>
+<div class="paragraph">
+<p>In case that a Salt minion is upgraded with the CVE fixes but your Salt master is not, then the communication between the master and this minion will be broken, and you would see errors like the following in your minion logs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>2022-03-28 13:19:41,880 [salt.crypt       :743 ][ERROR   ][15942] Sign-in attempt failed: {'publish_port': 4505, 'pub_key': '-----BEGIN PUBLIC KEY-----\n...\n-----END PUBLIC KEY-----\n''enc': 'pub','sig': ".."}
+2022-03-28 13:19:41,885 [salt.minion      :1056][ERROR   ][15942] Error while bringing up minion for multi-master. Is master at salt-master-server.tf.local responding?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As soon as your Salt master is upgraded and restarted then the communication between master and minion will be restablished and the errors messages will not longer happen.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_new_xml_rpc_api_version_26">New XML-RPC API version 26</h5>
+<div class="paragraph">
+<p>Uyuni 2022.03 updates the XML-RPC API version from 25 to 26, in preparation for SUSE Manager 4.3</p>
+</div>
+<div class="paragraph">
+<p>There are no breaking changes to any methods.</p>
+</div>
+<div class="paragraph">
+<p>If any of your scripts are checking for the version 25, you can change them to use version 26 without any further changes.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_smdba_changed_defaults_for_newer_postgresql_versions">smdba: changed defaults for newer PostgreSQL versions</h5>
+<div class="paragraph">
+<p>Starting with PostgreSQL 13, some defaults have changed.</p>
+</div>
+<div class="paragraph">
+<p>To improve performance, smdba autotuning was adapted to use the new values.</p>
+</div>
+<div class="paragraph">
+<p>Additionally an extra paramater <code>--ssd</code> was added to autotuning to tell smdba that the database is stored on ssd or fast network storage.</p>
+</div>
+<div class="paragraph">
+<p>To change an existing configuration with the new defaults call</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>smdba system-check autotuning</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Remember you can also adjust some other parameters, in case you need them:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>smdba system-check autotuning [--max_connections=&lt;number&gt;] [--ssd]</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_grafana_8_3_5">Monitoring: Grafana 8.3.5</h5>
+<div class="paragraph">
+<p>Uyuni 2022.03 updates Grafana from version 7.5.12 to 8.3.5.</p>
+</div>
+<div class="paragraph">
+<p>This update fixes several security vulnerabilities:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>XSS vulnerability in handling data sources (CVE-2022-21702)</p>
+</li>
+<li>
+<p>Cross-origin request forgery vulnerability (CVE-2022-21703)</p>
+</li>
+<li>
+<p>Insecure Direct Object Reference vulnerability in Teams API (CVE-2022-21713)</p>
+</li>
+<li>
+<p>GetUserInfo: return an error if no user was found (CVE-2022-21673)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Updating Grafana is strongly recommended.</p>
+</div>
+<div class="paragraph">
+<p>Relevant changes are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>New Alerting for Grafana 8</p>
+</li>
+<li>
+<p>CloudWatch: Add support for AWS Metric Insights</p>
+</li>
+<li>
+<p>CloudWatch: Add AWS RoboMaker metrics and dimension</p>
+</li>
+<li>
+<p>CloudWatch: Add AWS Transfer metrics and dimension</p>
+</li>
+<li>
+<p>CloudWatch: Add AWS LookoutMetrics</p>
+</li>
+<li>
+<p>CloudWatch: Add Lambda@Edge Amazon CloudFront metrics</p>
+</li>
+<li>
+<p>CloudMonitoring: Add support for preprocessing</p>
+</li>
+<li>
+<p>CloudWatch: Add AWS/EFS StorageBytes metric</p>
+</li>
+<li>
+<p>CloudWatch: Add Amplify Console metrics and dimensions</p>
+</li>
+<li>
+<p>CloudWatch: Add metrics for managed RabbitMQ service</p>
+</li>
+<li>
+<p>Elasticsearch: Add support for Elasticsearch 8.0</p>
+</li>
+<li>
+<p>AzureMonitor: Add support for PostgreSQL and MySQL Flexible Servers</p>
+</li>
+<li>
+<p>AzureMonitor: Add Azure Resource Graph</p>
+</li>
+<li>
+<p>AzureMonitor: Add support for Microsoft.SignalRService/SignalR metrics</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://grafana.com/docs/grafana/latest/release-notes/">upstream changelog</a> for more details on what has changed.</p>
+</div>
+<div class="paragraph">
+<p>There is one breaking change:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Grafana 8 Alerting enabled by default for installations that do not use legacy alerting.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Uyuni does not use Grafana alerting, so if you do not need it, you can disable it at the Grafana WebUI.</p>
+</div>
+<div class="paragraph">
+<p>If you use legacy Grafana alerting in your environment, consider migrating to new Grafana 8 alerting.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_unsupported_products">Unsupported products</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat Enterprise Linux 6</p>
+</li>
+<li>
+<p>Oracle Linux 6</p>
+</li>
+<li>
+<p>CentOS 6</p>
+</li>
+<li>
+<p>CentOS 8</p>
+</li>
+<li>
+<p>Ubuntu 16.04</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We highly encourage you to migrate your workload to a newer version of each distribution, or to an alternative distribution that is still supported, so you can continue managing your infrastructure with Uyuni.</p>
+</div>
+<div class="paragraph">
+<p>Please note that we will not break things on purpose for these unsupported products, and there is a possibility that they could still continue to work. But if things break, there will not be any support provided, not even on a best-effort basis, unless someone from the community can step in.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_02">Version 2022.02</h4>
+<div class="sect4">
+<h5 id="_postgresql_default_password_encryption_mechanism_change">PostgreSQL default password encryption mechanism change</h5>
+<div class="paragraph">
+<p>PostgresSQL is changing its default password encryption mechanism from md5 to scram-sha-256.</p>
+</div>
+<div class="paragraph">
+<p>With this update Uyuni will follow this change and will migrate the database user to this new encryption mechanism.</p>
+</div>
+<div class="paragraph">
+<p>This should happen fully automated for the existing database user.</p>
+</div>
+<div class="paragraph">
+<p>The following changes will happen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At the <code>/var/lib/pgsql/data/postgresql.conf</code> file, <code>password_encryption = scram-sha-256</code> will be set.</p>
+</li>
+<li>
+<p>The password for the user specified in the file <code>/etc/rhn/rhn.conf</code> will be reset.</p>
+</li>
+<li>
+<p>At the <code>/var/lib/pgsql/data/ph_hba.conf</code> file, all mechanisms which are set to <code>md5</code> will be changed to <code>scram-sha-256</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In case additional users where created, the passwords must be reseted.</p>
+</div>
+<div class="paragraph">
+<p>This can be done with the following command on the Uyuni Server executed as "root" user, and exchanging`&lt;DBUSER&gt;` with the right username and <code>&lt;DBPASSWD&gt;</code> with the new password:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>runuser - postgres -c "echo \"ALTER USER &lt;DBUSER&gt; WITH PASSWORD '&lt;DBPASSWD&gt;';\" | psql"</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_reporting_database">Reporting Database</h5>
+<div class="paragraph">
+<p>The reporting database provides Uyuni data used for reports in a simplified schema, and is accessible by any reporting tool with support for SQL databases as content sources.</p>
+</div>
+<div class="paragraph">
+<p>This new database is isolated from the one used for the Uyuni Server, and created automatically.</p>
+</div>
+<div class="paragraph">
+<p>The tool <code>uyuni-setup-reportdb-user</code> can create new users which has read-only access to the data.</p>
+</div>
+<div class="paragraph">
+<p>For more information on this topic, see <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/specialized-guides/large-deployments/hub-reporting.html">Hub reporting</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ubuntu_errata_installation">Ubuntu errata installation</h5>
+<div class="paragraph">
+<p>Uyuni now comes with Ubuntu errata support. It does this by downloading errata information from <a href="https://usn.ubuntu.com/usn-db/database.json" class="bare">https://usn.ubuntu.com/usn-db/database.json</a> and matching it after the syncing of Ubuntu channels.</p>
+</div>
+<div class="paragraph">
+<p>It also adds support for installing errata on Ubuntu systems by mapping them to package installs.</p>
+</div>
+<div class="paragraph">
+<p>For users, it will be a seamless experience and they will get exactly the same UX as it was for errata management for other distros.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_3">Monitoring</h5>
+<div class="sect5">
+<h6 id="_prometheus_2_32_1">Prometheus 2.32.1</h6>
+<div class="paragraph">
+<p>Uyuni 2022.02 updates Prometheus from version 2.27.1 to 2.32.1.</p>
+</div>
+<div class="paragraph">
+<p>The new version contains some breaking changes that need to be addressed after the Uyuni Server is updated.</p>
+</div>
+<div class="paragraph">
+<p>Breaking changes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Uyuni Service Discovery: The configuration and the returned set of meta labels have changed. Please check the <a href="https://prometheus.io/docs/prometheus/latest/configuration/configuration/#uyuni_sd_config">upstream documentation</a> for more details.</p>
+</li>
+<li>
+<p>As a consequence all users with existing monitoring setup must reapply the highstate on the monitoring server(s).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Important changes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Introduced generic HTTP-based service discovery.</p>
+</li>
+<li>
+<p>New expression editor with advanced autocompletion, inline linting, and syntax highlighting.</p>
+</li>
+<li>
+<p>Discovering Kubernetes API servers using a kubeconfig file.</p>
+</li>
+<li>
+<p>Faster server restart times via snapshotting.</p>
+</li>
+<li>
+<p>Controlling scrape intervals and timeouts via relabeling.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://github.com/prometheus/prometheus/blob/v2.32.1/CHANGELOG.md">upstream changelog</a> for more details on what has changed.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_postgres_exporter_updated_to_version_0_10_0_for_suse_linux_enterprise_and_opensuse">Postgres exporter updated to version 0.10.0 for SUSE Linux Enterprise and openSUSE</h6>
+<div class="paragraph">
+<p>Uyuni 2022.02 updates the Postgres exporter from version 0.4.7 to the version 0.10.0 for SUSE Linux Enterprise and openSUSE.</p>
+</div>
+<div class="paragraph">
+<p>This version brings the rename of the package from <code>golang-github-wrouesnel-postgres_exporter</code> to <code>prometheus-postgres_exporter</code>, as this package is now part of the Prometheus Community Projects. After the package is updated, you will need to reenable the <code>prometheus-postgres_exporter</code> service:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For the Uyuni Server WebUI, proceed to Admin &gt; Manager Configuration &gt; Monitoring. You will see <code>PostgreSQL database</code> is stopped. Click <code>Enable</code> and the service will get started.</p>
+</li>
+<li>
+<p>For the SUSE Linux Enterprise and openSUSE, apply the highstate to all the clients where the PostgreSQL needs to be exported.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The new version also contains a patch that allows connecting to PostgreSQL servers using <code>scram-sha-256</code>, which is the new default for Uyuni installations starting with 2022.02.</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://github.com/prometheus-community/postgres_exporter/blob/v0.10.0/CHANGELOG.md">upstream changelog</a> for more details, including new metrics.</p>
+</div>
+<div class="paragraph">
+<p>Other operating systems such as for example CentOS7 or AlmaLinux 8 will get 0.10.0 with future Uyuni releases.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_sles_payg_client_support_on_cloud">SLES PAYG client support on cloud</h5>
+<div class="paragraph">
+<p>It is now possible to sync content from SUSE-operated Cloud RMT Server from the Uyuni. This makes it a lot easier for users with SLES PAYG instances because now they don&#8217;t need to go through a cumbersome process of getting zero-cost subscriptions.</p>
+</div>
+<div class="paragraph">
+<p>It works in all three major public clouds AWS, GCP, and Azure.</p>
+</div>
+<div class="paragraph">
+<p>For more information and instructions on this topic, see the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/connect-payg.html">Connect Pay-as-you-go instance</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_openscap_for_debian_11_tech_preview">openscap for Debian 11 (Tech Preview)</h5>
+<div class="paragraph">
+<p>Uyuni 2022.02 provides the openscap package binaries using the sources from Debian Sid. Debian11 itself does not provide <a href="https://tracker.debian.org/news/1244793/openscap-removed-from-testing/">openscap</a>, as it was removed from Debian Testing during Debian 11 development.</p>
+</div>
+<div class="paragraph">
+<p>This is a Tech Preview and therefore not supported, but we invite the community to provide feedback and will provide updates from the Debian upstream package if needed.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2022_01">Version 2022.01</h4>
+<div class="sect4">
+<h5 id="_debian_11_as_client">Debian 11 as client</h5>
+<div class="paragraph">
+<p>Uyuni is now able to manage Debian 11 clients as salt or salt-ssh minions, as well as all other features that work for previous versions of Debian, with the exception of openscap as it is not available on <a href="https://tracker.debian.org/news/1244793/openscap-removed-from-testing/">Debian 11</a></p>
+</div>
+<div class="paragraph">
+<p>The following architectures can be managed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>x86_64</p>
+</li>
+<li>
+<p>aarch64</p>
+</li>
+<li>
+<p>armv7l</p>
+</li>
+<li>
+<p>i586</p>
+</li>
+<li>
+<p>ppc64le</p>
+</li>
+<li>
+<p>s390x</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Check the <code>Client Configuration Guide</code> for information about how to configure Uyuni Server to work with Debian 11 clients.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_link_to_vendor_security_advisory_in_patch_details_page">Link to vendor security advisory in Patch details page</h5>
+<div class="paragraph">
+<p>The patch details page now contains a new section <code>Vendor Advisory</code>, which links to the original advisory provided by the vendor of the patch.</p>
+</div>
+<div class="paragraph">
+<p>This information is auto-generated from data already existing in the database thus, when possible, it will be available for both new and existing patches.</p>
+</div>
+<div class="paragraph">
+<p>With Uyuni 2022.01, the following providers are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>SUSE</p>
+</li>
+<li>
+<p>Red Hat</p>
+</li>
+<li>
+<p>Oracle</p>
+</li>
+<li>
+<p>Amazon</p>
+</li>
+<li>
+<p>AlmaLinux</p>
+</li>
+<li>
+<p>RockyLinux</p>
+</li>
+<li>
+<p>Alibaba</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_add_support_for_custom_ssh_port_for_ssh_minions">Add support for custom SSH port for SSH minions</h5>
+<div class="paragraph">
+<p>Starting with Uyuni 2022.01, using TCP port 22 for SSH minions is not required anymore, and any TCP port can be used.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_change_proxy_used_for_clients_from_the_webui">Change proxy used for clients from the WebUI</h5>
+<div class="paragraph">
+<p>It is now possible to change the proxy used by an Uyuni client using the WebUI.</p>
+</div>
+<div class="paragraph">
+<p>This can be done from the <code>Connection</code> tab at the <code>Details</code> tab for any Salt client, using the new link <code>Change</code> to change the connection type.</p>
+</div>
+<div class="paragraph">
+<p>Using System Set Manager is supported as well, and can be done from the <code>Misc</code> tab, and then <code>Proxy</code> tab.</p>
+</div>
+<div class="paragraph">
+<p><strong>NOTE:</strong> Changing the connection for a Proxy to move it, is not supported at this moment. The Connectiontab will not show the <code>Change</code> link for proxies.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_version_2021_12">Version 2021.12</h4>
+<div class="sect4">
+<h5 id="_salt_as_a_bundle">Salt as a Bundle</h5>
+<div class="paragraph">
+<p>Salt Bundle is a single package called <code>venv-salt-minion</code> containing the Salt Minion, Python and all Python modules. It is exactly the same version and codebase for the current <code>salt-minion</code> RPM package.</p>
+</div>
+<div class="paragraph">
+<p>The Salt Bundle can be used on systems that already run another Salt Minion, that do not meet Salt&#8217;s requirements or already provide a newer salt version that is used instead of the version provided by Uyuni.</p>
+</div>
+<div class="paragraph">
+<p>Starting with Uyuni 2021.12, Uyuni is able to bootstrap systems with Salt Bundle for all the supported operating systems.</p>
+</div>
+<div class="paragraph">
+<p>On bootstrapping new clients the Salt Bundle package will be used instead of salt-minion, if the package <code>venv-salt-minion</code> is present in the bootstrap repo.</p>
+</div>
+<div class="paragraph">
+<p>Clients already registered will not be changed, but can be switched to Salt Bundle with applying the state <code>util.mgr_switch_to_venv_minion</code> to them. For more information see the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/contact-methods-saltbundle.html#_switching_from_salt_minion_to_salt_bundle">Client Configuration Guide</a>.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_aarch64_support_for_opensuse_leap_15_3_centos_78_clones_and_related_systems">aarch64 support for openSUSE Leap 15.3, CentOS 7/8, clones and related systems</h5>
+<div class="paragraph">
+<p>Uyuni 2021.12 adds support for the aarch64 (ARM64) architecture for the following operating systems:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>openSUSE Leap 15.3</p>
+</li>
+<li>
+<p>CentOS 7/8</p>
+</li>
+<li>
+<p>Oracle Linux 7/8</p>
+</li>
+<li>
+<p>Rocky Linux 8</p>
+</li>
+<li>
+<p>AlmaLinux 8</p>
+</li>
+<li>
+<p>Amazon Linux 2</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_system_reactivation">System reactivation</h5>
+<div class="paragraph">
+<p>It is now possible to re-activate a system using the UI/XMLRPC-API of Uyuni which was only possible using bootstrap script before. The bootstrapping page UI has been extended and the user can now enter the reactivation key of the system and the UI/XMLRPC-API of Uyuni will take care of the rest.</p>
+</div>
+<div class="paragraph">
+<p>The same could be achieved from the XMLRPC API.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_low_diskspace_notification">Low Diskspace notification</h5>
+<div class="paragraph">
+<p>With Uyuni 2021.12, on the login page, a banner will be shown when available disk space on the server will be running low. This will help users avoid situations like the automatic shutdown of Uyuni when disk space is critically low, without even noticing it.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_package_locking_for_salt_minions">Package Locking for Salt Minions</h5>
+<div class="paragraph">
+<p>Package locks are used to prevent unauthorized installation or upgrades of software packages. In the past the package lock feature was only available for traditional clients. Now it is also available for Salt clients (SUSE, RHEL and clones, and Debian/Ubuntu).</p>
+</div>
+<div class="paragraph">
+<p>Check the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/client-configuration/system-locking.html#_package_locks">Package Locking documentation</a> for information about how to use this feature.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_monitoring_4">Monitoring</h5>
+<div class="sect5">
+<h6 id="_prometheus_blackbox_exporter">Prometheus Blackbox exporter</h6>
+<div class="paragraph">
+<p>Uyuni 2021.12 comes with the Blackbox exporter, which allows blackbox probing of endpoints over HTTP, HTTPS, DNS, TCP, and ICMP. It needs to be installed next to the Prometheus server and not on the clients.
+Prometheus formula has been extended to configure the Blackbox exporter.</p>
+</div>
+<div class="paragraph">
+<p>The package prometheus-blackbox_exporter has been added as recommended for the Proxy.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_formulas">Formulas</h6>
+<div class="paragraph">
+<p>One of the limitations of the current formulas is that they are listed against every client, even if the supported packages are not available for that OS version or service pack.</p>
+</div>
+<div class="paragraph">
+<p>While we are continuously focused on improving the formulas, for now, starting with the monitoring formulas it will be mentioned in documentation if applying those formulas would actually work in the case of a particular client.</p>
+</div>
+<div class="paragraph">
+<p>In 2021.09, we made the Prometheus package available for Uyuni Proxy and Retail Branch Server but that is not the case with Grafana.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Prometheus is available for the client tools for SLE 12, SLE 15, and openSUSE 15 Uyuni Proxies or Retail Branch Servers</p>
+</li>
+<li>
+<p>Grafana is available for the client tools for SLE 12, SLE 15, openSUSE15</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_content_lifecycle_management_improvement">Content Lifecycle Management improvement</h5>
+<div class="paragraph">
+<p>From the Content Lifecycle Management project view, the new column <code>Last build</code> has been added. This information is useful when you need a general overview of all latest build times rather than retrieving the information project by project.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_new_xmlrpc_api_methods_for_saltkey">New XMLRPC API methods for SaltKey</h5>
+<div class="paragraph">
+<p>Following new XMLRPC methods have been added in <code>SaltKey</code> namespace.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>accept</code> : API endpoint to accept minion keys</p>
+</li>
+<li>
+<p><code>reject</code> : API endpoint to reject minion keys</p>
+</li>
+<li>
+<p><code>pendingList</code> :  API endpoint to list pending salt keys</p>
+</li>
+<li>
+<p><code>acceptedList</code> : API endpoint to list accepted salt keys</p>
+</li>
+<li>
+<p><code>rejectedList</code> : API endpoint to list rejected salt keys</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These methods could further help in improving the automation workflows.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_new_product_enabled">New product enabled</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>SUSE Linux Enterprise Server 15 SP2 LTSS</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_cve_2021_40348_remediation">CVE-2021-40348 remediation</h5>
+<div class="paragraph">
+<p>A security fix for <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40348">CVE-2021-40348</a> is included as apart of Uyuni 2021.08, to fix a potential injection arbitrary code to a root-owned file that eventually will be executed by the system.</p>
+</div>
+<div class="paragraph">
+<p>The fix for this problem was previously released on October 29th as a patch on top of Uyuni 2021.09, but if you did not apply such patch yet, we recommend appling the update to Uyuni 2021.12 as soon as possible.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_centos_8_end_of_life">CentOS 8 End of Life</h5>
+<div class="paragraph">
+<p>CentOS 8 will be End of Life on December 31st, 2021. Uyuni support for this product will end as well.</p>
+</div>
+<div class="paragraph">
+<p>Please refer to support section for more information.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_future_deprecation_of_the_traditional_stack">Future deprecation of the traditional stack</h5>
+<div class="paragraph">
+<p>With Uyuni 2021.12, we announced the future deprecation of the Traditional client tools.</p>
+</div>
+<div class="paragraph">
+<p>Uyuni 2022.06 is the last release that supports them.</p>
+</div>
+<div class="paragraph">
+<p>Starting with Uyuni 2022.08, the traditional client tools will be deprecated as we will start removing the code at some point after the summer.</p>
+</div>
+<div class="paragraph">
+<p>Do not use traditional for any new deployments of clients or proxies, and start migrating your traditional clients to Salt.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="known_issues">Known issues</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_automated_rhui_credential_update_2">Automated RHUI credential update</h3>
+<div class="paragraph">
+<p>Red Hat Enterprise Linux 9 clients may encounter SSH connectivity issues with the standard configuration. To resolve this, they must be configured with the crypto policy set to "LEGACY" in order to establish a connection.</p>
+</div>
+<div class="paragraph">
+<p>Before attempting to set up the SSH connection, please use the following command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo update-crypto-policies --set LEGACY</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While for Red Hat Enterprise Linux 7 clients, ensure that you update the instance first before proceeding with any further steps.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_almalinux">AlmaLinux</h3>
+<div class="paragraph">
+<p>Because of an upstream <a href="https://bugs.almalinux.org/view.php?id=158">bug</a>, the original package shipped with AlmaLinux 8.5 is providing a broken repository file (containing duplicated identificators). We have already reported this issue to AlmaLinux.</p>
+</div>
+<div class="paragraph">
+<p><strong>Workaround</strong>: Update the package <code>almalinux-release</code> before registering the instance to Uyuni so at least the version <code>8.5-3</code> is installed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bootstrap_with_web_ui_using_non_root_user">Bootstrap with web UI using non-root user</h3>
+<div class="paragraph">
+<p>Onboarding of clients with the <code>non-root</code> user from the Uyuni UI fails the following error:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>ERROR com.suse.manager.webui.controllers.utils.AbstractMinionBootstrapper - Error during bootstrap: SaltSSHError(13, stderr: "", stdout: "ERROR: Failure deploying ext_mods:"</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The root cause of this problem is a wrong ownership of the Salt thin directory when using the Salt bundle.</p>
+</div>
+<div class="paragraph">
+<p><strong>Workaround</strong>: Once bootstrap fails, the user can run <code>chown -R $USER:$GROUP /var/tmp/.*_salt</code> once and try onboarding again, it shouldn&#8217;t fail this time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clm_and_custom_repositories">CLM and custom repositories</h3>
+<div class="paragraph">
+<p>When building a CLM project that includes custom channels with custom repositories, the custom repositories might not be selected in the new cloned custom channels. As a workaround, one can go to the new cloned custom channels, select the custom repositories and synchronize them.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_container_build_host_and_salt_bundle">Container build host and Salt bundle</h3>
+<div class="paragraph">
+<p>The container build host will not work with the Salt bundle. We are working on a fix. Meanwhile, don&#8217;t use the Salt bundle on the Container build host but rather a normal Salt.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_single_sign_on_api_and_cli_tools">Single Sign On, API and CLI tools</h3>
+<div class="paragraph">
+<p>Single Sign On can be used to authenticate in the Web UI but not with the API or CLI tools. This will be fixed in a future release of Uyuni.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_epel_and_salt_packages">EPEL and Salt packages</h3>
+<div class="paragraph">
+<p>Using the Extra Packages for Enterprise Linux directly on RHEL clients (or compatible: CentOS, Oracle Linux, etc) will install the Salt packages from EPEL, which miss some features in the Uyuni-provided Salt packages. This is an unsupported scenario.</p>
+</div>
+<div class="paragraph">
+<p>If you need to enable the EPEL repository, make sure you are using the Salt Bundle (it is used by default with new clients but not for clients onboarded before Uyuni 2022.04)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_rhel_native_clients">RHEL native clients</h3>
+<div class="paragraph">
+<p>When autogenerating bootstrap repositories for native RHEL clients, some errors may be logged from the moment the official Red Hat channels are added until the moment those channels are fully synchronized for the first time.</p>
+</div>
+<div class="paragraph">
+<p>This does not affect CentOS, Rocky Linux, AlmaLinux or Oracle Linux.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_registering_spacewalk_2_xred_hat_satellite_5_x_clients_to_uyuni_as_salt_minions">Registering Spacewalk 2.x/Red Hat Satellite 5.x clients to Uyuni as Salt minions</h3>
+<div class="paragraph">
+<p>If a client machine is running the Red Hat Satellite 5.x agent, registering it to Uyuni as a Salt minion will fail due to package conflicts.</p>
+</div>
+<div class="paragraph">
+<p>Registering a RH Satellite 5.x client as a Uyuni traditional client works fine.</p>
+</div>
+<div class="paragraph">
+<p>Registering a Uyuni traditional client as a Uyuni Salt minion will also work.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Works</th>
+<th class="tableblock halign-left valign-top">Fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RH Satellite 5.x &#8658; Uyuni traditional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RH Satellite 5.x &#8658; Uyuni Salt minion</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uyuni traditional &#8658; Uyuni Salt minion</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>In order to register Red Hat Satellite 5.x clients to Uyuni as Salt minions, you will need to modify the bootstrap script to remove the Satellite agent packages first.</p>
+</div>
+<div class="paragraph">
+<p>Spacewalk 2.x and Oracle Spacewalk 2.x clients will show the same behavior as Red Hat Satellite 5.x clients</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_client_tools_notes">Client Tools Notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>URLs of the Client Tools are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>openSUSE Leap 15.* (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/</a></p>
+</li>
+<li>
+<p>openSUSE Leap Micro 5.* (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/</a></p>
+</li>
+<li>
+<p>SLE12 (x86_64, pcc64le, s390x, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE12-Uyuni-Client-Tools/SLE_12/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE12-Uyuni-Client-Tools/SLE_12/</a></p>
+</li>
+<li>
+<p>SLE15 (x86_64, pcc64le, s390x, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE15-Uyuni-Client-Tools/SLE_15/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE15-Uyuni-Client-Tools/SLE_15/</a></p>
+</li>
+<li>
+<p>CentOS7 (x86_64, aarch64, ppc64le): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/</a></p>
+</li>
+<li>
+<p>Oracle Linux 7 (x86_64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/</a></p>
+</li>
+<li>
+<p>Oracle Linux 8 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/</a></p>
+</li>
+<li>
+<p>Oracle Linux 9 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL9-Uyuni-Client-Tools/EL_9/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL9-Uyuni-Client-Tools/EL_9/</a></p>
+</li>
+<li>
+<p>AlmaLinux 8 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/</a></p>
+</li>
+<li>
+<p>AlmaLinux 8 (x86_64, aarch64, ppc64le, s390x): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL9-Uyuni-Client-Tools/EL_9/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL9-Uyuni-Client-Tools/EL_9/</a></p>
+</li>
+<li>
+<p>Rocky Linux 8 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/ELS8-Uyuni-Client-Tools/EL_8/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/ELS8-Uyuni-Client-Tools/EL_8/</a></p>
+</li>
+<li>
+<p>Rocky Linux 9 (x86_64, aarch64, ppc64le, s390x): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL9-Uyuni-Client-Tools/EL_9/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL9-Uyuni-Client-Tools/EL_9/</a></p>
+</li>
+<li>
+<p>Amazon Linux 2 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/</a></p>
+</li>
+<li>
+<p>Alibaba Linux 2 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/</a></p>
+</li>
+<li>
+<p>AlmaLinux 8 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/</a></p>
+</li>
+<li>
+<p>Rocky Linux 8 (x86_64, aarch64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/</a></p>
+</li>
+<li>
+<p>Ubuntu 18.04 (x86_64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1804-Uyuni-Client-Tools/xUbuntu_18.04/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu1804-Uyuni-Client-Tools/xUbuntu_18.04/</a></p>
+</li>
+<li>
+<p>Ubuntu 20.04 (x86_64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu2004-Uyuni-Client-Tools/xUbuntu_20.04/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu2004-Uyuni-Client-Tools/xUbuntu_20.04/</a></p>
+</li>
+<li>
+<p>Ubuntu 22.04 (x86_64): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu2204-Uyuni-Client-Tools/xUbuntu_22.04/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Ubuntu2204-Uyuni-Client-Tools/xUbuntu_22.04/</a></p>
+</li>
+<li>
+<p>Debian 10 (x86_64, aarch64, armv7l, i586): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Debian10-Uyuni-Client-Tools/Debian_10/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Debian10-Uyuni-Client-Tools/Debian_10/</a></p>
+</li>
+<li>
+<p>Debian 11 (x86_64, aarch64, armv7l, i586, ppc64le, s390x): <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Debian11-Uyuni-Client-Tools/Debian_11/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Debian11-Uyuni-Client-Tools/Debian_11/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Keep in mind you should manage the client tools using the command <code>spacewalk-common-channels</code> on the server, that will also allow you to add the required channels for all those operating systems that are freely available.</p>
+</div>
+<div class="sect2">
+<h3 id="_supported_clients">Supported clients</h3>
+<div class="paragraph">
+<p>At the moment the status is the following:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Salt bootstrap from server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Salt SSH bootstrap from server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Salt bootstrap from client</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Traditional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openSUSE Leap 15.X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">openSUSE Leap Micro 5.X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SLE12</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SLE15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CentOS7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle Linux 7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle Linux 8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oracle Linux 9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon Linux 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alibaba Linux 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AlmaLinux 8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AlmaLinux 9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rocky Linux 8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rocky Linux 9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu18.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu20.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ubuntu22.04</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debian10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Debian11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-check"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-check"></i></span> = Working, <span class="icon"><i class="fa fa-times"></i></span> = Not working, <span class="icon"><i class="fa fa-question"></i></span> = Untested</p>
+</div>
+<div class="paragraph">
+<p>With the exception of RHEL/CentOS and Oracle Linux, all maintained SPs and subversions are supported.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_untested_clients">Untested clients</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Salt bootstrap from server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Salt SSH bootstrap from server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Salt bootstrap from client</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Traditional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEL7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEL8</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RHEL9</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-question"></i></span></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon"><i class="fa fa-times"></i></span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>RHEL7 is expected to work in the same way as CentOS7, using the CentOS7 client tools.
+RHEL8 and 9 are expected to work in the same way as Rocky Linux or AlmaLinux 8 or 9, using the AlmaLinux/Rocky Linux/Oracle 8 or 9 client tools</p>
+</div>
+<div class="paragraph">
+<p>CentOS8 (and therefore RHEL8) does not have support for the traditional client tools, only salt.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation">Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_requirements">Requirements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>OS: openSUSE Leap 15.5 x86_64, fully updated</p>
+</li>
+<li>
+<p>Main memory: Minimum 16 GB for base installation</p>
+</li>
+<li>
+<p>Disk space: Minimum 100 GB for root partition, Minimum 50 GB for /var/lib/pgsql, Minimum 50 GB per SUSE product + 100 GB per RHEL product (/var/spacewalk)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/uyuni-install-requirements.html">documentation</a> for more details on the system requirements.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_installing_the_server">Installing the Server</h3>
+<div class="paragraph">
+<p>Add the Stable repository:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>zypper ar <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/" class="bare">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/</a> uyuni-server</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Install the pattern:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>zypper in patterns-uyuni_server</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Run Yast2 and go to Network Services &gt; Uyuni Setup</p>
+</div>
+<div class="paragraph">
+<p>Follow the setup assistant.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/installation-and-upgrade-overview.html">Installation/Upgrade guide</a> for detailed instructions on how to install.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_from_previous_versions_of_uyuni_server">Update from previous versions of Uyuni Server</h3>
+<div class="paragraph">
+<p>See the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/installation-and-upgrade-overview.html">Installation/Upgrade guide</a> for detailed instructions on how to upgrade.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>As Uyuni 2023.09 is changing the base operating system, you will need to follow the "Installation/Upgrade Guide &gt; Upgrade &gt; Upgrade the Server" &gt; "Server - Major Upgrade" section.</p>
+</li>
+<li>
+<p>Migrating from versions older than 2022.06 is not possible</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All connected clients will continue to run and are manageable unchanged.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_update_from_previous_versions_of_uyuni_proxy">Update from previous versions of Uyuni Proxy</h3>
+<div class="paragraph">
+<p>When updating, always start with the server first and then continue with the proxies.</p>
+</div>
+<div class="paragraph">
+<p>See the release notes for the proxy and the <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/installation-and-upgrade/installation-and-upgrade-overview.html">Installation/Upgrade guide</a> for detailed upgrade instructions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_information">Other information</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_red_hat_channels">Red Hat Channels</h3>
+<div class="paragraph">
+<p>Managing RHEL clients requires availability of appropriate Red Hat packages.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_suse_channels">SUSE Channels</h3>
+<div class="paragraph">
+<p>Managing SUSE Linux clients requires availability of appropriate SUSE channels.</p>
+</div>
+<div class="paragraph">
+<p>Your licensed SUSE products can be used with Uyuni by following the setup Wizard.</p>
+</div>
+<div class="paragraph">
+<p>Check the manuals for more information.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_providing_feedback">Providing feedback</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In case of encountering a bug please report it at <a href="https://github.com/uyuni-project/uyuni/issues" class="bare">https://github.com/uyuni-project/uyuni/issues</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_legal_notices">Legal Notices</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Copyright © 2018 – 2023 The Uyuni Project</p>
+</div>
+<div class="paragraph">
+<p>This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 License. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/3.0/es/" class="bare">http://creativecommons.org/licenses/by-sa/3.0/es/</a> or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.</p>
+</div>
+<div class="paragraph">
+<p>For SUSE trademarks, see <a href="http://www.suse.com/company/legal/" class="bare">http://www.suse.com/company/legal/</a>. All other third-party trademarks are the property of their respective owners. Trademark symbols (®, ™ etc.) denote trademarks of SUSE and its affiliates. Asterisks (*) denote third-party trademarks.</p>
+</div>
+<div class="paragraph">
+<p>All information found in this document has been compiled with utmost attention to detail. However, this does not guarantee complete accuracy. Neither SUSE LLC, its affiliates, the authors nor the translators shall be held liable for possible errors or the consequences thereof.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2023-09-29 09:33:09 +0200
+</div>
+</div>
+</body>
+</html>
