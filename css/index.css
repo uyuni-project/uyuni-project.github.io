@@ -88,8 +88,10 @@ header .landing-description a {
 }
 
 header .btn {
-  border-radius: 50px;
-  padding: 8px 50px ;
+  border-radius: 3vh;
+  width: auto;
+  width: 30vh;
+  margin: 2px 20px;
 }
 
 header .eos-icons {
@@ -148,18 +150,6 @@ header .cta-section {
 }
 
 
-/* ==========================================================================
-  Page wrapper
-  ========================================================================== */
-.page-wrapper {
-  margin-top: -250px;
-  margin-bottom: 50px;
-  background: #fff;
-  border-radius: 5px;
-  padding: 0;
-  box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.05);
-  border-bottom: 5px solid var(--bc-primary);
-}
 
 .home-illustration {
   width: 80%;
@@ -423,5 +413,23 @@ header .subpage-description {
 
   .subpage-title-back a{
     margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px){
+  header .btn{
+    padding: 1vh 6.3vh ;
+    width: auto; 
+  }  
+
+  /* page wrap */
+  .main{
+    margin-top: -250px;
+    margin-bottom: 50px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 0;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.05);
+    border-bottom: 5px solid var(--bc-primary);
   }
 }
