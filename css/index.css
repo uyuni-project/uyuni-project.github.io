@@ -8,8 +8,8 @@
   --margin-m: 16px;
   --margin-l: 24px;
 
-  /* Coolors */
-  --bc-primary: #00C081;
+  /* Colors */
+  --bc-primary: #008558;
   --bc-primary-light: #26C994;
   --bc-secondary: #142529;
   --bc-links: #008ACF;
@@ -94,6 +94,7 @@ header .btn {
 
 header .eos-icons {
   font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 header .cta-section {
@@ -113,6 +114,7 @@ header .cta-section {
 .top-nav a {
   color: #fff;
   margin-left: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .top-nav a.dropdown-item {
@@ -143,6 +145,10 @@ header .cta-section {
   z-index: 1;
 }
 
+.landing-description p {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .uyuni-logo {
   width: 300px;
 }
@@ -168,6 +174,7 @@ header .cta-section {
 .section-description {
   margin-bottom: 50px;
   color: #3B3B3B;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* Accordion
@@ -184,6 +191,7 @@ header .cta-section {
   font-weight: 500;
   padding: 10px 20px;
   margin: 10px 0;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .accordion [aria-expanded="true"] {
@@ -271,6 +279,7 @@ header .cta-section {
 
 .news-box-content {
   padding: 5px 15px;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .news-box-cta {
@@ -329,6 +338,7 @@ footer ul li  {
 footer a {
   color: #0082A0 !important;
   font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .social-links {
