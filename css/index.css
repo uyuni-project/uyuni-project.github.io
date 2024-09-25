@@ -253,7 +253,6 @@ header .cta-section {
 
 .news-box {
   /* width: 450px; */
-  max-height: 150px;
   display: flex;
   background: var(--bc-gray-light);
   margin-right: 20px;
@@ -280,6 +279,7 @@ header .cta-section {
 .news-box-content {
   padding: 5px 15px;
   background-color: rgba(0, 0, 0, 0.05);
+  height: auto;
 }
 
 .news-box-cta {
@@ -428,7 +428,13 @@ header .subpage-description {
   .cta-section button{
     margin-top: 10px;
   }
-
+  .page-wrapper {
+    margin-top: 5px;
+  }
+  
+  .landing-description p {
+    font-size: 16px;
+  }
   .subpage-title-back {
     flex-direction: column;
   }
