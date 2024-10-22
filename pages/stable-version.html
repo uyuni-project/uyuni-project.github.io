@@ -90,8 +90,8 @@
         <div class="row content-padding subpage-content">
 
             <h4 id="releasenotes"><a href="#releasenotes">Release notes</a></h4>
-            <p><strong>WARNING:</strong> Remember to review the release notes! They contain valuable information and, depending on your current version, required procedures to update to the most recent one! Make sure you read the release notes for all the versions between the one you are using now, and 2024.10!</strong></p>
-            <!--<p><strong>WARNING:</strong> Remember to review the release notes! They contain valuable information and, for the update to 2023.09, a major upgrade with a special procedure is required, as the base operating system is now changing to openSUSE Leap 15.5 for the Uyuni Server and the Proxies!</strong></p>-->
+            <!--<p><strong>WARNING:</strong> Remember to review the release notes! They contain valuable information and, depending on your current version, required procedures to update to the most recent one! Make sure you read the release notes for all the versions between the one you are using now, and 2024.10!</strong></p>-->
+            <p><strong>WARNING:</strong> Remember to review the release notes! They contain valuable information and, for the update to 2024.10, remember that this version is changing the base operating system and moves the product to a containers only release for both Uyuni Server and the Proxies!</strong></p>
             <ul>
                 <li><a href="../doc/2024.10/release-notes-uyuni-server.html">Server Release Notes</a></li>
                 <li><a href="../doc/2024.10/release-notes-uyuni-proxy.html">Proxy Release Notes</a></li>
@@ -181,24 +181,24 @@
                 <p>3. Configure a resolvable fully quallified domain name (FQDN)</p>
 
                 <p>4. Enter the transactional shell:</p>
-                <code>$ transactional-update shell</code>
+                <code># transactional-update shell</code>
 
                 <p>5. Add the Uyuni Server repository:</p>
-                <code>$ zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/ uyuni-server-stable</code>
+                <code># zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/ uyuni-server-stable</code>
 
                 <p>6. Refresh the repository list and accept the key:</p>
-                <code>$ zypper ref</code>
+                <code># zypper ref</code>
 
                 <p>7. Install the container tools:</p>
-                <code>$ zypper in mgradm mgrctl mgradm-bash-completion mgrctl-bash-completion</code>
+                <code># zypper in mgradm mgrctl mgradm-bash-completion mgrctl-bash-completion</code>
 
                 <p>8. Reboot the host</p>
 
                 <p>9. From the terminal run the following command as root:</p>
-                <code>$ mgradm install podman</code>
+                <code># mgradm install podman</code>
 
                 <p>10. Input a password for the CA certificate, an administrative account password and your email for notifications:</p>
-		<code>$ leapmicro:~ # mgradm install podman<br>
+		<code># mgradm install podman<br>
 		  3:07PM INF Welcome to mgradm<br>
 		  3:07PM INF Executing command: podman<br>
 		  Password for the CA certificate to generate:<br>
@@ -281,6 +281,7 @@
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/">openSUSE Leap Micro 5.* (x86_64, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE12-Uyuni-Client-Tools/SLE_12/">SLE12 (x86_64, pcc64le, s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE15-Uyuni-Client-Tools/SLE_15/">SLE15 (x86_64, pcc64le, s390x, aarch64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLMicro6-Uyuni-Client-Tools/SL-Micro6/">SL Micro 6 (x86_64, s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/">RHEL, CentOS, Oracle Linux and SLES ES 7 (x86_64, ppc64le, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/EL8-Uyuni-Client-Tools/EL_8/">RHEL, CentOS, Oracle Linux and SLES ES 8 (x86_64, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/CentOS7-Uyuni-Client-Tools/CentOS_7/">Amazon Linux 2 (x86_64, aarch64)</a></li>
