@@ -184,7 +184,7 @@ header .cta-section {
   min-height: 300px;
 }
 
-.accordion .accordion-header h5 {
+.accordion .accordion-header h2 {
   /* background: #E8E8E8; */
   font-size: 16px;
   color: #707070;
