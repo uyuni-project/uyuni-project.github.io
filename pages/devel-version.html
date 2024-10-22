@@ -119,7 +119,7 @@
                     <tbody >
                     <tr>
 
-                        <td>openSUSE Leap 15.5</td>
+                        <td>openSUSE Leap Micro 5.5</td>
                         <td>Clean installation, up-to-date</td>
 
                     </tr>
@@ -156,25 +156,41 @@
                 <p>Please note Uyuni requires FQDNs for the Server, Proxy and clients, so usage of a properly-configured DNS server is mandatory for client updates to work.</p>
                 <p>If you want to install Uyuni in lab mode, for testing, you may be interested in how to easily make use of libvirt's included dnsmasq DNS and DHCP server: <a href="https://github.com/uyuni-project/uyuni/wiki/Libvirt-DNS-and-DHCP-without-Avahi">Libvirt DNS and DCHP without Avahi</a>.</p>
 
-                <p>1. Update openSUSE Leap 15.5:</p>
-                <code>$ sudo zypper update</code>
+                <p>1. Update openSUSE Leap Micro 5.5:</p>
+                <code># transactional update</code>
 
-                <p>2. Configure a resolvable fully quallified domain name with <strong>Yast2 > System > Netwok Settings > Hostname/DNS</strong></p>
+                <p>2. Reboot the system</p>
 
-                <p>3. Add the repository for the server:</p>
-                <code>$ sudo zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images/repo/Uyuni-Server-POOL-$(arch)-Media1/ uyuni-server-devel</code>
+                <p>3. Configure a resolvable fully qualified domain name (FQDN)</p>
 
-                <p>4. Refresh metadata from the repositories:</p>
-                <code>$ sudo zypper ref</code>
+                <p>4. Enter the transactional shell:</p>
+                <code># transactional-update shell</code>
 
-                <p>5. Install the pattern for the Uyuni server:</p>
-                <code>$ sudo zypper in patterns-uyuni_server</code>
+                <p>5. Add the Uyuni Server repository:</p>
+                <code># zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master/images/repo/Uyuni-Server-POOL-$(arch)-Media1/ uyuni-server-devel</code>
 
-                <p>6. Run <strong>Yast2</strong> and navigate to <strong>Network Services > Uyuni Setup</strong></p>
+                <p>6. Refresh the repository list and accept the key:</p>
+                <code># zypper ref</code>
 
-                <p>7. Follow the setup assistant</p>
+                <p>7. Install the container tools:</p>
+                <code># zypper in mgradm mgrctl mgradm-bash-completion mgrctl-bash-completion</code>
 
-                Once the setup assistant is ready, you will be able to access the WebUI at <code>https://&lt;FQDN>/</code>
+                <p>8. Reboot the host</p>
+
+                <p>9. From the terminal run the following command as root:</p>
+                <code># mgradm install podman</code>
+
+                <p>10. Input a password for the CA certificate, an administrative account password and your email for notifications:</p>
+		<code># mgradm install podman<br>
+		  3:07PM INF Welcome to mgradm<br>
+		  3:07PM INF Executing command: podman<br>
+		  Password for the CA certificate to generate:<br>
+		  Administrator password:<br>
+		  Administrator's email: admin@example.com</code>
+
+                <p>11. The container will take some minutes to deploy.</p>
+
+		Once the setup assistant is ready, you will be able to access the WebUI at <code>https://&lt;FQDN>/</code>
 
                 <p>From that point you can start working with the Uyuni Server.</p>
 
@@ -200,7 +216,7 @@
                     <tbody >
                     <tr>
 
-                        <td>openSUSE Leap 15.5</td>
+                        <td>openSUSE Leap Micro 5.5</td>
                         <td>Clean installation, up-to-date</td>
 
                     </tr>
@@ -247,6 +263,7 @@
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/">openSUSE Leap Micro 5.* (x86_64, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/SLE12-Uyuni-Client-Tools/SLE_12/">SLE 12 (x86_64, pcc64le, s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/SLE15-Uyuni-Client-Tools/SLE_15/">SLE 15 (x86_64, pcc64le, s390x, aarch64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/SLMicro6-Uyuni-Client-Tools/SL-Micro6/">SL Micro 6 (x86_64, s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/CentOS7-Uyuni-Client-Tools/CentOS_7/">RHEL, CentOS, Oracle Linux and SLES ES 7 (x86_64, ppc64le)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/EL8-Uyuni-Client-Tools/EL_8/">RHEL, CentOS, Oracle Linux and SLES ES 8 (x86_64, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/CentOS7-Uyuni-Client-Tools/CentOS_7/">Amazon Linux 2 (x86_64, aarch64)</a></li>
@@ -259,6 +276,7 @@
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/EL9-Uyuni-Client-Tools/EL_9/">Amazon Linux 2023 (x86_64, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/Ubuntu2004-Uyuni-Client-Tools/xUbuntu_20.04/">Ubuntu 20.04 (x86_64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/Ubuntu2204-Uyuni-Client-Tools/xUbuntu_22.04/">Ubuntu 22.04 (x86_64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/Ubuntu2404-Uyuni-Client-Tools/xUbuntu_24.04/">Ubuntu 24.04 (x86_64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/Debian11-Uyuni-Client-Tools/Debian_11/">Debian 11 (x86_64, aarch64, armv7l, i586, ppc64le, s390x)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/Debian12-Uyuni-Client-Tools/Debian_12/">Debian 12 (x86_64, aarch64, armv7l, i586, ppc64le, s390x)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Master:/Debian12-Uyuni-Client-Tools/Debian_12/">Raspberry Pi OS 12 (arm64, armhf)</a></li>
