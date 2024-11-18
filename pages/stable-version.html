@@ -181,13 +181,13 @@
                 <code># transactional-update shell</code>
 
                 <p>5. Add the Uyuni Server repository:</p>
-                <code># zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-x86_64-Media1/ uyuni-server-stable</code>
+                <code># zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-$(arch)-Media1/ uyuni-server-stable</code>
 
                 <p>6. Refresh the repository list and accept the key:</p>
                 <code># zypper ref</code>
 
                 <p>7. Install the container tools:</p>
-                <code># zypper in mgradm mgrctl mgradm-bash-completion mgrctl-bash-completion</code>
+                <code># zypper in mgradm mgrctl mgradm-bash-completion mgrctl-bash-completion uyuni-storage-setup-server</code>
 
                 <p>8. Reboot the host</p>
 
@@ -264,7 +264,6 @@
 
                 <p>Installation of Uyuni Proxy is done via the Uyuni Server web interface.</p>
                 <p>See the <strong>Installation Guide</strong> for step-by-step instructions for installing and configuring Uyuni Proxy.</p>
-                <p>The repository for the Proxy is <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Proxy-POOL-x86_64-Media1/">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Proxy-POOL-x86_64-Media1/</a>
 
             </div>
             <!-- end subpage-content-push -->
