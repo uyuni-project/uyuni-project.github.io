@@ -95,26 +95,50 @@
             </div>
             <h4><a href="#server">Server</a></h4>
             <div class="subpage-content-push-right">
-                <p>1. Add the patches repository to the Server, if you do not have it already:</p>
-                <code>$ sudo zypper addrepo https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Patches/openSUSE_Leap_15.4/systemsmanagement:Uyuni:Stable:Patches.repo
-        </code>
-                <p>2. Refresh the metadata:</p>
-                <code>$ sudo zypper refresh</code>
-                <p>3. Stop the services:</p>
-                <code>$ sudo spacewalk-service stop</code>
-                <p>4. Apply the update:</p>
-                <code>$ sudo zypper update</code>
-                <p>5. Restart the services:</p>
-                <code>$ sudo spacewalk-service start</code>
-            </div>
-            <h4><a href="#proxiesclients">Proxies and clients</a></h4>
-            <div class="subpage-content-push-right">
               <ol>
-                <li>Sync all the affected client tools repositories</li>
-                <li>Update the clients using the Uyuni Server as you would for any other updates</li>
+                <li>Add the patches repository to the Server, if you do not have it already:
+                  <code>$ sudo zypper addrepo https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Patches/openSUSE_Leap_Micro_5.5/systemsmanagement:Uyuni:Stable:Patches.repo</code>
+                </li>
+                <li>Refresh the metadata:
+                  <code>$ sudo zypper refresh</code>
+                </li>
+                <li>Update the system:
+                  <code>$ sudo transactional-update up</code>
+                </li>
+                <li>Reboot the system:
+                  <code>$ sudo reboot</code>
+                </li>
+                <li>Update the server container:
+                  <code>$ sudo mgradm upgrade podman --image registry.opensuse.org/systemsmanagement/uyuni/stable/patches/containers/uyuni/server --registry registry.opensuse.org</code>
+                </li>
               </ol>
             </div>
-
+            <h4><a href="#proxiesclients">Proxies</a></h4>
+            <div class="subpage-content-push-right">
+              <ol>
+                <li>Add the patches repository to the Proxy, if you do not have it already:
+                  <code>$ sudo zypper addrepo https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Patches/openSUSE_Leap_Micro_5.5/systemsmanagement:Uyuni:Stable:Patches.repo</code>
+                </li>
+                <li>Refresh the metadata:
+                  <code>$ sudo zypper refresh</code>
+                </li>
+                <li>Update the system:
+                  <code>$ sudo transactional-update up</code>
+                </li>
+                <li>Reboot the system:
+                  <code>$ sudo reboot</code>
+                </li>
+                <li>Update the proxies containers:
+                  <code>$ sudo mgrpxy upgrade podman --httpd-image registry.opensuse.org/systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-httpd --saltbroker-image registry.opensuse.org/systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-salt-broker --squid-image registry.opensuse.org/systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-squid --ssh-image registry.opensuse.org/systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-ssh --tftpd-image registry.opensuse.org/systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-tftpd</code>
+                </li>
+              </ol>
+            </div>
+            <h4><a href="#proxiesclients">Clients</a></h4>
+            <div class="subpage-content-push-right">
+              <ol>
+                <li>Sync all the affected client tools repositories and apply the provided patches</li>
+              </ol>
+            </div>
         </div>
     </div> <!-- #container -->
   <!-- Footer -->
