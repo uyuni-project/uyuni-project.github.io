@@ -8,11 +8,12 @@
   --margin-m: 16px;
   --margin-l: 24px;
 
-  /* Colors */
-  --bc-primary: #008558;
+  /* Colors - Ensure good contrast ratio */
+  --bc-primary: #008558;      
+  --bc-links: #0066cc;       
+  --text-color: #333333;     
   --bc-primary-light: #26C994;
   --bc-secondary: #142529;
-  --bc-links: #008ACF;
 
   /* Helpers */
   --bc-gray-light: #FDFDFD;
@@ -26,7 +27,8 @@ body {
 }
 
 a, a:visited, a:active, a:focus {
-  color: var(--bc-links)
+  color: var(--bc-links);
+  font-weight: 600;
 }
 
 p {
@@ -61,6 +63,26 @@ code {
   border: none;
 }
 
+
+.btn-light {
+  background-color: #ffffff;
+  border: 1px solid #e2e2e2;
+  color: var (--text-color);
+}
+
+.btn-light:hover,
+.btn-light:active {
+  background-color: #f8f9fa;
+  border-color: #ddd;
+}
+
+.btn-light:focus-visible {
+  outline: 3px solid var(--bc-primary);
+  outline-offset: 2px;
+}
+
+
+
 /* ==========================================================================
   Header section
   ========================================================================== */
@@ -90,11 +112,26 @@ header .landing-description a {
 header .btn {
   border-radius: 50px;
   padding: 8px 50px ;
+  position: relative;
+  min-height: 44px;   /* Minimum touch target size */
+  min-width: 44px; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;           /* Space between icon and text */
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #333333 !important;
 }
 
 header .eos-icons {
   font-size: 16px;
   background-color: rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 16px;    /* Ensure consistent icon size */
+  min-height: 16px;
 }
 
 header .cta-section {
@@ -107,7 +144,29 @@ header .cta-section {
   justify-content: center;
   border-radius: 25px; 
   gap: 15px;
+  flex-wrap: wrap;
 }
+
+header .cta-section .btn + .btn {
+  margin-left: 4px;
+}
+header .cta-section a:focus,
+header .cta-section button:focus {
+  outline: 2px solid var(--bc-primary);
+  outline-offset: 2px;
+}
+
+@media screen and (max-width: 780px) {
+  header .cta-section {
+      gap: 12px;      /* Slightly reduced spacing on mobile */
+  }
+  
+  header .btn {
+      width: 100%;    /* Full width on mobile for easier touching */
+      max-width: 320px; /* Maximum width for better usability */
+  }
+}
+
 
 /* TOP NAVIGATION */
 .navbar a img {
@@ -221,21 +280,66 @@ header .cta-section {
   background: #E8E8E8;
 }
 
+.accordion [aria-expanded="false"] h2 {
+  color: #333333; /* Ensure sufficient contrast on collapsed state */
+}
 
 .accordion .accordion-header:hover, h5:hover  {
   cursor: pointer;
+}
+
+.accordion .accordion-header:hover h2 {
+  color: #0056b3; /* Slightly darker blue for hover state */
+}
+
+.accordion .collapse {
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .accordion  .accordion-content {
   background: #f5f5f5;
   padding: 8px 21px;
   font-weight: 400;
+  transition: height 0.3s ease-out, opacity 0.3s ease-out;
+  overflow: hidden;
 }
 
 .accordion-plus {
   width: 12px;
   height: 12px;
   margin: -2px 5px 0px -5px;
+}
+
+.accordion-button {
+  background: none;
+  border: none;
+  color: #333333; /* Updated for better contrast */
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #E8E8E8; /* Updated for better contrast */
+}
+
+.accordion-button:focus {
+  outline: 2px solid transparent;
+}
+
+.accordion-button[aria-expanded="true"] {
+  color: #fff;
+  background: #0D2C40;
+}
+
+.accordion-button[aria-expanded="false"] {
+  background: #E8E8E8;
+}
+
+.accordion-wrap {
+  margin-bottom: 15px; /* Add consistent spacing between accordion items */
 }
 
 /* Home news box
