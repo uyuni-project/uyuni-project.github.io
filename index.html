@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta and title -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Uyuni</title>
   <meta name="description" content="The open-source configuration and infrastructure management solution for software-defined infrastructure.">
+
+  <!-- Favicon links -->
   <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
@@ -13,6 +16,8 @@
   <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/index.css">
@@ -20,142 +25,143 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/eos-icons/dist/css/eos-icons.css" />
 </head>
 <body>
-
-<header>
-  <div class="container">
-        <nav class="navbar navbar-expand-lg">
-            <a class="navbar-brand" href="https://www.uyuni-project.org/">
-                <img src="img/logo-letters.svg" alt="Uyuni logo letters">
+  <!-- Skip to main content link -->
+  <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a class="navbar-brand" href="https://www.uyuni-project.org/">
+          <img src="img/logo-letters.svg" alt="Uyuni logo letters">
+        </a>
+        <!-- Navigation Links -->
+        <ul class="nav top-nav d-flex justify-content-end">
+          <!-- Dropdown for available Uyuni versions -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="downloadDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Download Menu">
+              DOWNLOAD
             </a>
-
-            <ul class="nav top-nav d-flex justify-content-end">
-
-                <!-- Dropdown for available Uyuni versions -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        DOWNLOAD
-                    </a>
-                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="pages/stable-version.html">Stable</a>
-                        <a class="dropdown-item" href="pages/devel-version.html">Develop</a>
-                        <a class="dropdown-item" href="pages/patches.html">Patches</a>
-                        <a class="dropdown-item" href="pages/source-code.html">Source code</a>
-                    </div>
-                </li>
-                <!-- DOCS -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        DOCUMENTATION
-                    </a>
-                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="https://www.uyuni-project.org/uyuni-docs/">Guides</a>
-                        <a class="dropdown-item" href="https://www.uyuni-project.org/uyuni-docs-api/">API</a>
-                        <a class="dropdown-item" href="https://www.uyuni-project.org/uyuni-docs/reporting-db-schema/">Reporting Database Schema</a>
-                    </div>
-                </li>
-                <!-- FAQ -->
-                <li class="nav-item">
-                    <a class="nav-link" href="pages/faq.html">FAQ</a>
-                </li>
-                <!-- NEWS -->
-                <li class="nav-item">
-                    <a class="nav-link" href="pages/news.html">NEWS</a>
-                </li>
-                <!-- Contact -->
-                <li class="nav-item">
-                    <a class="nav-link" href="pages/contact.html">CONTACT</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="https://twitter.com/UyuniProject" target="_blank">
-                        <img src="img/twitter.svg" alt="Uyuni - Twitter" title="Twitter" />
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- #nav -->
-    <div class="landing-description">
-      <img class="uyuni-logo" src="img/uyuni-logo.svg" alt="Uyuni logo">
-      <p>The open-source configuration and infrastructure management solution for software-defined infrastructure.</p>
-      <div class="cta-section">
-        <a href='pages/stable-version.html' class="btn btn-primary">
-          <span class="badge eos-icons">download</span>
-          Get new 2024.12!
-        </a>
-        <a href="pages/source-code.html">
-        <button type="button" class="btn btn-light">
-          <span class="badge eos-icons">code</span>
-          Source code
-        </button>
-        </a>
-      </div>
-    </div>
-  </div>
-</header>
-
-<div class="container page-wrapper">
-  <div class="container">
-    <div class="row content-padding">
-      <div class="col-md d-flex justify-content-center">
-        <img class="img-fluid home-illustration" src="img/il_1.svg" alt="">
-      </div>
-      <div class="col-md">
-        <h1 class="h3-style">What is Uyuni?</h1>
-        <p class="section-description">
-          Uyuni is a configuration and infrastructure management tool that saves you time and headaches when you have to manage and update tens, hundreds or even thousands of machines.
-        </p>
-
-        <div class="accordion" id="accordion-uyuni">
-          <!-- Start item -->
-          <div class="accordion-wrap">
-            <div class="accordion-header" data-toggle="collapse" data-target="#item1" aria-expanded="true"
-                 aria-controls="item1" id="headingOne">
-              <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> Automated patch and package management</h2>
+            <div class="dropdown-menu bg-dark" aria-labelledby="downloadDropdown">
+              <a class="dropdown-item" href="pages/stable-version.html">Stable</a>
+              <a class="dropdown-item" href="pages/devel-version.html">Develop</a>
+              <a class="dropdown-item" href="pages/patches.html">Patches</a>
+              <a class="dropdown-item" href="pages/source-code.html">Source code</a>
             </div>
-            <div id="item1" class="collapse show accordion-content" aria-labelledby="headingOne"
-                 data-parent="#accordion-uyuni">
-              <p>
-                enables you to deploy patches and packages based on software channels and repositories you can assign, helping you to reduce costs.
-              </p>
+          </li>
+          <!-- DOCS -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              DOCUMENTATION
+            </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown2">
+              <a class="dropdown-item" href="https://www.uyuni-project.org/uyuni-docs/">Guides</a>
+              <a class="dropdown-item" href="https://www.uyuni-project.org/uyuni-docs-api/">API</a>
+              <a class="dropdown-item" href="https://www.uyuni-project.org/uyuni-docs/reporting-db-schema/">Reporting Database Schema</a>
             </div>
-          </div>
-          <!-- End item -->
-          <!-- Start item -->
-          <div class="accordion-wrap">
-            <div class="accordion-header" data-toggle="collapse" data-target="#item2" aria-expanded="false"
-              aria-controls="item2" id="headingOne">
-              <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> Easily onboard and manage</h2>
-            </div>
-            <div id="item2" class="collapse hide accordion-content" aria-labelledby="headingOne"
-              data-parent="#accordion-uyuni">
-              <p>
-                any Linux server connected to the network, from IoT edge devices to your Kubernetes environment, no matter where it is located – in your data center, a 3rd party data center or in the public cloud.
-              </p>
-            </div>
-          </div>
-          <!-- End item -->
-
-          <!-- Start item -->
-          <div class="accordion-wrap">
-            <div class="accordion-header" data-toggle="collapse" data-target="#item3" aria-expanded="false"
-              aria-controls="item3" id="headingOne">
-              <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> A single tool for automated deployment </h2>
-            </div>
-            <div id="item3" class="collapse hide accordion-content" aria-labelledby="headingOne"
-              data-parent="#accordion-uyuni">
-              <p>
-                of hardened OS templates (bare metal, VM or container) to tens of thousands of servers and IoT devices for faster, consistent and repeatable provisioning and configuration without compromising speed or security.
-              </p>
-            </div>
-          </div>
-          <!-- End item -->
+          </li>
+          <!-- FAQ -->
+          <li class="nav-item">
+            <a class="nav-link" href="pages/faq.html">FAQ</a>
+          </li>
+          <!-- NEWS -->
+          <li class="nav-item">
+            <a class="nav-link" href="pages/news.html">NEWS</a>
+          </li>
+          <!-- Contact -->
+          <li class="nav-item">
+            <a class="nav-link" href="pages/contact.html">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/UyuniProject" target="_blank">
+              <img src="img/twitter.svg" alt="Uyuni - Twitter" title="Twitter" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Landing Description -->
+      <div class="landing-description">
+        <img class="uyuni-logo" src="img/uyuni-logo.svg" alt="Uyuni logo">
+        <p>The open-source configuration and infrastructure management solution for software-defined infrastructure.</p>
+        <div class="cta-section">
+          <!-- Call-to-action buttons -->
+          <a href='pages/stable-version.html' class="btn btn-primary">
+            <i class="eos-icons" aria-hidden="true" style="color: white;">download</i>
+            <span style="color: white;">Get new 2024.12!</span>
+          </a>
+          <a href="pages/source-code.html" class="btn btn-light header-light">
+            <i class="eos-icons" aria-hidden="true">code</i>
+            <span>Source code</span>
+          </a>
+          <a href="https://www.uyuni-project.org/uyuni-docs/en/uyuni/quickstart/container-deployment/uyuni/quickstart-deploy-uyuni-server.html" class="btn btn-light header-light">
+            <i class="eos-icons" aria-hidden="true">bolt</i>
+            <span>QuickStart</span>
+          </a>
         </div>
-        <!-- #accordion -->
       </div>
     </div>
+  </header>
+  <!-- Main Content -->
+  <div id="main-content" class="container page-wrapper">
+    <div class="container">
+      <div class="row content-padding">
+        <div class="col-md d-flex justify-content-center">
+          <img class="img-fluid home-illustration" src="img/il_1.svg" alt="">
+        </div>
+        <div class="col-md">
+          <h1 class="h3-style">What is Uyuni?</h1>
+          <p class="section-description">
+            Uyuni is a configuration and infrastructure management tool that saves you time and headaches when you have to manage and update tens, hundreds or even thousands of machines.
+          </p>
+          <div class="accordion" id="accordion-uyuni">
+            <!-- Start item -->
+            <div class="accordion-wrap">
+              <div class="accordion-header" role="button" data-toggle="collapse" data-target="#item1" aria-expanded="true"
+                aria-controls="item1" id="headingOne-item1" tabindex="0">
+                <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> Automated patch and package management</h2>
+              </div>
+              <div id="item1" class="collapse show accordion-content" role="region" aria-labelledby="headingOne-item1"
+                data-parent="#accordion-uyuni" aria-hidden="false">
+                <p>
+                  enables you to deploy patches and packages based on software channels and repositories you can assign, helping you to reduce costs.
+                </p>
+              </div>
+            </div>
+            <!-- End item -->
+            <!-- Start item -->
+            <div class="accordion-wrap">
+              <div class="accordion-header" role="button" data-toggle="collapse" data-target="#item2" aria-expanded="false"
+                aria-controls="item2" id="headingTwo-item2" tabindex="0">
+                <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> Easily onboard and manage</h2>
+              </div>
+              <div id="item2" class="collapse hide accordion-content" role="region" aria-labelledby="headingTwo-item2"
+                data-parent="#accordion-uyuni" aria-hidden="true">
+                <p>
+                  any Linux server connected to the network, from IoT edge devices to your Kubernetes environment, no matter where it is located – in your data center, a 3rd party data center or in the public cloud.
+                </p>
+              </div>
+            </div>
+            <!-- End item -->
+            <!-- Start item -->
+            <div class="accordion-wrap">
+              <div class="accordion-header" role="button" data-toggle="collapse" data-target="#item3" aria-expanded="false"
+                aria-controls="item3" id="headingThree-item3" tabindex="0">
+                <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> A single tool for automated deployment </h2>
+              </div>
+              <div id="item3" class="collapse hide accordion-content" role="region" aria-labelledby="headingThree-item3"
+                data-parent="#accordion-uyuni">
+                <p>
+                  of hardened OS templates (bare metal, VM or container) to tens of thousands of servers and IoT devices for faster, consistent and repeatable provisioning and configuration without compromising speed or security.
+                </p>
+              </div>
+            </div>
+            <!-- End item -->
+          </div>
+          <!-- #accordion -->
+        </div>
+      </div>
     </div>
     <!-- end row 1 -->
-
     <div class="row content-padding row-eq-height">
       <div class="col-md">
         <h2>How does Uyuni work?</h2>
@@ -164,17 +170,15 @@
           The Uyuni Server is a full-fledged Salt Master node, allowing you to register and manage Salt clients.
           For more information about Salt, see the Salt documentation at <a href="https://docs.saltproject.io/en/latest/contents.html">Salt Project</a>
         </p>
-
         <div class="accordion" id="accordion-uyuni-2">
-
           <!-- Start item -->
           <div class="accordion-wrap">
-            <div class="accordion-header" data-toggle="collapse" data-target="#item2-2" aria-expanded="false"
-              aria-controls="item2-2" id="headingOne">
+            <div class="accordion-header" role="button" data-toggle="collapse" data-target="#item2-2" aria-expanded="false"
+              aria-controls="item2-2" id="headingTwo-item2-2" tabindex="0">
               <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> Detailed compliance auditing </h2>
             </div>
-            <div id="item2-2" class="collapse hide accordion-content" aria-labelledby="headingOne"
-              data-parent="#accordion-uyuni-2">
+            <div id="item2-2" class="collapse hide accordion-content" role="region" aria-labelledby="headingTwo-item2-2"
+              data-parent="#accordion-uyuni-2" aria-hidden="true">
               <p>
                 and reporting with the ability to track all hardware and software changes made to your managed Linux infrastructure helps to ensure compliance with internal security policies
               </p>
@@ -183,12 +187,12 @@
           <!-- End item -->
           <!-- Start item -->
           <div class="accordion-wrap">
-            <div class="accordion-header" data-toggle="collapse" data-target="#item3-2" aria-expanded="false"
-              aria-controls="item3-2" id="headingOne">
+            <div class="accordion-header" role="button" data-toggle="collapse" data-target="#item3-2" aria-expanded="false"
+              aria-controls="item3-2" id="headingTwo-item3-2" tabindex="0">
               <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> Quickly identify systems</h2>
             </div>
-            <div id="item3-2" class="collapse hide accordion-content" aria-labelledby="headingOne"
-              data-parent="#accordion-uyuni-2">
+            <div id="item3-2" class="collapse hide accordion-content" role="region" aria-labelledby="headingTwo-item3-2"
+              data-parent="#accordion-uyuni-2" aria-hidden="true">
               <p>
                 deployed in hybrid cloud and container infrastructures that are out of compliance to hardened profiles/templates based on your own internal security policies ensuring faster non-compliant remediation.
               </p>
@@ -197,12 +201,12 @@
           <!-- End item -->
           <!-- Start item -->
           <div class="accordion-wrap">
-            <div class="accordion-header" data-toggle="collapse" data-target="#item4-2" aria-expanded="false"
-              aria-controls="item4-2" id="headingOne">
+            <div class="accordion-header" role="button" data-toggle="collapse" data-target="#item4-2" aria-expanded="false"
+              aria-controls="item4-2" id="headingTwo-item4-2" tabindex="0">
               <h2><img src="img/plus.svg" class="accordion-plus" alt="Expand Icon: Click to reveal additional information."> Simplified management</h2>
             </div>
-            <div id="item4-2" class="collapse hide accordion-content" aria-labelledby="headingOne"
-              data-parent="#accordion-uyuni-2">
+            <div id="item4-2" class="collapse hide accordion-content" role="region" aria-labelledby="headingTwo-item4-2"
+              data-parent="#accordion-uyuni-2" aria-hidden="true">
               <p>
                 with graphical visualization of your Linux systems and their relationships along with the capability to organize them into logical groupings based on tags (e.g. location, rack, vendor, CPU architecture, RAM, etc.)
               </p>
@@ -247,7 +251,7 @@
               <span>19/02/2025</span>
             </div>
             <div class="news-box-content">
-	      <p>The <a href="https://github.com/uyuni-project/uyuni/discussions/9804" target="_blank">poll</a> to choose the new host OS for Uyuni is already available. Please send your vote until Friday February 28th, end of the day. Should you have any additional comment, please find the discussion <a href="https://github.com/uyuni-project/uyuni/discussions/9729" target="_blank">here</a>.</p>
+	      <p>The <a href="https://github.com/uyuni-project/uyuni/discussions/9804" target="_blank">poll</a> to choose the new host OS for Uyuni is already available. Please send your vote until Friday February 28th, end of the day. Should you have any additional comment, please find the discussion <a href="https://github.com/uyuni-project/uyuni/discussions/9729" target="_blank" alt="discussion-here">here</a>.</p>
             </div>
           </div>
           <!-- News box End -->
@@ -266,8 +270,6 @@
           © 2018 - 2024 The Uyuni Project
         </span>
       </div>
-
-
       <div class="col-md">
         <h5>Project</h5>
         <ul>
@@ -287,7 +289,7 @@
         <h5>Related links</h5>
         <ul>
           <li><a href="https://www.suse.com/products/suse-manager/">SUSE Manager</a></li>
-          <li><a href="https://www.saltproject.io/">Salt Project</a></li>
+          <li><a href="https://www.saltproject.io/">Salt-Project</a></li>
           <li><a href="https://cobbler.github.io/">Cobbler</a></li>
           <li><a href="https://spacewalkproject.github.io"/>Spacewalk</a></li>
         </ul>
@@ -317,12 +319,11 @@
   <!-- end footer -->
 </div>
 <!-- .page-wrapper -->
-
-
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="./js/script.js"></script>
 </body>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <script src="./js/script.js"></script>
 </html>
