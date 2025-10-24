@@ -77,8 +77,8 @@
 
         <div class="subpage-description">
             <div class="subpage-title-back">
-		<span style="display: none;" id="current_version">2025.07</span>
-                <h1>Stable version 2025.07</h1>
+		<span style="display: none;" id="current_version">2025.10</span>
+                <h1>Stable version 2025.10</h1>
                 <a href="../index.html" class="btn btn-primary">
                     <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
             </div>
@@ -92,10 +92,10 @@
 
             <h4 id="releasenotes"><a href="#releasenotes">Release notes</a></h4>
             <!--<p><strong>WARNING:</strong> Remember to review the release notes! They contain valuable information and, depending on your current version, required procedures to update to the most recent one! Make sure you read the release notes for all the versions between the one you are using now, and 2024.10!</strong></p>-->
-            <p><strong>WARNING:</strong> Remember to review the release notes! They contain valuable information and, for the update to 2024.10, remember that this version is changing the base operating system and moves the product to a containers only release for both Uyuni Server and the Proxies!</strong></p>
+            <p><strong>WARNING:</strong> Remember to review the release notes! Since release 2025.10 Uyuni is released for a different host OS for both Uyuni Server and the Proxies!</strong></p>
             <ul>
-                <li><a href="../doc/2025.07/release-notes-uyuni-server.html">Server Release Notes</a></li>
-                <li><a href="../doc/2025.07/release-notes-uyuni-proxy.html">Proxy Release Notes</a></li>
+                <li><a href="../doc/2025.10/release-notes-uyuni-server.html">Server Release Notes</a></li>
+                <li><a href="../doc/2025.10/release-notes-uyuni-proxy.html">Proxy Release Notes</a></li>
             </ul>
             <h4 id="documentation"><a href="#documentation">Documentation</a></h4>
 	    <h5>HTML</h5>
@@ -103,14 +103,14 @@
                 <a href="https://www.uyuni-project.org/uyuni-docs-api/">API</a><br />
 	    <h5>PDF</h5>
             <ul>
-                <li><a href="../doc/2025.07/uyuni_installation-and-upgrade_guide.pdf">Installation and Upgrade guide</a></li>
-                <li><a href="../doc/2025.07/uyuni_client-configuration_guide.pdf">Client Configuration Guide</a></li>
-                <li><a href="../doc/2025.07/uyuni_administration_guide.pdf">Administration Guide</a></li>
-                <li><a href="../doc/2025.07/uyuni_reference_guide.pdf">Reference Guide</a></li>
-                <li><a href="../doc/2025.07/uyuni_retail_guide.pdf">Retail Guide</a></li>
-                <li><a href="../doc/2025.07/uyuni_common-workflows_guide.pdf">Common Workflows Guide</a></li>
-                <li><a href="../doc/2025.07/uyuni_specialized-guides_guide.pdf">Specialized Guides Guide</a></li>
-                <li><a href="../doc/2025.07/uyuni_legal_guide.pdf">Legal Information</a></li>
+                <li><a href="../doc/2025.10/uyuni_installation-and-upgrade_guide.pdf">Installation and Upgrade guide</a></li>
+                <li><a href="../doc/2025.10/uyuni_client-configuration_guide.pdf">Client Configuration Guide</a></li>
+                <li><a href="../doc/2025.10/uyuni_administration_guide.pdf">Administration Guide</a></li>
+                <li><a href="../doc/2025.10/uyuni_reference_guide.pdf">Reference Guide</a></li>
+                <li><a href="../doc/2025.10/uyuni_retail_guide.pdf">Retail Guide</a></li>
+                <li><a href="../doc/2025.10/uyuni_common-workflows_guide.pdf">Common Workflows Guide</a></li>
+                <li><a href="../doc/2025.10/uyuni_specialized-guides_guide.pdf">Specialized Guides Guide</a></li>
+                <li><a href="../doc/2025.10/uyuni_legal_guide.pdf">Legal Information</a></li>
             </ul>
 
             <p>The latest documentation is also listed in the server's WebUI navigation after installation. </p>
@@ -133,7 +133,7 @@
                     <tbody >
                     <tr>
 
-                        <td>openSUSE Leap Micro 5.5</td>
+                        <td>openSUSE Tumbleweed</td>
                         <td>Clean installation, up-to-date</td>
 
                     </tr>
@@ -170,31 +170,28 @@
                 <p>Please note Uyuni requires FQDNs for the Server, Proxy and clients, so usage of a properly-configured DNS server is mandatory for client updates to work.</p>
                 <p>If you want to install Uyuni in lab mode, for testing, you may be interested in how to easily make use of libvirt's included dnsmasq DNS and DHCP server: <a href="https://github.com/uyuni-project/uyuni/wiki/Libvirt-DNS-and-DHCP-without-Avahi">Libvirt DNS and DCHP without Avahi</a>.</p>
 
-                <p>1. Update openSUSE Leap Micro 5.5:</p>
-                <code># transactional-update</code>
+                <p>1. Update openSUSE Tumbleweed</p>
+                <code># zypper dup</code>
 
-                <p>2. Reboot the system</p>
+                <p>2. Reboot the system if needed</p>
 
-                <p>3. Configure a resolvable fully quallified domain name (FQDN)</p>
+                <p>3. Configure a resolvable fully qualified domain name (FQDN)</p>
 
-                <p>4. Enter the transactional shell:</p>
-                <code># transactional-update shell</code>
-
-                <p>5. Add the Uyuni Server repository:</p>
+                <p>4. Add the Uyuni Server repository:</p>
                 <code># zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-$(arch)-Media1/ uyuni-server-stable</code>
 
-                <p>6. Refresh the repository list and accept the key:</p>
+                <p>5. Refresh the repository list and accept the key:</p>
                 <code># zypper ref</code>
 
-                <p>7. Install the container tools:</p>
+                <p>6. Install the container tools:</p>
                 <code># zypper in mgradm mgrctl mgradm-bash-completion mgrctl-bash-completion uyuni-storage-setup-server</code>
 
-                <p>8. Reboot the host</p>
+                <p>7. Reboot the host</p>
 
-                <p>9. From the terminal run the following command as root:</p>
+                <p>8. From the terminal run the following command as root:</p>
                 <code># mgradm install podman</code>
 
-                <p>10. Input a password for the CA certificate, an administrative account password and your email for notifications:</p>
+                <p>9. Input a password for the CA certificate, an administrative account password and your email for notifications:</p>
 		<code># mgradm install podman<br>
 		  3:07PM INF Welcome to mgradm<br>
 		  3:07PM INF Executing command: podman<br>
@@ -202,7 +199,7 @@
 		  Administrator password:<br>
 		  Administrator's email: admin@example.com</code>
 
-                <p>11. The container will take some minutes to deploy.</p>
+                <p>10. The container will take some minutes to deploy.</p>
 
 		Once the setup assistant is ready, you will be able to access the WebUI at <code>https://&lt;FQDN>/</code>
 
@@ -230,7 +227,7 @@
                     <tbody >
                     <tr>
 
-                        <td>openSUSE Leap Micro 5.5</td>
+                        <td>openSUSE Tumbleweed</td>
                         <td>Clean installation, up-to-date</td>
 
                     </tr>
@@ -275,6 +272,7 @@
             <ul>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/">openSUSE Leap 15.* (x86_64, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/openSUSE_Leap_15-Uyuni-Client-Tools/openSUSE_Leap_15.0/">openSUSE Leap Micro 5.* (x86_64, aarch64)</a></li>
+                <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Tumbleweed-Uyuni-Client-Tools/openSUSE_Tumbleweed/">openSUSE Tumbleweed (x86_64, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE12-Uyuni-Client-Tools/SLE_12/">SLE12 (x86_64, pcc64le, s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLE15-Uyuni-Client-Tools/SLE_15/">SLE15 (x86_64, pcc64le, s390x, aarch64)</a></li>
                 <li><a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/SLMicro6-Uyuni-Client-Tools/SL-Micro6/">SL Micro 6 (x86_64, s390x, aarch64)</a></li>
