@@ -180,26 +180,40 @@
                 <p>4. Add the Uyuni Server repository:</p>
                 <code># zypper ar https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable/images/repo/Uyuni-Server-POOL-$(arch)-Media1/ uyuni-server-stable</code>
 
+                In case of using a different host OS (Ubuntu, Debian...), in general anything not based on (open)SUSE products), use the relevant repository from
+                <a href="https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/ContainerUtils/" target="_blank">https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/ContainerUtils/</a>
+
                 <p>5. Refresh the repository list and accept the key:</p>
                 <code># zypper ref</code>
 
-                <p>6. Install the container tools:</p>
-                <code># zypper in mgradm mgrctl mgradm-bash-completion mgrctl-bash-completion uyuni-storage-setup-server</code>
+                <p>6. Install the product:</p>
+                <code># zypper in -t product Uyuni-Server</code>
+
+                In case of using a different host OS (Ubuntu, Debian...), in general anything not based on (open)SUSE products), the packages to be installed are:
+                <code>
+                mgradm
+                mgrctl
+                mgradm-bash-completion
+                podman
+                uyuni-storage-setup-server
+                </code>
+                <strong>IMPORTANT:</strong> podman >= 4.5.0 is required
 
                 <p>7. From the terminal run the following command as root:</p>
                 <code># mgradm install podman</code>
 
                 <p>8. Input a password for the CA certificate, an administrative account password and your email for notifications:</p>
-		<code># mgradm install podman<br>
-		  3:07PM INF Welcome to mgradm<br>
-		  3:07PM INF Executing command: podman<br>
-		  Password for the CA certificate to generate:<br>
-		  Administrator password:<br>
-		  Administrator's email: admin@example.com</code>
+                <code>
+                2:09PM INF Starting mgradm install podman<br>
+                2:09PM INF Use of this software implies acceptance of the End User License Agreement.<br>
+                Password for the CA key to generate:<br>
+                Confirm the password:<br>
+                Administrator password:<br>
+                Confirm the password:
+                </code>
 
                 <p>9. The container will take some minutes to deploy.</p>
-
-		Once the setup assistant is ready, you will be able to access the WebUI at <code>https://&lt;FQDN>/</code>
+                Once the setup assistant is ready, you will be able to access the WebUI at <code>https://&lt;FQDN>/</code>
 
                 <p>From that point you can start working with the Uyuni Server.</p>
 
