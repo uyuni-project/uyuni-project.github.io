@@ -235,20 +235,34 @@
           <!-- News box Start -->
           <div class="news-box">
             <div class="news-box-title">
-              <span>03/02/2026</span>
+              <span>24/02/2026</span>
             </div>
             <div class="news-box-content">
-              <p>Uyuni 2026.01 is now available. This release support openSUSE Leap 16.0 and SUSE Linux Enterprise Server 16 as client OSes. Additionally enhanced support for Ansible and RBAC and some critical vulnerabilities (CVEs). Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
+               <p>
+                  <b>Important note for upgrading to Uyuni 2026.01.</b><br>
+                  This release bumps the database to <b>PostgreSQL&nbsp;18</b>.
+                  If you are upgrading an existing Uyuni version, please note that a bug in the version-detection logic requires a manual workaround:
+               </p>
+               <ol>
+                  <li>Run this <a href="https://gist.github.com/aaannz/266c2bd175be27d4881161b1de768d3f">migration script</a>.</li>
+                  <li>Execute <code>mgradm upgrade podman</code></li>
+               </ol>
+               <p>
+                  This only affects upgrades; new installations will configure PostgreSQL&nbsp;18 automatically.
+               </p>
+               <p>
+                  For more details, see <a href="https://github.com/uyuni-project/uyuni/issues/11444">GitHub Issue #11444.</a>
+               </p>
             </div>
           </div>
           <!-- News box End -->
-          <!-- News box Start -->
+        <!-- News box Start -->
           <div class="news-box">
             <div class="news-box-title">
-              <span>19/01/2026</span>
+              <span>05/02/2026</span>
             </div>
             <div class="news-box-content">
-              <p>Uyuni will be present at the Config Management Camp 2026 (2-4 February 2026, Ghent, Belgium) with a talk about <a href="https://cfp.cfgmgmtcamp.org/ghent2026/talk/9GEJXP/" target="_blank">current state and future of the Ansible Integration in Uyuni</a>.</p>
+              <p>Uyuni 2026.01 is now available. This release support openSUSE Leap 16.0 and SUSE Linux Enterprise Server 16 as client OSes. Additionally enhanced support for Ansible and RBAC and some critical vulnerabilities (CVEs). Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
             </div>
           </div>
           <!-- News box End -->
