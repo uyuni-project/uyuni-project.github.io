@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2026.03</span><br>
-<span id="revdate">2026-03-06 11:50:53 +0100</span>
+<span id="revdate">2026-03-09 17:05:55 +0100</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -810,6 +810,7 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_security_fixes">Security fixes</a></li>
 </ul>
 </li>
+<li><a href="#_monitoring_server_components_for_sles_12_client_tools">Monitoring Server Components for SLES 12 Client Tools</a></li>
 <li><a href="#_version_2026_01">Version 2026.01</a>
 <ul class="sectlevel4">
 <li><a href="#_new_products_enabled_2">New products enabled</a></li>
@@ -1458,8 +1459,27 @@ This renewal of the codebase was required due to EOL of the currently used versi
 <li>
 <p><a href="https://www.cve.org/CVERecord?id=CVE-2026-21722">CVE-2026-21722</a> grafana: Public dashboards annotations: use dashboard timerange if time selection disabled <a href="https://bugzilla.suse.com/show_bug.cgi?id=1258136">bsc#1258136</a></p>
 </li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2024-29371">CVE-2024-29371</a> jose4j: Safeguard against excessive resource utilization by restricting the size of data during JWE payload decompression (<a href="http://bugzilla.suse.com/show_bug.cgi?id=1255298">bsc#1255298</a>)</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-27727">CVE-2026-27727</a> mchange-commons: Possible download and execution of malicious code triggered by reading a maliciously crafted javax.naming.Reference or serialized object. (<a href="http://bugzilla.suse.com/show_bug.cgi?id=1258913">bsc#1258913</a>)</p>
+</li>
+<li>
+<p><a href="https://www.cve.org/CVERecord?id=CVE-2026-27830">CVE-2026-27830</a> c3p0: Deserialization vulnerability through maliciously crafted Java serialized objects and javax.naming.Reference instances (<a href="http://bugzilla.suse.com/show_bug.cgi?id=1258942">bsc#1258942</a>)</p>
+</li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_monitoring_server_components_for_sles_12_client_tools">Monitoring Server Components for SLES 12 Client Tools</h4>
+<div class="paragraph">
+<p>Starting with Uyuni 2026.03, the monitoring server related packages included in the SLES 12 client tools channels have been removed and will no longer receive updates.
+These packages previously enabled a SLES 12 system to act as a monitoring server and included components such as Prometheus, Alertmanager, Grafana, and related dashboards.</p>
+</div>
+<div class="paragraph">
+<p>Client side monitoring components (exporters) will continue to be provided, allowing SLES 12 systems to remain monitored by an external monitoring server.</p>
 </div>
 </div>
 <div class="sect3">
@@ -6340,7 +6360,7 @@ RHEL8 and 9 are expected to work in the same way as Rocky Linux or AlmaLinux 8 o
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-03-06 11:50:53 +0100
+Last updated 2026-03-09 17:05:55 +0100
 </div>
 </div>
 </body>
