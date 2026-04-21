@@ -81,7 +81,7 @@
       <div class="cta-section">
         <a href='pages/stable-version.html' class="btn btn-primary">
           <span class="badge eos-icons">download</span>
-          Get new 2026.03!
+          Get new 2026.04!
         </a>
         <a href="pages/source-code.html">
         <button type="button" class="btn btn-light">
@@ -232,37 +232,23 @@
         -->
         </div>
         <div class="js-home-carousel home-carousel">
-        <!-- News box Start -->
+          <!-- News box Start -->
+          <div class="news-box">
+            <div class="news-box-title">
+              <span>23/04/2026</span>
+            </div>
+            <div class="news-box-content">
+              <p>Uyuni 2026.04 is now available. This release supports RHEL 10 and its compatible distributions as a client OS. This release also includes other new features, including online database backup management, Enhanced SCAP Auditing Integration (Technology Preview), and a Reporting Dashboard for Grafana. Additionally, some critical vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
+            </div>
+          </div>
+          <!-- News box Start -->
+          <!-- News box End -->
           <div class="news-box">
             <div class="news-box-title">
               <span>10/03/2026</span>
             </div>
             <div class="news-box-content">
               <p>Uyuni 2026.03 is now available. This release supports Debian 13 as a client OS. Additionally some critical vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
-            </div>
-          </div>
-          <!-- News box End -->
-          <!-- News box Start -->
-          <div class="news-box">
-            <div class="news-box-title">
-              <span>24/02/2026</span>
-            </div>
-            <div class="news-box-content">
-               <p>
-                  <b>Important note for upgrading to Uyuni 2026.01.</b><br>
-                  This release bumps the database to <b>PostgreSQL&nbsp;18</b>.
-                  If you are upgrading an existing Uyuni version, please note that a bug in the version-detection logic requires a manual workaround:
-               </p>
-               <ol>
-                  <li>Run this <a href="https://gist.github.com/aaannz/266c2bd175be27d4881161b1de768d3f">migration script</a>.</li>
-                  <li>Execute <code>mgradm upgrade podman</code></li>
-               </ol>
-               <p>
-                  This only affects upgrades; new installations will configure PostgreSQL&nbsp;18 automatically.
-               </p>
-               <p>
-                  For more details, see <a href="https://github.com/uyuni-project/uyuni/issues/11444">GitHub Issue #11444.</a>
-               </p>
             </div>
           </div>
           <!-- News box End -->
