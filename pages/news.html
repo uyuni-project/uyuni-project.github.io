@@ -88,7 +88,13 @@
 <div class="container page-wrapper">
     <div class="container">
         <div class="row content-padding subpage-content">
-            <p><strong>28/04/2026</strong> - Uyuni 2026.04 is now available. This release supports RHEL 10 and its compatible distributions as a client OS. This release also includes other new features, including online database backup management, Enhanced SCAP Auditing Integration (Technology Preview), and a Reporting Dashboard for Grafana. Additionally, some critical vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
+            <p><strong>29/04/2026</strong> - Uyuni 2026.04 is now available. This release supports RHEL 10 and its compatible distributions as a client OS. This release also includes other new features, including online database backup management, Enhanced SCAP Auditing Integration (Technology Preview), and a Reporting Dashboard for Grafana. Additionally, some critical vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
+            <p><strong>29/04/2026</strong> - <b>Stability Update: Disk Space Health Check & Upgrades</b><br>
+                  We recently introduced a safety feature that monitors disk space to prevent data corruption.
+                  To ensure a smooth transition during major upgrades, where long-running tasks like DB reindexing are common, the "stop-on-failure" action is temporarily disabled for the main container.
+               <p>
+                  While the database container remains protected and will shut down if disk space is exhausted, the <b>main container will stay running</b> even if it reports an "unhealthy" status. This prevents upgrade interruptions; please monitor disk pressure manually until the migration completes and the Web UI returns to a healthy state.
+               </p>
             <p><strong>10/03/2026</strong> - Uyuni 2026.03 is now available. This release supports Debian 13 as a client OS. Additionally some critical vulnerabilities (CVEs) were fixed. Check the <a href='../pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
             <p><strong>24/02/2026</strong> - <strong>Important note for upgrading to Uyuni 2026.01.</strong>  The 2026.01 release bumps the database to <strong>PostgreSQL&nbsp;18</strong>. If you are <strong>upgrading an existing Uyuni version</strong>, please note that a bug in the version-detection logic requires a manual workaround. <strong>This issue only affects upgrades to Uyuni 2026.01, new installations will configure PostgreSQL&nbsp;18 automatically</strong>. If you are interested to more details, see<a href="https://github.com/uyuni-project/uyuni/issues/11444"> GitHub Issue #11444</a>, otherwise, just follow these steps:
                <ol>
