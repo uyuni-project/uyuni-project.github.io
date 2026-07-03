@@ -235,10 +235,10 @@
           <!-- News box Start -->
           <div class="news-box">
             <div class="news-box-title">
-              <span>29/04/2026</span>
+              <span>02/07/2026</span>
             </div>
             <div class="news-box-content">
-              <p><b>Uyuni 2026.04 is now available.</b> This release supports RHEL 10 and its compatible distributions as a client OS. This release also includes other new features, including online database backup management, Enhanced SCAP Auditing Integration (Technology Preview), and a Reporting Dashboard for Grafana. Additionally, some critical vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
+              <b>Important notes before upgrading to Uyuni 2026.06:</b><br> The transition to openSUSE Leap 16.0 introduces strict SSL certificate validation. Python 3.13 will reject any CA certificate that does not mark the X509v3 Basic Constraints extension as critical. </br> <b>Please carefully read this <a href='https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/thread/JL2D74CZ65VHYMNF36YDTQJ7VODAGAXA/'>announcement</a> before starting the upgrade process.</b>
             </div>
           </div>
           <!-- News box Start -->
@@ -248,13 +248,7 @@
               <span>29/04/2026</span>
             </div>
             <div class="news-box-content">
-               <p>
-                  <b>Stability Update: Disk Space Health Check & Upgrades</b><br>
-                  We recently introduced a safety feature that monitors disk space to prevent data corruption.
-                  To ensure a smooth transition during major upgrades, where long-running tasks like DB reindexing are common, the "stop-on-failure" action is temporarily disabled for the main container.
-               <p>
-                  While the database container remains protected and will shut down if disk space is exhausted, the <b>main container will stay running</b> even if it reports an "unhealthy" status. This prevents upgrade interruptions; please monitor disk pressure manually until the migration completes and the Web UI returns to a healthy state.
-               </p>
+              <p><b>Uyuni 2026.04 is now available.</b> This release supports RHEL 10 and its compatible distributions as a client OS. This release also includes other new features, including online database backup management, Enhanced SCAP Auditing Integration (Technology Preview), and a Reporting Dashboard for Grafana. Additionally, some critical vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
             </div>
           </div>
           <!-- News box End -->
