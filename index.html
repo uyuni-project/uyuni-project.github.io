@@ -81,7 +81,7 @@
       <div class="cta-section">
         <a href='pages/stable-version.html' class="btn btn-primary">
           <span class="badge eos-icons">download</span>
-          Get new 2026.04!
+          Get new 2026.06!
         </a>
         <a href="pages/source-code.html">
         <button type="button" class="btn btn-light">
@@ -235,20 +235,24 @@
           <!-- News box Start -->
           <div class="news-box">
             <div class="news-box-title">
-              <span>02/07/2026</span>
+              <span>09/07/2026</span>
             </div>
             <div class="news-box-content">
-              <b>Important notes before upgrading to Uyuni 2026.06:</b><br> The transition to openSUSE Leap 16.0 introduces strict SSL certificate validation. Python 3.13 will reject any CA certificate that does not mark the X509v3 Basic Constraints extension as critical. </br> <b>Please carefully read this <a href='https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/thread/JL2D74CZ65VHYMNF36YDTQJ7VODAGAXA/'>announcement</a> before starting the upgrade process.</b>
+              Uyuni 2026.06 is now available. The container base OS has been upgraded to openSUSE Leap 16.0. Additionally, several high-severity security vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading! <br>
+                <b>Important notes for upgrading to Uyuni 2026.06:</b><br>
+                  <b>Please carefully read this <a href='https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/thread/JL2D74CZ65VHYMNF36YDTQJ7VODAGAXA/'>announcement</a> before starting the upgrade process.</b>
+                  Additionally, the glibc upgrade to Leap 16.0 will trigger a <b>PostgreSQL database reindexing</b> during the upgrade. This could take a long time to complete depending on the size of your environment, so please plan your upgrade window accordingly.
+                </p>
             </div>
           </div>
           <!-- News box Start -->
           <!-- News box End -->
           <div class="news-box">
             <div class="news-box-title">
-              <span>29/04/2026</span>
+              <span>02/07/2026</span>
             </div>
             <div class="news-box-content">
-              <p><b>Uyuni 2026.04 is now available.</b> This release supports RHEL 10 and its compatible distributions as a client OS. This release also includes other new features, including online database backup management, Enhanced SCAP Auditing Integration (Technology Preview), and a Reporting Dashboard for Grafana. Additionally, some critical vulnerabilities (CVEs) were fixed. Check the <a href='pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
+              <b>Important notes before upgrading to Uyuni 2026.06:</b><br> The transition to openSUSE Leap 16.0 introduces strict SSL certificate validation. Python 3.13 will reject any CA certificate that does not mark the X509v3 Basic Constraints extension as critical. </br> <b>Please carefully read this <a href='https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/thread/JL2D74CZ65VHYMNF36YDTQJ7VODAGAXA/'>announcement</a> before starting the upgrade process.</b>
             </div>
           </div>
           <!-- News box End -->
