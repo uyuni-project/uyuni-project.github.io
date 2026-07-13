@@ -786,7 +786,7 @@ p { margin-bottom: 1.25rem; }
 <h1>Release notes for Uyuni Server</h1>
 <div class="details">
 <span id="author" class="author">Version 2026.06</span><br>
-<span id="revdate">2026-07-01 17:47:01 +0200</span>
+<span id="revdate">2026-07-13 08:42:30 +0200</span>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
@@ -1144,6 +1144,7 @@ p { margin-bottom: 1.25rem; }
 </li>
 <li><a href="#known_issues">Known issues</a>
 <ul class="sectlevel2">
+<li><a href="#_availability_of_salts_virt_module_inside_the_salt_bundle">Availability of Salt&#8217;s "virt" module inside the Salt Bundle</a></li>
 <li><a href="#_ssh_sftp_misconfiguration_after_sles_16_migration">SSH SFTP Misconfiguration after SLES 16 Migration</a></li>
 <li><a href="#_uyuni_2025_10_fails_to_start_because_of_error_column_server_id_of_relation_rhnactiondup_contains_null_values">Uyuni 2025.10 fails to start because of ERROR: column "server_id" of relation "rhnactiondup" contains null values</a></li>
 <li><a href="#_hub_xml_rpc_usage">Hub XML-RPC Usage</a></li>
@@ -1517,6 +1518,12 @@ The migration action runs first, followed by a mandatory verification step to co
 </li>
 <li>
 <p><a href="https://www.suse.com/security/cve/CVE-2026-33381.html">CVE-2026-33381</a> - <a href="https://bugzilla.suse.com/show_bug.cgi?id=1265281">bsc#1265281</a> - Grafana: Fixed service account token generation after permission removal.</p>
+</li>
+<li>
+<p><a href="https://bugzilla.suse.com/show_bug.cgi?id=1269253">bsc#1269253</a> - spacewalk-java: formula.setFormulasOfGroup and formula.getCombinedFormulaDataByServerIds allow cross-organization broken access control.</p>
+</li>
+<li>
+<p><a href="https://bugzilla.suse.com/show_bug.cgi?id=1269534">bsc#1269534</a> - spacewalk-java: Authenticated Arbitrary File Write via Image Upload Filename Traversal.</p>
 </li>
 </ul>
 </div>
@@ -6168,6 +6175,19 @@ Prometheus formula has been extended to configure the Blackbox exporter.</p>
 <h2 id="known_issues">Known issues</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="_availability_of_salts_virt_module_inside_the_salt_bundle">Availability of Salt&#8217;s "virt" module inside the Salt Bundle</h3>
+<div class="paragraph">
+<p>For openSUSE Leap, Tumbleweed and SLE family, the Salt Bundle provides the necessary Python libvirt libraries for the Salt&#8217;s <code>virt</code> module to work, but it requires the <code>libvirt-libs</code> package to be installed. This package must be installed manually by the user in the managed client where we want to interact with the <code>virt</code> module of Salt. Otherwise you would get an issue when interacting with the module:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code># venv-salt-call virt.all_capabilities
+[...]
+'virt' __virtual__ returned False: Unable to locate or import python libvirt library.</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_ssh_sftp_misconfiguration_after_sles_16_migration">SSH SFTP Misconfiguration after SLES 16 Migration</h3>
 <div class="paragraph">
 <p>Migrating systems from SUSE Linux Enterprise Server 15 SP7 to SUSE Linux Enterprise Server 16 or from openSUSE Leap 15.6 to openSUSE Leap 16.0 can leave an outdated SFTP subsystem path in <code>/etc/ssh/sshd_config</code>. This causes file transfer protocols like <code>scp</code> and <code>sftp</code> to fail. A permanent automated fix will be included in the next update.</p>
@@ -6818,7 +6838,7 @@ RHEL8 and 9 are expected to work in the same way as Rocky Linux or AlmaLinux 8 o
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-07-01 17:47:01 +0200
+Last updated 2026-07-13 08:42:30 +0200
 </div>
 </div>
 </body>
