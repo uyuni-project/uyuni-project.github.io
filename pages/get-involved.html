@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Uyuni - Patches</title>
-    <meta name="description" content="Uyuni - Stable Version">
+    <title>Uyuni - Get involved</title>
+    <meta name="description" content="Uyuni - Get involved">
 
     <link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
     <link rel="manifest" href="../img/favicon/site.webmanifest">
     <link rel="mask-icon" href="../img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/eos-icons/dist/css/eos-icons.css' />
@@ -74,10 +74,9 @@
             </ul>
         </nav>
         <!-- #nav -->
-
         <div class="subpage-description">
             <div class="subpage-title-back">
-                <h1>Patches</h1>
+                <h1>Contact</h1>
                 <a href="../index.html" class="btn btn-primary">
                     <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
             </div>
@@ -88,57 +87,38 @@
 <div class="container page-wrapper">
     <div class="container">
         <div class="row content-padding subpage-content">
-            <h4><a href="#releasenotes">General information</a></h4>
-            <div class="subpage-content-push-right">
-                <p>Uyuni follows a rolling release model, meaning there is no maintenance for a given Uyuni version and all bugfixes are provided by the next version.</p>
-                <p>However there are some exceptional situations where patches need to be provided, for example for CVEs, and that is what this procedure covers.</p>
-            </div>
-            <h4><a href="#server">Server</a></h4>
-            <div class="subpage-content-push-right">
-              <ol>
-                <li>Add the patches repository to the Server, if you do not have it already:
-                  <code>$ sudo zypper addrepo https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Patches/openSUSE_Leap_Micro_5.5/systemsmanagement:Uyuni:Stable:Patches.repo</code>
-                </li>
-                <li>Refresh the metadata:
-                  <code>$ sudo zypper refresh</code>
-                </li>
-                <li>Update the system:
-                  <code>$ sudo transactional-update up</code>
-                </li>
-                <li>Reboot the system:
-                  <code>$ sudo reboot</code>
-                </li>
-                <li>Update the server container:
-                  <code>$ sudo mgradm upgrade podman --image systemsmanagement/uyuni/stable/patches/containers/uyuni/server</code>
-                </li>
-              </ol>
-            </div>
-            <h4><a href="#proxiesclients">Proxies</a></h4>
-            <div class="subpage-content-push-right">
-              <ol>
-                <li>Add the patches repository to the Proxy, if you do not have it already:
-                  <code>$ sudo zypper addrepo https://download.opensuse.org/repositories/systemsmanagement:/Uyuni:/Stable:/Patches/openSUSE_Leap_Micro_5.5/systemsmanagement:Uyuni:Stable:Patches.repo</code>
-                </li>
-                <li>Refresh the metadata:
-                  <code>$ sudo zypper refresh</code>
-                </li>
-                <li>Update the system:
-                  <code>$ sudo transactional-update up</code>
-                </li>
-                <li>Reboot the system:
-                  <code>$ sudo reboot</code>
-                </li>
-                <li>Update the proxies containers:
-                  <code>$ sudo mgrpxy upgrade podman --httpd-image systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-httpd --saltbroker-image systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-salt-broker --squid-image systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-squid --ssh-image systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-ssh --tftpd-image systemsmanagement/uyuni/stable/patches/containers/uyuni/proxy-tftpd</code>
-                </li>
-              </ol>
-            </div>
-            <h4><a href="#proxiesclients">Clients</a></h4>
-            <div class="subpage-content-push-right">
-              <ol>
-                <li>Sync all the affected client tools repositories and apply the provided patches</li>
-              </ol>
-            </div>
+            <h2 id="ml" class="h4-style"><a href="#ml">Announcements</a></h2>
+            <ul>
+                <li><a href="https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/" target="_blank">announce</a> mailing list: To receive news about releases, events and more via email.</li>
+                <li><a href="https://twitter.com/UyuniProject" target="_blank">Twitter</a>: To receive news about releases, events and more via Twitter.</li>
+            </ul>
+            <h2 id="bugs" class="h4-style"><a href="#bugs">Reporting bugs</a></h2>
+            <p> Submit bugs to the issues tab located at our <a href="https://github.com/uyuni-project/uyuni/issues">Github repository</a>.</p>
+            <div class="alert alert-warning" role="alert"> Verify that a duplicate of the issue does not already exist! </div>
+            <h2 id="vulnerabilities" class="h4-style"><a href="#vulnerabilities">Reporting security vulnerabilities</a></h2>
+            <p>Report security vulnerabilities by creating a <a href="https://github.com/uyuni-project/uyuni/security/advisories/new">security advisory</a>. We would be happy to give you credits for your help with making Uyuni more secure.</p>
+            <h2 id="discussions" class="h4-style"><a href="#discussions">GitHub discussions</a></h2>
+            <p>We have asynchronous communication using <a href="https://github.com/uyuni-project/uyuni/discussions" target="_blank">GitHub Discussions<a>. They replaced the now archived mailing lists (see below).</p>
+            <h2 id="gitter" class="h4-style"><a href="#gitter">Gitter</a></h2>
+            <p>You can use the channels <a href="https://gitter.im/uyuni-project/users">users</a> and <a href="https://gitter.im/uyuni-project/devel">devel</a> at Gitter to chat with us.</p>
+            <p>You can also join the Gitter rooms via Matrix: <a href="https://matrix.to/#/#uyuni-project_users:gitter.im">#uyuni-project_users:gitter.im</a> and <a href="https://matrix.to/#/#uyuni-project_devel:gitter.im">#uyuni-project_devel:gitter.im</a>.</p>
+            <h2 id="community-hours" class="h4-style"><a href="#community-hours">Uyuni Community Hours</a></h2>
+            <p>Every last Thursday of the month, 16.00 CET/CEST (Germany time) we meet online to talk about what is new in Uyuni, discuss how to improve and enhance it, answer questions from the community and have a nice time in general.</p>
+            <p>Agenda and meeting details are sent to the Uyuni <a href="#ml">mailing lists</a> and published in the Uyuni wiki too: <a href="https://github.com/uyuni-project/uyuni/wiki/Uyuni-Community-Hours">Uyuni Community Hours</a>.</p>
+            <p>We also provide a custom calendar that lists all the sessions we are organizing. For more details visit the <a href="https://calendar.opensuse.org/teams/uyuni/events/uyuni-community-hours">dedicated page and subscribe</a></p>
+            <h2 id="calendars" class="h4-style"><a href="#calendars">Community calendars</a></h2>
+            <p>If you want to stay informed on what it is going on, feel free to see the <a href="https://calendar.opensuse.org/teams/uyuni">details at the following page</a> and subscribe to your preferred calendars!</p>
+            <p>Are you presenting at a conference, but your Uyuni presentation is not listed? Reach out to us on <a href="#gitter">Gitter</a> or on <a href="#discussions">GitHub discussions</a> and we will take care of adding your event to the community calendar!</p>
+            <h2 id="presentations" class="h4-style"><a href="#presentations">Presentations slides</a></h2>
+            <p>You can find Uyuni presentations slides from the community in different languages in the <a href="https://github.com/uyuni-project/presentations">presentations repository</a>. Feel free to watch them or even submit yours.</p>
+            <h2 id="deprecated" class="h4-style"><a href="#deprecated">Deprecated resources</a></h2>
+            <p>The following resources are deprecated, are archived, and can be used for historical purposes. They are not to be used as a contact method</p>
+            <h3 class="h5-style">Archived (use GitHub discussions instead):</h3>
+            <ul>
+                <li><a href="https://lists.opensuse.org/archives/list/devel@lists.uyuni-project.org/" target="_blank">devel</a> mailing list: It was used to discuss about development.</li>
+                <li><a href="https://lists.opensuse.org/archives/list/users@lists.uyuni-project.org/" target="_blank">users</a> mailing list: It was used to discuss about usage.</li>
+                <li><a href="https://lists.opensuse.org/archives/list/translation@lists.uyuni-project.org/" target="_blank">translation</a> mailing list: It was used to discuss about translations.</li>
+            </ul>
         </div>
     </div> <!-- #container -->
   <!-- Footer -->
@@ -152,7 +132,7 @@
       </div>
 
       <div class="col-md">
-        <h6>Project</h6>
+        <h5>Project</h5>
         <ul>
           <li><a href="https://www.uyuni-project.org/uyuni-docs/">Documentation</a></li>
           <li><a href="../pages/faq.html">FAQ</a></li>
@@ -167,7 +147,7 @@
         </ul>
       </div>
       <div class="col-md">
-        <h6>Related links</h6>
+        <h5>Related links</h5>
         <ul>
           <li><a href="https://www.suse.com/products/multi-linux-manager/">SUSE Multi-Linux Manager</a></li>
           <li><a href="https://www.saltproject.io/">Salt Project</a></li>
@@ -176,7 +156,7 @@
         </ul>
       </div>
       <div class="col-md">
-        <h6>Social</h6>
+        <h5>Social</h5>
         <div class="social-links">
           <a href="https://github.com/uyuni-project" target="_blank">
             <img src="../img/github_white.svg" alt="Uyuni - Github" title="GitHub source repository">
@@ -184,7 +164,7 @@
           <a href="https://l10n.opensuse.org/projects/uyuni/" target="_blank">
             <img src="../img/Weblate_logo.svg" width="24" height="24" alt="Uyuni - Weblate" title="Translate Uyuni to your language">
           </a>
-          <a href="../pages/get-involved.html#gitter">
+          <a href=".../pages/get-involved.html#gitter">
             <img src="../img/gitter.svg" alt="Uyuni - Gitter" title="Gitter chat rooms">
           </a>
           <a href="https://www.youtube.com/channel/UCB0SkZFAw9vPCFeUIYqZQ5A" target="_blank">
