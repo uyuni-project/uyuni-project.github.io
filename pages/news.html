@@ -67,8 +67,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="https://twitter.com/UyuniProject" target="_blank">
-                        <img src="../img/twitter.svg" alt="Uyuni - Twitter" title="Twitter">
+                    <a class="nav-link" href="https://x.com/UyuniProject" target="_blank" rel="noopener noreferrer" aria-label="Uyuni on X (opens in a new tab)">
+                        <img src="../img/twitter.svg" alt="" title="Uyuni on X">
                     </a>
                 </li>
             </ul>
@@ -88,12 +88,14 @@
 <div class="container page-wrapper">
     <div class="container">
         <div class="row content-padding subpage-content">
+            <p><strong>11/08/2026</strong> - Uyuni 2026.08 is now available. This release brings critical security fixes for Grafana and Prometheus, introduces full management support for Ubuntu 26.04 LTS, and upgrades Grafana to v12.4.5 Check the <a href='../pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
             <p><strong>09/07/2026</strong> - Uyuni 2026.06 is now available. The container base OS has been upgraded to openSUSE Leap 16.0. Additionally, several high-severity security vulnerabilities (CVEs) were fixed. Check the <a href='../pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading! <br>
                 <b>Important notes for upgrading to Uyuni 2026.06:</b><br>
                   <b>Please carefully read this <a href='https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/thread/JL2D74CZ65VHYMNF36YDTQJ7VODAGAXA/'>announcement</a> before starting the upgrade process.</b>
                   Additionally, the glibc upgrade to Leap 16.0 will trigger a <b>PostgreSQL database reindexing</b> during the upgrade. This could take a long time to complete depending on the size of your environment, so please plan your upgrade window accordingly.  </br>Furthermore, if you have customized the 'spacecheck_free_alert' or 'spacecheck_free_critical' parameters in '/etc/rhn/rhn.conf', please note that their meaning has changed from "minimum free space" to "maximum used space". You must convert your customized values (e.g., from 10 to 90) inside the Server container and restart the 'tomcat' and 'taskomatic' services. Failing to do so will cause the server to incorrectly detect an out-of-disk-space condition and get stuck in the <i>starting</i> state.
                 </p>
             <p><strong>02/07/2026</strong> - <b>Important notes before upgrading to Uyuni 2026.06:</b><br> The transition to openSUSE Leap 16.0 introduces strict SSL certificate validation. Python 3.13 will reject any CA certificate that does not mark the X509v3 Basic Constraints extension as critical. <b>Please carefully read this <a href='https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/thread/JL2D74CZ65VHYMNF36YDTQJ7VODAGAXA/'>announcement</a> before starting the upgrade process.</b>
+            <p><strong>22/06/2026</strong> - <a href="https://news.opensuse.org/2026/06/22/uyuni-joins-opensuse/" target="_blank" rel="noopener noreferrer" aria-label="Uyuni Joins openSUSE Project Ahead of Annual Conference (opens in a new tab)">Uyuni Joins openSUSE Project Ahead of Annual Conference</a>. </p>
             <p><strong>29/04/2026</strong> - Uyuni 2026.04 is now available. This release supports RHEL 10 and its compatible distributions as a client OS. This release also includes other new features, including online database backup management, Enhanced SCAP Auditing Integration (Technology Preview), and a Reporting Dashboard for Grafana. Additionally, some critical vulnerabilities (CVEs) were fixed. Check the <a href='../pages/stable-version.html#releasenotes'>release notes</a> for the full details before upgrading!</p>
             <p><strong>29/04/2026</strong> - <b>Stability Update: Disk Space Health Check & Upgrades</b><br>
                   We recently introduced a safety feature that monitors disk space to prevent data corruption.
@@ -204,13 +206,12 @@
             <p><strong>02/08/2019</strong> - Uyuni 4.0.2 is now available! This release enables Ubuntu clients, monitoring, content lifecycle management and <a href="../pages/stable-version.html#releasenotes">much more</a>!</p>
             <p><strong>05/04/2019</strong> - openSUSE Summit Nashville - <a href="https://events.opensuse.org/conferences/oSSN19/program/proposals/2276">Managed Monitoring with Prometheus, Grafana and Uyuni</a></p>
             <p><strong>08/03/2019</strong> - SCALE17x Presentation - <a href="https://www.socallinuxexpo.org/scale/17x/presentations/uyuni-adding-flavor-open-source-infrastructure-management">Uyuni: Adding flavor to open source infrastructure managementx</a></p>
-
             <p><strong>31/01/2019</strong> - Uyuni will be present at <a href="https://fosdem.org/" target="_blank">FOSDEM 2019</a> (Saturday Feb 2nd, 14.00-14.25, Room UB2.252A (Lameere)) and <a href="https://cfgmgmtcamp.eu/">Config Management Camp</a> (Tuesday Feb 5th, 15.00-15.55, salt track)</p>
             <p><strong>18/12/2018</strong> - Uyuni 4.0.1 available! This release enables full Salt and Traditional support for openSUSE Leap 42.3/15.0, SLE12/15 and CentOS6/7 and many other new fatures. Check the <a href="stable-version.html#rn">release notes</a> for details.
             <p><strong>06/11/2018</strong> - <a href="https://lists.opensuse.org/uyuni-users" target="_blank">uyuni-users</a> mailing list is now open to talk about Uyuni usage.</p>
             <p><strong>26/10/2018</strong> - Our first release, Uyuni 4.0.0 is out! <a href="stable-version.html">Give it a try</a> and send us your feedback! (<a href="faq.html#first-version">why is the first version 4.0.0?</a>)</p>
             <p><strong>14/09/2018</strong> - <a href="https://lists.opensuse.org/uyuni-devel" target="_blank">uyuni-devel</a> mailing list is now open for everyone, for development discussions.</p>
-            <p><strong>21/08/2018</strong> - <a href="https://twitter.com/kkaempf" target="_blank">Klaus Kämpf</a> will be discussing about Uyuni at talk <a href="https://cfp.all-systems-go.io/en/ASGpublic/events/182" target="_blank">From Physical to Cloud to Container</a>, next 2018-09-28 at <a href="https://all-systems-go.io/" target="_blank">Schedule All Systems Go! 2018</a>.</p>
+            <p><strong>21/08/2018</strong> - <a href="https://x.com/kkaempf" target="_blank" rel="noopener noreferrer" aria-label="Klaus Kämpf on X (opens in a new tab)">Klaus Kämpf</a> will be discussing about Uyuni at talk <a href="https://cfp.all-systems-go.io/en/ASGpublic/events/182" target="_blank">From Physical to Cloud to Container</a>, next 2018-09-28 at <a href="https://all-systems-go.io/" target="_blank">Schedule All Systems Go! 2018</a>.</p>
             <p><strong>20/08/2018</strong> - Uyuni source code available at GitHub <a href="https://github.com/uyuni-project/uyuni" target="_blank">uyuni-project/uyuni</a>.
              <p><strong>29/05/2018</strong> - Official #uyuni IRC channel at <a href="http://freenode.net" target="_blank">Freenode</a>. Join with your favourite IRC client, or use the <a href="http://webchat.freenode.net/?channels=%23uyuni" target="_blank">web application</a>.</p>
             <p><strong>27/05/2018</strong> - Uyuni <a href="https://events.opensuse.org/conference/oSC18/program/proposal/1852" target="_blank">workshop</a> at openSUSE conference 2018, 13.00 at room 350. Come download your images at Room 322 on Saturday and Sunday.</p>
@@ -223,7 +224,7 @@
       <div class="col-md-4 footer-description">
         <h4>Uyuni</h4>
         <span class="footer-legal">
-          © 2018 - 2026 The Uyuni Project
+          Copyright © 2018 - 2026 The Uyuni Project.<br><a href="https://news.opensuse.org/2026/06/22/uyuni-joins-opensuse/" target="_blank" rel="noopener noreferrer">Uyuni Project is part of openSUSE Project</a>
         </span>
       </div>
 
@@ -266,8 +267,8 @@
           <a href="https://www.youtube.com/channel/UCB0SkZFAw9vPCFeUIYqZQ5A" target="_blank">
             <img src="../img/yt_icon_mono_dark.svg" width="24" height="24" alt="Uyuni - YouTube" title="YouTube channel">
           </a>
-          <a href="https://twitter.com/UyuniProject" target="_blank">
-            <img src="../img/twitter.svg" alt="Uyuni - Twitter" title="Twitter">
+          <a href="https://x.com/UyuniProject" target="_blank" rel="noopener noreferrer" aria-label="Uyuni on X (opens in a new tab)">
+            <img src="../img/twitter.svg" alt="" title="Uyuni on X">
           </a>
         </div>
       </div>
