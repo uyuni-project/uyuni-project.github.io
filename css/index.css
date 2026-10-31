@@ -26,7 +26,7 @@ body {
 }
 
 a, a:visited, a:active, a:focus {
-  color: var(--bc-links)
+  color: var(--bc-links);
 }
 
 p {
@@ -41,17 +41,21 @@ code {
   padding: 10px;
   display: block;
   margin: 15px 0;
-  border-bottom: 2px solid #c5c5c5
+  border-bottom: 2px solid #c5c5c5;
 }
 
 .content-padding{
   padding: 80px 40px;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active,
+.btn-primary:focus {
+  color: #fff !important;
   background: var(--bc-primary);
   border: none;
-  transition: all 0.5 ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .btn-primary:hover,
@@ -59,6 +63,7 @@ code {
 .btn-primary:focus {
   background: var(--bc-primary-light) !important;
   border: none;
+  color: #fff !important;
 }
 
 /* ==========================================================================
@@ -428,6 +433,148 @@ header .subpage-description {
   margin: 0 0 16px;
   padding-left: 30px;
 }
+
+/* Community / Get Involved Cards
+  ========================================================================== */
+.community-section {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.community-section h2 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid rgba(0, 133, 88, 0.2);
+}
+
+.community-section h2 a {
+  color: var(--bc-secondary);
+  text-decoration: none;
+}
+
+.community-section h2 a:hover {
+  color: var(--bc-primary);
+}
+
+.community-card {
+  background: #fdfdfd;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.community-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.community-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--bc-secondary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.community-card h3 .eos-icons {
+  margin-right: 8px;
+  color: var(--bc-primary);
+  font-size: 22px;
+}
+
+.community-card p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.community-card ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.community-card .card-actions {
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.community-card .btn {
+  margin-top: 6px;
+  margin-right: 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  padding: 6px 16px;
+}
+
+.community-card .btn-outline-secondary {
+  color: #4a5568;
+  border: 1px solid #cbd5e0;
+  background: transparent;
+}
+
+.community-card .btn-outline-secondary:hover {
+  background: #edf2f7;
+  color: #2d3748;
+}
+
+.community-card .icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bc-secondary);
+  color: #fff !important;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.community-card .icon-link:hover {
+  background: var(--bc-primary);
+  color: #fff !important;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.community-card .icon-link .eos-icons {
+  font-size: 22px;
+  color: #fff !important;
+  margin: 0;
+}
+
+.community-card .icon-link img {
+  width: 18px;
+  height: 18px;
+}
+
+.deprecated-card {
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  width: 100%;
+}
+
+.deprecated-card summary {
+  font-weight: 600;
+  cursor: pointer;
+  color: #555;
+  outline: none;
+}
+
+.deprecated-card summary:hover {
+  color: var(--bc-primary);
+}
+
+.deprecated-card[open] summary {
+  margin-bottom: 12px;
+}
+
 /* ==========================================================================
   Devices
   ========================================================================== */

@@ -76,7 +76,7 @@
         <!-- #nav -->
         <div class="subpage-description">
             <div class="subpage-title-back">
-                <h1>Contact</h1>
+                <h1>Get Involved</h1>
                 <a href="../index.html" class="btn btn-primary">
                     <i class="eos-icons">keyboard_arrow_left</i> Go back</a>
             </div>
@@ -87,38 +87,182 @@
 <div class="container page-wrapper">
     <div class="container">
         <div class="row content-padding subpage-content">
-            <h2 id="ml" class="h4-style"><a href="#ml">Announcements</a></h2>
-            <ul>
-                <li><a href="https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/" target="_blank">announce</a> mailing list: To receive news about releases, events and more via email.</li>
-                <li><a href="https://x.com/UyuniProject" target="_blank" rel="noopener noreferrer" aria-label="Uyuni on X (opens in a new tab)">X</a>: To receive news about releases, events and more via X.</li>
-            </ul>
-            <h2 id="bugs" class="h4-style"><a href="#bugs">Reporting bugs</a></h2>
-            <p> Submit bugs to the issues tab located at our <a href="https://github.com/uyuni-project/uyuni/issues">Github repository</a>.</p>
-            <div class="alert alert-warning" role="alert"> Verify that a duplicate of the issue does not already exist! </div>
-            <h2 id="vulnerabilities" class="h4-style"><a href="#vulnerabilities">Reporting security vulnerabilities</a></h2>
-            <p>Report security vulnerabilities by creating a <a href="https://github.com/uyuni-project/uyuni/security/advisories/new">security advisory</a>. We would be happy to give you credits for your help with making Uyuni more secure.</p>
-            <h2 id="discussions" class="h4-style"><a href="#discussions">GitHub discussions</a></h2>
-            <p>We have asynchronous communication using <a href="https://github.com/uyuni-project/uyuni/discussions" target="_blank">GitHub Discussions<a>. They replaced the now archived mailing lists (see below).</p>
-            <h2 id="gitter" class="h4-style"><a href="#gitter">Gitter</a></h2>
-            <p>You can use the channels <a href="https://gitter.im/uyuni-project/users">users</a> and <a href="https://gitter.im/uyuni-project/devel">devel</a> at Gitter to chat with us.</p>
-            <p>You can also join the Gitter rooms via Matrix: <a href="https://matrix.to/#/#uyuni-project_users:gitter.im">#uyuni-project_users:gitter.im</a> and <a href="https://matrix.to/#/#uyuni-project_devel:gitter.im">#uyuni-project_devel:gitter.im</a>.</p>
-            <h2 id="community-hours" class="h4-style"><a href="#community-hours">Uyuni Community Hours</a></h2>
-            <p>Every last Thursday of the month, 16.00 CET/CEST (Germany time) we meet online to talk about what is new in Uyuni, discuss how to improve and enhance it, answer questions from the community and have a nice time in general.</p>
-            <p>Agenda and meeting details are sent to the Uyuni <a href="#ml">mailing lists</a> and published in the Uyuni wiki too: <a href="https://github.com/uyuni-project/uyuni/wiki/Uyuni-Community-Hours">Uyuni Community Hours</a>.</p>
-            <p>We also provide a custom calendar that lists all the sessions we are organizing. For more details visit the <a href="https://calendar.opensuse.org/teams/uyuni/events/uyuni-community-hours">dedicated page and subscribe</a></p>
-            <h2 id="calendars" class="h4-style"><a href="#calendars">Community calendars</a></h2>
-            <p>If you want to stay informed on what it is going on, feel free to see the <a href="https://calendar.opensuse.org/teams/uyuni">details at the following page</a> and subscribe to your preferred calendars!</p>
-            <p>Are you presenting at a conference, but your Uyuni presentation is not listed? Reach out to us on <a href="#gitter">Gitter</a> or on <a href="#discussions">GitHub discussions</a> and we will take care of adding your event to the community calendar!</p>
-            <h2 id="presentations" class="h4-style"><a href="#presentations">Presentations slides</a></h2>
-            <p>You can find Uyuni presentations slides from the community in different languages in the <a href="https://github.com/uyuni-project/presentations">presentations repository</a>. Feel free to watch them or even submit yours.</p>
-            <h2 id="deprecated" class="h4-style"><a href="#deprecated">Deprecated resources</a></h2>
-            <p>The following resources are deprecated, are archived, and can be used for historical purposes. They are not to be used as a contact method</p>
-            <h3 class="h5-style">Archived (use GitHub discussions instead):</h3>
-            <ul>
-                <li><a href="https://lists.opensuse.org/archives/list/devel@lists.uyuni-project.org/" target="_blank">devel</a> mailing list: It was used to discuss about development.</li>
-                <li><a href="https://lists.opensuse.org/archives/list/users@lists.uyuni-project.org/" target="_blank">users</a> mailing list: It was used to discuss about usage.</li>
-                <li><a href="https://lists.opensuse.org/archives/list/translation@lists.uyuni-project.org/" target="_blank">translation</a> mailing list: It was used to discuss about translations.</li>
-            </ul>
+
+            <!-- Discussions & Chat -->
+            <section class="community-section">
+                <h2 id="discussions" class="h4-style"><a href="#discussions">Discussions &amp; Chat</a></h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="community-card">
+                            <h3><i class="eos-icons">forum</i> GitHub Discussions</h3>
+                            <p>Asynchronous forum for both users and developers to ask questions, share ideas, and discuss development topics.</p>
+                            <div class="card-actions">
+                                <a href="https://github.com/uyuni-project/uyuni/discussions" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Open Discussions</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="community-card">
+                            <h3 id="gitter"><i class="eos-icons">chat</i> User Chat</h3>
+                            <p>Real-time chat for usage questions, community support, and getting help with Uyuni.</p>
+                            <div class="card-actions">
+                                <a href="https://gitter.im/uyuni-project/users" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Gitter #users</a>
+                                <a href="https://matrix.to/#/#uyuni-project_users:gitter.im" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">Matrix</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="community-card">
+                            <h3><i class="eos-icons">code</i> Developer Chat</h3>
+                            <p>Real-time chat for contributors and developers working on Uyuni codebase and architecture.</p>
+                            <div class="card-actions">
+                                <a href="https://gitter.im/uyuni-project/devel" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Gitter #devel</a>
+                                <a href="https://matrix.to/#/#uyuni-project_devel:gitter.im" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">Matrix</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contributing Code -->
+            <section class="community-section">
+                <h2 id="contribute" class="h4-style"><a href="#contribute">Contributing Code</a></h2>
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <div class="community-card">
+                            <h3><i class="eos-icons">terminal</i> Code Contributions</h3>
+                            <p>We welcome contributions including bug fixes, enhancements, and new features. Check out our guides to get your development environment running and submit pull requests:</p>
+                            <div class="card-actions">
+                                <a href="https://github.com/uyuni-project/uyuni/wiki/Contributing" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Contributing Guide</a>
+                                <a href="https://github.com/uyuni-project/uyuni/wiki/Working-with--Uyuni-Project-Using-DevContainers" target="_blank" rel="noopener noreferrer" class="btn btn-primary">DevContainers Guide</a>
+                                <a href="https://github.com/uyuni-project/uyuni" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Issue & Security Reporting -->
+            <section class="community-section">
+                <h2 id="issues" class="h4-style"><a href="#issues">Issue &amp; Security Reporting</a></h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="community-card">
+                            <h3 id="bugs"><i class="eos-icons">bug_report</i> Reporting Bugs</h3>
+                            <p>Found a problem or unexpected behavior? Submit an issue on our GitHub repository. Please verify that a duplicate issue does not already exist before creating a new one.</p>
+                            <div class="card-actions">
+                                <a href="https://github.com/uyuni-project/uyuni/issues" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub Issues</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="community-card">
+                            <h3 id="vulnerabilities"><i class="eos-icons">security</i> Reporting Security Vulnerabilities</h3>
+                            <p>Report security vulnerabilities confidentially by creating a security advisory. We are happy to give you credit for your help with making Uyuni more secure.</p>
+                            <div class="card-actions">
+                                <a href="https://github.com/uyuni-project/uyuni/security/advisories/new" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Submit Security Advisory</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Translating Uyuni -->
+            <section class="community-section">
+                <h2 id="translate" class="h4-style"><a href="#translate">Translating Uyuni</a></h2>
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <div class="community-card">
+                            <h3><i class="eos-icons">translate</i> Localization &amp; Translations</h3>
+                            <p>Help us translate the Uyuni web interface and documentation into your language. Localization is hosted on openSUSE Weblate, and no coding experience is required.</p>
+                            <div class="card-actions">
+                                <a href="https://l10n.opensuse.org/projects/uyuni/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Translate on Weblate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Announcements & Community Hours -->
+            <section class="community-section">
+                <h2 id="ml" class="h4-style"><a href="#ml">Announcements &amp; Community Hours</a></h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="community-card">
+                            <h3 id="calendars"><i class="eos-icons">campaign</i> Announcements &amp; Calendar</h3>
+                            <p>Stay informed about releases, events, and project updates:</p>
+                            <div class="d-flex align-items-center mt-auto pt-2">
+                                <a href="https://lists.opensuse.org/archives/list/announce@lists.uyuni-project.org/" target="_blank" rel="noopener noreferrer" class="icon-link mr-3" title="Announce Mailing List" aria-label="Announce Mailing List">
+                                    <i class="eos-icons">email</i>
+                                </a>
+                                <a href="https://calendar.opensuse.org/teams/uyuni" target="_blank" rel="noopener noreferrer" class="icon-link mr-3" title="Community Calendar" aria-label="Community Calendar">
+                                    <i class="eos-icons">event</i>
+                                </a>
+                                <a href="https://x.com/UyuniProject" target="_blank" rel="noopener noreferrer" class="icon-link" title="Uyuni on X" aria-label="Uyuni on X (opens in a new tab)">
+                                    <img src="../img/twitter.svg" alt="Uyuni on X">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="community-card">
+                            <h3 id="community-hours"><i class="eos-icons">event</i> Uyuni Community Hours</h3>
+                            <p>Every last Thursday of the month at 16:00 CET/CEST (Germany time), we meet online to share updates, discuss enhancements, and answer community questions.</p>
+                            <p>Agenda and details are published in advance on the Uyuni wiki and announce list.</p>
+                            <div class="card-actions">
+                                <a href="https://github.com/uyuni-project/uyuni/wiki/Uyuni-Community-Hours" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Meeting Agenda &amp; Wiki</a>
+                                <a href="https://calendar.opensuse.org/teams/uyuni/events/uyuni-community-hours" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">Subscribe Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Presentations -->
+            <section class="community-section">
+                <h2 id="presentations" class="h4-style"><a href="#presentations">Presentations</a></h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="community-card">
+                            <h3><i class="eos-icons">slideshow</i> Presentation Slides</h3>
+                            <p>Explore Uyuni slide decks from community presentations in various languages, or submit your own slides to share with others.</p>
+                            <div class="card-actions">
+                                <a href="https://github.com/uyuni-project/presentations" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Presentations Repository</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="community-card">
+                            <h3><i class="eos-icons">co_present</i> Add Your Event to the Calendar</h3>
+                            <p>Are you presenting at a conference or meetup, but your talk is not listed? Reach out to us on <a href="#gitter">chat</a> or <a href="#discussions">GitHub Discussions</a>, and we will add your event to the community calendar!</p>
+                            <div class="card-actions">
+                                <a href="https://calendar.opensuse.org/teams/uyuni" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary">View Calendar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Deprecated Resources -->
+            <section class="community-section">
+                <h2 id="deprecated" class="h4-style"><a href="#deprecated">Deprecated Resources</a></h2>
+                <div class="row">
+                    <div class="col-12">
+                        <details class="deprecated-card">
+                            <summary>Archived mailing lists (click to expand)</summary>
+                            <div class="pt-2">
+                                <p>The following resources are archived and kept for historical purposes only. They are not to be used as a contact method (use <a href="#discussions">GitHub Discussions</a> instead):</p>
+                                <ul>
+                                    <li><a href="https://lists.opensuse.org/archives/list/devel@lists.uyuni-project.org/" target="_blank" rel="noopener noreferrer">devel</a> mailing list: Formerly used for development discussions.</li>
+                                    <li><a href="https://lists.opensuse.org/archives/list/users@lists.uyuni-project.org/" target="_blank" rel="noopener noreferrer">users</a> mailing list: Formerly used for usage discussions.</li>
+                                    <li><a href="https://lists.opensuse.org/archives/list/translation@lists.uyuni-project.org/" target="_blank" rel="noopener noreferrer">translation</a> mailing list: Formerly used for translation discussions.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </div> <!-- #container -->
   <!-- Footer -->
@@ -164,7 +308,7 @@
           <a href="https://l10n.opensuse.org/projects/uyuni/" target="_blank">
             <img src="../img/Weblate_logo.svg" width="24" height="24" alt="Uyuni - Weblate" title="Translate Uyuni to your language">
           </a>
-          <a href=".../pages/get-involved.html#gitter">
+          <a href="../pages/get-involved.html#gitter">
             <img src="../img/gitter.svg" alt="Uyuni - Gitter" title="Gitter chat rooms">
           </a>
           <a href="https://www.youtube.com/channel/UCB0SkZFAw9vPCFeUIYqZQ5A" target="_blank">
